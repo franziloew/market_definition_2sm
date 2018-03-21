@@ -1,0 +1,73 @@
+---
+title: "News Magazines"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+#library(urca)
+#library(tseries)
+#library(seasonal)
+#library(lmtest)
+# library(vars)
+# library(forecast)
+# library(graphics)
+# library(Hmisc)
+# library(xtable)
+# library(stargazer)
+# library(plotrix)
+
+rm(list=ls())
+```
+
+```{r message=FALSE, warning=FALSE}
+sales <- read_excel("../data/sales.xls")
+ads <- read_excel("../data/ads.xls")
+adprice <- read_excel("../data/adprice.xls")
+```
+
+```{r}
+names(sales)
+```
+
+```{r}
+names(ads)
+```
+
+```{r}
+names(adprice)
+```
+
+Combine data
+```{r}
+df <- sales %>%
+  select(-Status) %>%
+  left_join(., ads %>%
+              select(- Status), 
+            by = c("Titel","Heft Nr.")) %>%
+  left_join(., adprice %>%
+              select(-Status),
+            by = c("Titel","Heft Nr."))
+
+names(df)
+```
+
+```{r}
+df %>% group_by(Gattung, Titel) %>%
+  tally()
+```
+
+```{r}
+
+```
+
+```{r}
+df <- df %>%
+  mutate(year = as.numeric(substrRight(`Heft Nr.`, 4)),
+         issue = as.numeric(substr(`Heft Nr.`,1,2)))
+```
+```{r}
+df %>% filter(is.na(issue))
+```
+
