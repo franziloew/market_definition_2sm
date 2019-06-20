@@ -1,0 +1,268 @@
+---
+title: "News Magazines"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(readxl)
+library(lubridate)
+library(urca)
+library(tseries)
+library(seasonal)
+library(lmtest)
+library(vars)
+library(forecast)
+library(graphics)
+library(Hmisc)
+library(xtable)
+library(stargazer)
+
+# Theming
+quartzFonts(
+  Roboto =
+    c("Roboto-Light",
+      "Roboto-Bold",
+      "Roboto-Regular",
+      "Roboto-Thin")
+)
+
+theme_set(
+  theme_bw(base_family = "Roboto", base_size = 10) +
+    theme(
+      plot.title = element_text(size = 14,
+                                margin = margin(0, 0, 4, 0, "pt")),
+      plot.subtitle = element_text(size = 8),
+      plot.caption = element_text(size = 6),
+      panel.border = element_blank()
+    )
+)
+
+rm(list=ls())
+
+col <- rcartocolor::carto_pal(12, "Bold")
+source("func/helper_functions.R")
+```
+
+```{r message=FALSE, warning=FALSE}
+# Load Data
+sales <- read_excel("../data/sales.xls")
+ads <- read_excel("../data/ads.xls")
+adprice <- read_excel("../data/adprice.xls")
+```
+
+# Prepare and explore data
+
+... combine the dataframes
+
+```{r message=FALSE, warning=FALSE}
+df <- sales %>%
+  dplyr::select(-Status) %>%
+  left_join(., ads %>%
+              dplyr::select(- Status), 
+            by = c("Titel","Heft Nr.")) %>%
+  left_join(., adprice %>%
+              dplyr::select(-Status),
+            by = c("Titel","Heft Nr.")) %>%
+  mutate(year = as.numeric(substrRight(`Heft Nr.`, 4)),
+         issue = as.numeric(substr(`Heft Nr.`,1,2)))
+```
+
+```{r}
+ggplot(df, aes(Gattung)) +
+  geom_bar(fill = col[2], alpha = 0.8) +
+  coord_flip()
+```
+
+```{r}
+df %>%
+  filter(Gattung == "Aktuelle Zeitschriften und Magazine") %>%
+  ggplot(aes(Titel)) +
+  geom_bar(fill = col[3], alpha = 0.8) +
+  coord_flip()
+```
+
+## FOCUS, Der Spiegel, Stern
+
+... keep only FOCUS, Der Spiegel, Stern
+
+```{r}
+keep <- c("FOCUS","Der Spiegel","Stern")
+
+fss <- df %>%
+  filter(Titel %in% keep) %>%
+  mutate(date = calculate_week(issue, year))
+```
+
+```{r}
+ggplot(fss, aes(date, `Verkauf Gesamt`,
+                color=Titel)) +
+  geom_line() +
+  labs(x="", color="", title = "Verkauf Gesamt")
+```
+
+```{r}
+ggplot(fss, aes(date, `Anzeigen Gesamt`,
+                color=Titel)) +
+  geom_line() +
+  labs(x="", color="", title = "Anzeigen Gesamt")
+```
+
+```{r fig.height=4, fig.width=8}
+ggplot(fss, aes(date, `Umsatz Brutto TEUR`,
+                group=Titel, color = Titel)) +
+  geom_line() +
+  #facet_wrap(~Titel, nrow=1) +
+  labs(x="", color="", title = "Umsatz Brutto TEUR")
+```
+
+```{r fig.height=4, fig.width=8}
+ggplot(fss, aes(date, `Preis 4C 1/1`,
+                group=Titel, color = Titel)) +
+  geom_line() +
+  #facet_wrap(~Titel, nrow=1) +
+  labs(x="", color="", title = "Preis 4C 1/1")
+```
+
+```{r fig.height=4, fig.width=8}
+ggplot(fss, aes(date, Heftumfang,
+                group=Titel, color = Titel)) +
+  geom_line() +
+  #facet_wrap(~Titel, nrow=1) +
+  labs(x="", color="", title = "Heftumfang")
+```
+
+# CCF
+
+We use the cross correlation function (CCF) to estimate the relationship between two time series ($y_t$ and $x_t$). However, one difficulty is that the CCF is affected by the time series structure of the x-variable and any “in common” trends the $x$ and $y$ series may have over time.
+
+One strategy for dealing with this difficulty is called “pre-whitening.”  The steps are:
+
+  1) Determine a time series model for the x-variable and store the residuals from this model.
+
+  2) Filter the y-variable series using the x-variable model (using the estimated coefficients from step 1). In this step we find differences between observed y-values and “estimated” y-values based on the x-variable model.
+
+  3) Examine the CCF between the residuals from Step 1 and the filtered y-values from Step 2.  This CCF can be used to identify the possible terms for a lagged regression.
+  
+This strategy stems from the fact that when the input series (say, wt) is “white noise” the patterns of the CCF between wt and zt, a linear combination of lags of the wt, are easily identifiable (and easily derived).  Step 1 above creates a “white noise” series as the input.  Conceptually, Step 2 above arises from a starting point that y-series = linear combination of x-series.  If we “transform” the x-series to white noise (residuals from its ARIMA model) then we should apply the transformation to both sides of the equation to preserve an equality of sorts.
+
+
+## Prewhitening / ARIMA
+
+```{r}
+# min <- calculate_week(33, 2013)
+# max <- calculate_week(33, 2015)
+
+min <- min(fss$date)
+max <- max(fss$date)
+
+fss %>%
+  dplyr::select(`Verkauf Gesamt`, date, Titel) %>%
+  spread(Titel, `Verkauf Gesamt`) %>%
+  filter(date >= as.Date(min)) %>%
+  filter(date <= as.Date(max)) %>%
+  dplyr::select(-date) -> tempdf
+```
+  
+```{r}
+results <- list()
+mag <- names(tempdf)
+x <- 1
+
+for (i in mag) {
+    selected <- tempdf[, -which(names(tempdf) == i)]
+    temp <- auto.arima(tempdf[,i], xreg = cbind(selected[,1],
+                                             selected[,2]))
+    results[[x]] <- temp
+    x <- x+1
+  }
+
+
+resid <- cbind(results[[1]]$residuals, results[[2]]$residuals, results[[3]]$residuals)
+```
+
+```{r}
+autoplot(resid) +
+  scale_color_manual(labels = mag, values = col[1:3]) +
+  geom_hline(yintercept = 0, color = "grey50") +
+  labs(y="residuals", x="", color = "",
+       title = paste("Timespan:", min,"to", max)) 
+```
+
+### Calculate CCF
+
+```{r}
+corr_temp <- resid %>% as.data.frame()
+names(corr_temp) <- mag
+
+# Create empty matrix
+corr <- expand.grid(names(corr_temp), names(corr_temp))
+
+corr$`-3` <- NA
+corr$`-2` <- NA
+corr$`-1` <- NA
+corr$`0` <- NA
+corr$`1` <- NA
+corr$`2` <- NA
+corr$`3` <- NA
+  
+x <- 1
+  
+for (corr1Id in 1:ncol(corr_temp)) {
+    c1 = corr_temp[,corr1Id]
+
+    for(corr2Id in 1:ncol(corr_temp)) {
+      c2 = corr_temp[,corr2Id]
+      correlation = ccf(c1, c2, lag.max = 3, 
+                        na.action = na.contiguous,
+                        plot=F)
+      
+      corr[x,3:9] <- correlation$acf %>% 
+        as.data.frame() %>% t()
+    
+      x<- x+1
+    }
+}
+```
+
+#### Plot CCF
+
+In R, the sample CCF is defined as the set of sample correlations between $x_{t+h}$ and $y_t$ for $h = 0, ±1, ±2, ±3$, and so on. A negative value for $h$ is a correlation between the x-variable at a time before $t$ and the y-variable at time $t$. For instance, consider $h = −2$.  The CCF value would give the correlation between $x_{t-2}$ and $y_t$.
+
+In the following figure, each $x$-time series is plotted in its own plot. The color indicates the $y$-series. 
+
+```{r}
+# Calculate confidence intervals
+ci_upper <- 2/sqrt(length(resid[,1]))
+ci_lower <- -2/sqrt(length(resid[,1]))
+
+# convert dataframe to long format
+corrLong <- corr %>%
+    gather(lag, ccf, `-3`:`3`) %>%
+  mutate(lag = as.numeric(lag))
+```
+
+```{r}
+corrLong %>%
+  filter(Var1!=Var2) %>%
+  ggplot(aes(lag,ccf,
+             fill=Var1)) +
+  geom_col(position = "dodge",
+           #show.legend = F,
+           alpha=0.8) +
+  scale_fill_manual(values=col) +
+  facet_wrap(~Var2, ncol=3)+
+  scale_x_continuous(breaks = c(-3:3)) +
+  geom_hline(yintercept = ci_upper, 
+             color = "black",
+             size = 0.3,
+             linetype = 2)+
+  geom_hline(yintercept = ci_lower, 
+             color = "black",
+             size=0.3,
+             linetype = 2)+
+  labs(x="", fill="", title = paste("Timespan:", min,"to", max))
+```
+

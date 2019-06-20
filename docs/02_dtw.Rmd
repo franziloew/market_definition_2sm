@@ -1,0 +1,297 @@
+---
+title: "News Magazines"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(readxl)
+library(lubridate)
+library(urca)
+library(tseries)
+library(seasonal)
+library(lmtest)
+library(vars)
+library(forecast)
+library(graphics)
+library(Hmisc)
+library(xtable)
+
+# Theming
+quartzFonts(
+  Roboto =
+    c("Roboto-Light",
+      "Roboto-Bold",
+      "Roboto-Regular",
+      "Roboto-Thin")
+)
+
+theme_set(
+  theme_bw(base_family = "Roboto", base_size = 10) +
+    theme(
+      plot.title = element_text(size = 14,
+                                margin = margin(0, 0, 4, 0, "pt")),
+      plot.subtitle = element_text(size = 8),
+      plot.caption = element_text(size = 6),
+      panel.border = element_blank()
+    )
+)
+
+rm(list=ls())
+
+col <- rcartocolor::carto_pal(12, "Bold")
+source("func/helper_functions.R")
+```
+
+```{r message=FALSE, warning=FALSE}
+sales <- read_excel("../data/sales.xls")
+ads <- read_excel("../data/ads.xls")
+adprice <- read_excel("../data/adprice.xls")
+```
+
+# Prepare and explore data
+
+... combine the dataframes
+
+```{r message=FALSE, warning=FALSE}
+df <- sales %>%
+  dplyr::select(-Status) %>%
+  left_join(., ads %>%
+              dplyr::select(- Status), 
+            by = c("Titel","Heft Nr.")) %>%
+  left_join(., adprice %>%
+              dplyr::select(-Status),
+            by = c("Titel","Heft Nr.")) %>%
+  mutate(year = as.numeric(substrRight(`Heft Nr.`, 4)),
+         issue = as.numeric(substr(`Heft Nr.`,1,2)))
+```
+
+What magazines do we have in our data?
+
+```{r fig.height=12, fig.width=10}
+df %>% 
+  group_by(Gattung, Titel, Verlag) %>%
+  tally() %>%
+  knitr::kable(align="l")
+```
+
+```{r}
+ggplot(df, aes(Gattung)) +
+  geom_bar(fill = col[2], alpha = 0.8) +
+  coord_flip() 
+```
+
+
+```{r}
+df.small <- df %>%
+  filter(Gattung == "Aktuelle Zeitschriften und Magazine") %>%
+  filter(Titel != "NEON") %>%
+  dplyr::select(Titel, `Verkauf Gesamt`, `Heft Nr.`) %>%
+  group_by(Titel) %>%
+  mutate(id = seq_len(n())) %>%
+  ungroup()
+```
+
+```{r}
+ggplot(df.small, aes(id, `Verkauf Gesamt`,
+                   group = Titel,
+                   color = Titel)) +
+  geom_line()
+```
+
+
+```{r}
+tempdf1 <- df.small %>%
+  filter(id >=200) %>%
+  filter(id <=300) 
+
+start <- head(tempdf1$`Heft Nr.`, 1)
+end <- tail(tempdf1$`Heft Nr.`, 1)
+
+ggplot(tempdf1, aes(id, (`Verkauf Gesamt`)/1000,
+                   group = Titel,
+                   color = Titel)) +
+  geom_line() +
+  labs(y = "Verkauf Gesamt / 1000",
+       color = "",
+    title = paste("Heft Nr.",start,"-",end))
+```
+
+## DTW
+
+```{r}
+tempdf <- tempdf1 %>%
+  dplyr::select(- `Heft Nr.`) %>%
+  spread(Titel, `Verkauf Gesamt`) %>%
+  dplyr::select(-id)
+```
+
+
+Dynamic Time Warping (DTW) can be thought of as an alignment algorithm. The basic idea is to match the shapes of the time series while allowing for different time speed by computing an optimum ‘warping curve’. It is slower and more computationally intensive than Euclidean distance but tends to be more robust. It is most easily understood visually.
+
+The Figure below plots the alignment performed by the DTW algorithm between two time series (total sales of Der Spiegel and FOCUS). The dashed lines exemplify how some points are mapped to each other, which shows how they can be warped in time. (Note that the vertical position of each series was artificially altered for visualization. 
+
+The computed distance between the two series is:
+
+```{r message=FALSE, warning=FALSE}
+library("dtw")
+
+tempdf[is.na(tempdf)] <- 0
+
+ref <- ts(tempdf[,3])
+test <- ts(tempdf[,4])
+
+alignment <- dtw(test,ref,k=T)
+alignment$distance
+```
+
+```{r fig.height=6, fig.width=10}
+plot(alignment,type="two",off=1,
+     match.lty=2,match.indices=50)
+```
+
+However, one difficulty is that the DTW measure is affected by the time series structure of the x-variable and any "in common"" trends the $x$ and $y$ series may have over time.
+
+One strategy for dealing with this difficulty is called "pre-whitening."
+
+
+#### Prewhitening / ARIMA
+
+```{r}
+results <- list()
+mag <- names(tempdf)
+x <- 1
+
+for (i in mag) {
+    selected <- tempdf[, -which(names(tempdf) == i)]
+    temp <- auto.arima(tempdf[,i], xreg = cbind(selected[,1],
+                                             selected[,2]))
+    results[[x]] <- temp
+    x <- x+1
+  }
+
+
+resid <- cbind(results[[1]]$residuals, 
+               results[[2]]$residuals, 
+               results[[3]]$residuals,
+               results[[4]]$residuals, 
+               results[[5]]$residuals, 
+               results[[6]]$residuals,
+               results[[7]]$residuals, 
+               results[[8]]$residuals
+               )
+
+autoplot(resid) +
+ # scale_color_manual(labels = mag) +
+  geom_hline(yintercept = 0, color = "grey50") +
+  labs(y="residuals", x="", color = "",
+       title = paste("Timespan:", min,"to", max)) 
+```
+
+
+Our ultimate objective is to cluster different mediums based on their similarities over time. So we need to produce a distance matrix where each cell contains the distance between a pair of medium valuation time series.
+
+```{r}
+#dtw_temp <- resid %>% as.data.frame()
+dtw_temp <- tempdf
+names(dtw_temp) <- mag
+dtw_temp[is.na(dtw_temp)] <- 0
+
+# Create empty matrix
+dtw_df <- expand.grid(names(dtw_temp), names(dtw_temp))
+dtw_df$dist <- NA
+  
+x <- 1
+  
+for (Id1 in 1:ncol(dtw_temp)) {
+    test = dtw_temp[,Id1]
+
+    for(Id2 in 1:ncol(dtw_temp)) {
+      ref = dtw_temp[,Id2]
+      alignment = dtw(test,ref,k=T)
+      
+      dtw_df[x,3] <- alignment$distance
+      x<- x+1
+    }
+}
+```
+
+
+## Plot Results
+```{r}
+dtw_df %>%
+  filter(Var1!=Var2) %>%
+  ggplot(aes(Var2, Var1, 
+                   fill=dist)) +
+  geom_tile() +
+  labs(x="",y="",
+       subtitle = paste("Timespan:", start,"to", end)) 
+```
+
+# K-medoids clustering
+
+K-medoids is the better choice after DTW (uses DTW-medoid for finding the cluster center). 
+
+As DTW is not minimized by the mean, k-means may not converge and even if it converges it will not yield a very good result. The mean is an least-squares estimator on the coordinates. It minimizes variance, not arbitrary distances, and k-means is designed for minimizing variance, not arbitrary distances.  
+
+```{r message=FALSE}
+library(cluster)
+library(factoextra)
+```
+
+```{r}
+ans %>% 
+  spread(Var2, distance) -> ans.wide
+
+m.ans <- as.matrix(ans.wide %>% select(-Var1))
+rownames(m.ans) <- ans.wide$Var1
+```
+
+## Results (K = 3)
+
+```{r}
+k = 3
+pam.k <- pam(m.ans, k = k)
+pam.k
+```
+
+```{r}
+m.ans %>%
+  as_tibble() %>%
+  mutate(cluster = pam.k$clustering,
+         medium = ans.wide$Var1) %>%
+  select(medium, cluster) %>%
+  htmlTable()
+```
+
+### Plot Results
+
+* The default level of the concentration ellipse is 0.95.
+
+```{r fig.height=6, fig.width=8, message=FALSE, warning=FALSE}
+fviz_cluster(pam.k, 
+             ellipse.type = "t", # Concentration ellipse
+             repel = T,
+             title = paste0("Cluster Plot, K=",k),
+             subtitle = "Time span: Jan2003-Jan2004\nTime Series: CDU/CSU"
+             ) +
+  theme(legend.position = "none")
+```
+
+### With K = 4
+
+```{r fig.height=6, fig.width=8, message=FALSE, warning=FALSE}
+k = 4
+pam.k <- pam(m.ans, k = k)
+
+fviz_cluster(pam.k, 
+             ellipse.type = "t", # Concentration ellipse
+             repel = T,
+             title = paste0("Cluster Plot, K=",k),
+             subtitle = "Time span: Jan2003-Jan2004\nTime Series: CDU/CSU"
+             ) +
+  theme(legend.position = "none")
+```
+

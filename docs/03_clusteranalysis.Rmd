@@ -1,0 +1,301 @@
+---
+title: "Hierarchical Cluster Analysis"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r include=FALSE}
+library(tidyverse)  # data manipulation
+library(cluster)    # clustering algorithms
+library(factoextra) # clustering visualization
+library(dendextend) # for comparing two dendrograms
+library(forecast)   # for estimating the arima model
+
+rm(list = ls())
+source("func/helper_functions.R")
+```
+
+1. Adjust the quantities with ARIMA
+2. Use residuals to measure correlations between two media outlets: $\text{corr}_{ij}$
+3. Calculte dissimilarity as: $d_{ij} = 1-\text{corr}_{ij}$
+4. Agglomerative hierarchical clustering using the dissimilarity measure $d_{ij}$
+5. Define a cutof value
+
+## Data
+
+```{r include=FALSE}
+library(readxl)
+
+sales <- read_excel("../data/sales.xls")
+ads <- read_excel("../data/ads.xls")
+adprice <- read_excel("../data/adprice.xls")
+```
+
+```{r include=FALSE}
+df <- sales %>%
+  dplyr::select(-Status) %>%
+  left_join(., ads %>% select(- Status), 
+            by = c("Titel","Heft Nr.")) %>%
+  left_join(., adprice %>% select(-Status),
+            by = c("Titel","Heft Nr.")) %>%
+  mutate(year = as.numeric(substrRight(`Heft Nr.`, 4)),
+         issue = as.numeric(substr(`Heft Nr.`,1,2)))
+```
+
+```{r}
+df %>% 
+  group_by(Gattung, Titel, Verlag) %>%
+  tally() %>%
+  knitr::kable(align="l")
+```
+
+```{r fig.height=10, fig.width=10, fig.align="center"}
+df %>%
+  group_by(Titel, Gattung)%>%
+  tally() %>%
+  ggplot(aes(reorder(Titel,n),n, fill = Gattung)) +
+  geom_col() +
+  coord_flip() +
+    ggthemes::theme_hc() +
+  labs(x=NULL, y=NULL, title="Titel") +
+  theme(legend.position = "right")
+```
+
+```{r fig.align="center"}
+df %>%
+  group_by(Gattung)%>%
+  tally() %>%
+  ggplot(aes(reorder(Gattung,n),n)) +
+  geom_col() +
+  coord_flip() +
+  ggthemes::theme_hc() +
+  labs(x=NULL, y=NULL, title = "Gattung")
+```
+
+```{r}
+types <- unique(df$Gattung)
+```
+
+```{r fig.align="center"}
+i <- 6
+
+df %>%
+  filter(Gattung == types[i]) %>%
+  mutate(date = calculate_week(issue, year)) %>%
+  ggplot(aes(
+    `Heft Nr.`
+    #date 
+    ,`Verkauf Gesamt`, 
+    color=Titel, group=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="", title = types[i]) +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+
+
+```{r fig.align="center"}
+i <- 12
+
+df %>%
+  filter(Gattung == types[i]) %>%
+  mutate(date = calculate_week(issue, year)) %>%
+  ggplot(aes(
+    #`Heft Nr.`
+    date 
+    ,`Verkauf Gesamt`, 
+    color=Titel, group=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="", title = types[i]) 
+```
+
+```{r fig.align="center"}
+i <- 2
+
+df %>%
+  filter(Gattung == types[i]) %>%
+  mutate(date = calculate_week(issue, year)) %>%
+  ggplot(aes(
+    `Heft Nr.`
+    #date 
+    ,`Verkauf Gesamt`, 
+    color=Titel, group=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="", title = types[i]) +
+  theme(axis.text.x = element_blank(),
+         axis.ticks.x = element_blank())
+```
+
+```{r fig.align="center"}
+i <- 13
+
+df %>%
+  filter(Gattung == types[i]) %>%
+  mutate(date = calculate_week(issue, year)) %>%
+  ggplot(aes(
+    `Heft Nr.`
+    #date 
+    ,`Verkauf Gesamt`, 
+    color=Titel, group=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="", title = types[i]) +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+
+*Group all magazines by Issue Nr. (Heftnummer) to use all of them in the cluster analysis*
+
+```{r fig.align="center"}
+# drop magazines with data less than 200 data points
+drops <- df %>%
+  group_by(Titel) %>%
+  tally(sort = T) %>%
+  filter(n < 200) %>%
+  select(Titel) 
+
+drops <- drops$Titel
+
+tempdf <- df %>%
+  filter(! Titel %in% drops) %>%
+  group_by(year, issue, Titel) %>%
+  summarise(sales = sum(`Verkauf Gesamt`)) %>%
+  ungroup() %>%
+  mutate(
+    date=paste0(issue, "/", year)
+  ) %>%
+  spread(Titel, sales)
+
+tempdf <- na.omit(tempdf)
+```
+
+```{r fig.align="center"}
+p <- tempdf %>%
+  select(-year, -issue) %>%
+  gather(Titel, sales, -date) %>%
+  ggplot(aes(date,sales,color=Titel, group=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="", title="Residuals") +
+  theme(legend.position = "none", 
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+
+plotly::ggplotly(p)
+```
+
+```{r}
+tempdf <- tempdf %>%
+  select(- year, - issue, - date)
+```
+
+## 1. Prewhitening / ARIMA
+
+
+$$
+y_t = \beta_1y_{t-1}+\beta_2y_{t-2}+...+\epsilon_{it}
+$$
+
+- Use `auto.arima` to find the best ARIMA model according to BIC value.
+- No other time series (magazines) are included.
+
+```{r}
+# ARIMA estimation
+mag <- names(tempdf)
+
+for (i in seq(1:length(mag))) {
+  
+  # get the time series
+  #selected <- tempdf[, -which(names(tempdf) ==  mag[i])]
+  # estimate auto arima
+  temp <- auto.arima(tempdf[,i], ic="bic")
+  
+  # create dataframe with the residuals
+  if (i == 1) {
+   resid <- cbind(temp$residuals) 
+  } else {
+    resid <- cbind(resid, temp$residuals) 
+  }
+}
+
+colnames(resid) <- mag
+```
+
+```{r}
+p <- autoplot(resid) +
+  geom_hline(yintercept = 0, color = "grey50") +
+  ggthemes::theme_hc() +
+  labs(y="residuals", x="", color = "") +
+  theme(legend.position = "none")
+
+plotly::ggplotly(p)
+```
+
+
+## 2. Calculate Corralation
+
+```{r include=FALSE}
+library(Hmisc)
+library(ggcorrplot)
+library(corrr)
+
+df.corr <- round(cor(resid, use = "complete.obs"),4)
+```
+
+## 3. Dissimilarity 
+
+$$
+d_{ij} = 1-|\text{corr}_{ij}|
+$$
+
+```{r}
+# as a measure of distance
+df.dis <- 1 - abs(df.corr)
+df_distance <- as.dist(df.dis)
+```
+
+## 4. Agglomerative clustering
+
+Also known as AGNES (Agglomerative Nesting). It works in a bottom-up manner. That is, each object is initially considered as a single-element cluster (leaf). At each step of the algorithm, the two clusters that are the most similar are combined into a new bigger cluster (nodes). This procedure is iterated until all points are member of just one single big cluster (root). The result is a tree which can be plotted as a dendrogram.
+
+- (Dis)similarity between observations is measured using distance measures (i.e. Euclidean distance, Manhattan distance, etc.)
+
+- (Dis)similarity between two clusters of observations is measured using using cluster agglomeration methods, i.e.: 
+
+**Maximum or complete linkage clustering**: This linkage method makes use of the maximum intercluster dissimilarity, which can be represented by
+
+$$
+D_{complete}(A,B) = \text{max} d_{ij}
+$$
+
+where A and B are two distinct clusters and dij is the chosen dissimilarity measure. As can be seen from this equation , the method computes all pairwise dissimilarities between the elements in cluster 1 and the elements in cluster 2, and considers the largest value (i.e., maximum value) of these dissimilarities as the distance between the two clusters. It tends to produce more compact clusters.
+
+```{r}
+hc1 <- hclust(df_distance, method = "complete")
+```
+
+### Dendogram
+
+```{r fig.height=6, fig.width=10, fig.align="center"}
+plot(hc1, main="", xlab="", cex = 0.6)
+```
+
+
+In the dendrogram displayed above, each leaf corresponds to one observation. As we move up the tree, observations that are similar to each other are combined into branches, which are themselves fused at a higher height. The height of the fusion, provided on the vertical axis, indicates the (dis)similarity between two observations in terms of our dissimilarity measure $d_{ij}$. 
+
+As soon as we move up the tree, some of those leafs begin to fuse into branches. For instance, at a height of 0.6 the freundin and Für Sie form a cluster. This means that their adjusted quantity series show an empirical correlation of 0.4 
+
+## 5. Cutoff value 
+
+In order to delineate relevant markets, a suitable cutoff value has to be determined. 
+
+```{r fig.height=6, fig.width=10, fig.align="center"}
+cut = 0.6
+plot(hc1, cex = 0.6, xlab="", ylab="", main= paste("Cut at height =",cut))
+rect.hclust(hc1, h = cut, border = 2:5)
+```
+

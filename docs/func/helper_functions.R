@@ -3,7 +3,7 @@ substrRight <- function(x, n){
 }
 
 calculate_week = function(week, year) {
-  date <- ymd(paste(year, 1, 1, sep="-"))
-  week(date) = week
+  date <- lubridate::ymd(paste(year, 1, 1, sep="-"))
+  lubridate::week(date) = week
   return(date)
 }
