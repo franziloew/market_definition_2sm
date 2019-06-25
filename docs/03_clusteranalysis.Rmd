@@ -40,7 +40,10 @@ df <- sales %>%
   left_join(., adprice %>% select(-Status),
             by = c("Titel","Heft Nr.")) %>%
   mutate(year = as.numeric(substrRight(`Heft Nr.`, 4)),
-         issue = as.numeric(substr(`Heft Nr.`,1,2)))
+         issue = as.numeric(substr(`Heft Nr.`,1,2))) %>%
+  group_by(Titel) %>%
+  mutate(publish_freq = max(issue)) %>%
+  ungroup() 
 ```
 
 ```{r}
@@ -77,120 +80,93 @@ df %>%
 types <- unique(df$Gattung)
 ```
 
-```{r fig.align="center"}
+# Weekly Magazines
+
+```{r}
+df %>%
+  group_by(publish_freq) %>%
+  tally(sort = T)
+```
+
+
+```{r fig.height=5, fig.width=10, fig.align="center"}
 i <- 6
 
-df %>%
+p <- df %>%
   filter(Gattung == types[i]) %>%
-  mutate(date = calculate_week(issue, year)) %>%
-  ggplot(aes(
-    `Heft Nr.`
-    #date 
-    ,`Verkauf Gesamt`, 
-    color=Titel, group=Titel)) +
-  geom_line() +
-  ggthemes::theme_hc() +
-  labs(x="", color="", title = types[i]) +
-  theme(axis.text.x = element_blank(),
-        axis.ticks.x = element_blank())
+  group_by(Titel, issue) %>%
+  summarise(n = n(),
+            year = paste(year, collapse = ", ")) %>%
+  ggplot(aes(as.factor(issue), n, text = year)) +
+  geom_col() +
+  coord_flip() +
+  labs(x="Heft Nr.", y=NULL, title = types[i]) +
+  facet_wrap(~Titel, nrow = 1)
+
+plotly::ggplotly(p)
 ```
 
-
-```{r fig.align="center"}
+```{r fig.height=5, fig.width=10, fig.align="center"}
 i <- 12
 
-df %>%
+p <- df %>%
   filter(Gattung == types[i]) %>%
-  mutate(date = calculate_week(issue, year)) %>%
-  ggplot(aes(
-    #`Heft Nr.`
-    date 
-    ,`Verkauf Gesamt`, 
-    color=Titel, group=Titel)) +
-  geom_line() +
-  ggthemes::theme_hc() +
-  labs(x="", color="", title = types[i]) 
+  group_by(Titel, issue) %>%
+  summarise(n = n(),
+            year = paste(year, collapse = ", ")) %>%
+  ggplot(aes(as.factor(issue), n, text = year)) +
+  geom_col() +
+  coord_flip() +
+  labs(x="Heft Nr.", y=NULL, title = types[i]) +
+  facet_wrap(~Titel, nrow = 1)
+
+plotly::ggplotly(p)
 ```
 
-```{r fig.align="center"}
-i <- 2
-
-df %>%
-  filter(Gattung == types[i]) %>%
-  mutate(date = calculate_week(issue, year)) %>%
-  ggplot(aes(
-    `Heft Nr.`
-    #date 
-    ,`Verkauf Gesamt`, 
-    color=Titel, group=Titel)) +
-  geom_line() +
-  ggthemes::theme_hc() +
-  labs(x="", color="", title = types[i]) +
-  theme(axis.text.x = element_blank(),
-         axis.ticks.x = element_blank())
-```
-
-```{r fig.align="center"}
+```{r fig.height=5, fig.width=10, fig.align="center"}
 i <- 13
 
-df %>%
+p <- df %>%
   filter(Gattung == types[i]) %>%
-  mutate(date = calculate_week(issue, year)) %>%
-  ggplot(aes(
-    `Heft Nr.`
-    #date 
-    ,`Verkauf Gesamt`, 
-    color=Titel, group=Titel)) +
-  geom_line() +
-  ggthemes::theme_hc() +
-  labs(x="", color="", title = types[i]) +
-  theme(axis.text.x = element_blank(),
-        axis.ticks.x = element_blank())
-```
-
-*Group all magazines by Issue Nr. (Heftnummer) to use all of them in the cluster analysis*
-
-```{r fig.align="center"}
-# drop magazines with data less than 200 data points
-drops <- df %>%
-  group_by(Titel) %>%
-  tally(sort = T) %>%
-  filter(n < 200) %>%
-  select(Titel) 
-
-drops <- drops$Titel
-
-tempdf <- df %>%
-  filter(! Titel %in% drops) %>%
-  group_by(year, issue, Titel) %>%
-  summarise(sales = sum(`Verkauf Gesamt`)) %>%
-  ungroup() %>%
-  mutate(
-    date=paste0(issue, "/", year)
-  ) %>%
-  spread(Titel, sales)
-
-tempdf <- na.omit(tempdf)
-```
-
-```{r fig.align="center"}
-p <- tempdf %>%
-  select(-year, -issue) %>%
-  gather(Titel, sales, -date) %>%
-  ggplot(aes(date,sales,color=Titel, group=Titel)) +
-  geom_line() +
-  ggthemes::theme_hc() +
-  labs(x="", color="", title="Residuals") +
-  theme(legend.position = "none", 
-        axis.text.x = element_blank(),
-        axis.ticks.x = element_blank())
+  group_by(Titel, issue) %>%
+  summarise(n = n(),
+            year = paste(year, collapse = ", ")) %>%
+  ggplot(aes(as.factor(issue), n, text = year)) +
+  geom_col() +
+  coord_flip() +
+  labs(x="Heft Nr.", y=NULL, title = types[i]) +
+  facet_wrap(~Titel, nrow = 1)
 
 plotly::ggplotly(p)
 ```
 
 ```{r}
-tempdf <- tempdf %>%
-  select(- year, - issue, - date)
+df_small <- df %>%
+  filter(publish_freq > 52) %>%
+  filter(!is.na(issue)) %>%
+  mutate(date = calculate_week(issue, year), 
+         sales = ifelse(`Verkauf Gesamt`==0,NA,`Verkauf Gesamt`))
+```
+
+```{r fig.align="center"}
+p<- df_small %>%
+  ggplot(aes(date, sales, 
+             color=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="") +
+  theme(legend.position = "none")
+
+plotly::ggplotly(tooltip = c("Titel","sales","date"))
+```
+
+
+```{r fig.align="center"}
+tempdf <- df_small %>%
+  select(Titel, sales, date) %>%
+  spread(Titel, sales)
+
+tempdf <- na.omit(tempdf) %>% select(- date)
 ```
 
 ## 1. Prewhitening / ARIMA
@@ -295,6 +271,258 @@ In order to delineate relevant markets, a suitable cutoff value has to be determ
 
 ```{r fig.height=6, fig.width=10, fig.align="center"}
 cut = 0.6
+plot(hc1, cex = 0.6, xlab="", ylab="", main= paste("Cut at height =",cut))
+rect.hclust(hc1, h = cut, border = 2:5)
+```
+
+
+
+# Bi-weekly Magazines
+
+```{r}
+df %>%
+  group_by(publish_freq) %>%
+  tally() %>%
+  arrange(publish_freq)
+```
+
+```{r}
+df_small <- df %>%
+  filter(publish_freq == 26 | publish_freq == 27) %>%
+  mutate(date = `Heft Nr.`, 
+         sales = `Verkauf Gesamt`)
+```
+
+```{r fig.align="center"}
+p<- df_small %>%
+  ggplot(aes(date, sales,
+             group = Titel,
+             color=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="") +
+  theme(legend.position = "none")
+
+plotly::ggplotly(tooltip = c("Titel","sales","date"))
+```
+
+
+```{r fig.align="center"}
+tempdf <- df_small %>%
+  select(Titel, sales, date) %>%
+  spread(Titel, sales)
+
+tempdf <- na.omit(tempdf) %>% select(- date)
+```
+
+## 1. Prewhitening / ARIMA
+
+```{r}
+# ARIMA estimation
+mag <- names(tempdf)
+
+for (i in seq(1:length(mag))) {
+  
+  # get the time series
+  #selected <- tempdf[, -which(names(tempdf) ==  mag[i])]
+  # estimate auto arima
+  temp <- auto.arima(tempdf[,i], ic="bic")
+  
+  # create dataframe with the residuals
+  if (i == 1) {
+   resid <- cbind(temp$residuals) 
+  } else {
+    resid <- cbind(resid, temp$residuals) 
+  }
+}
+
+colnames(resid) <- mag
+```
+
+```{r}
+p <- autoplot(resid) +
+  geom_hline(yintercept = 0, color = "grey50") +
+  ggthemes::theme_hc() +
+  labs(y="residuals", x="", color = "") +
+  theme(legend.position = "none")
+
+plotly::ggplotly(p)
+```
+
+
+## 2. Calculate Corralation
+
+```{r include=FALSE}
+library(Hmisc)
+library(ggcorrplot)
+library(corrr)
+
+df.corr <- round(cor(resid, use = "complete.obs"),4)
+```
+
+## 3. Dissimilarity 
+
+$$
+d_{ij} = 1-|\text{corr}_{ij}|
+$$
+
+```{r}
+# as a measure of distance
+df.dis <- 1 - abs(df.corr)
+df_distance <- as.dist(df.dis)
+```
+
+## 4. Agglomerative clustering
+
+$$
+D_{complete}(A,B) = \text{max} d_{ij}
+$$
+
+```{r}
+hc1 <- hclust(df_distance, method = "complete")
+```
+
+### Dendogram
+
+```{r fig.height=6, fig.width=10, fig.align="center"}
+plot(hc1, main="", xlab="", cex = 0.6)
+```
+
+
+## 5. Cutoff value 
+
+```{r fig.height=6, fig.width=10, fig.align="center"}
+cut = 0.4
+plot(hc1, cex = 0.6, xlab="", ylab="", main= paste("Cut at height =",cut))
+rect.hclust(hc1, h = cut, border = 2:5)
+```
+
+
+
+# Monthly Magazines
+
+```{r}
+df %>%
+  group_by(publish_freq) %>%
+  tally() %>%
+  arrange(publish_freq)
+```
+
+```{r}
+df_small <- df %>%
+  filter(publish_freq == 12 | publish_freq == 13) %>%
+  mutate(date = `Heft Nr.`, 
+         sales = `Verkauf Gesamt`)
+```
+
+```{r fig.align="center"}
+p<- df_small %>%
+  ggplot(aes(date, sales,
+             group = Titel,
+             color=Titel)) +
+  geom_line() +
+  ggthemes::theme_hc() +
+  labs(x="", color="") +
+  theme(legend.position = "none")
+
+plotly::ggplotly(tooltip = c("Titel","sales","date"))
+```
+
+
+```{r fig.align="center"}
+drops <- c("ARD Buffet Magazin","art","DER FEINSCHMECKER", "Auto Bild Klassik", "Dein Spiegel", "P.M. Magazin" ,"Playboy")
+
+tempdf <- df_small %>%
+  filter(! Titel %in% drops) %>%
+  select(Titel, sales, date) %>%
+  spread(Titel, sales)
+
+# tempdf %>%
+#   summarise_all(funs(sum(is.na(.))))
+
+tempdf <- na.omit(tempdf) %>% select(- date)
+
+```
+
+## 1. Prewhitening / ARIMA
+
+
+```{r}
+# ARIMA estimation
+mag <- names(tempdf)
+
+for (i in seq(1:length(mag))) {
+  
+  # get the time series
+  #selected <- tempdf[, -which(names(tempdf) ==  mag[i])]
+  # estimate auto arima
+  temp <- auto.arima(tempdf[,i], ic="bic")
+  
+  # create dataframe with the residuals
+  if (i == 1) {
+   resid <- cbind(temp$residuals) 
+  } else {
+    resid <- cbind(resid, temp$residuals) 
+  }
+}
+
+colnames(resid) <- mag
+```
+
+```{r}
+p <- autoplot(resid) +
+  geom_hline(yintercept = 0, color = "grey50") +
+  ggthemes::theme_hc() +
+  labs(y="residuals", x="", color = "") +
+  theme(legend.position = "none")
+
+plotly::ggplotly(p)
+```
+
+
+## 2. Calculate Corralation
+
+```{r include=FALSE}
+library(Hmisc)
+library(ggcorrplot)
+library(corrr)
+
+df.corr <- round(cor(resid, use = "complete.obs"),4)
+```
+
+## 3. Dissimilarity 
+
+$$
+d_{ij} = 1-|\text{corr}_{ij}|
+$$
+
+```{r}
+# as a measure of distance
+df.dis <- 1 - abs(df.corr)
+df_distance <- as.dist(df.dis)
+```
+
+## 4. Agglomerative clustering
+
+$$
+D_{complete}(A,B) = \text{max} d_{ij}
+$$
+
+
+```{r}
+hc1 <- hclust(df_distance, method = "complete")
+```
+
+### Dendogram
+
+```{r fig.height=6, fig.width=10, fig.align="center"}
+plot(hc1, main="", xlab="", cex = 0.6)
+```
+
+## 5. Cutoff value 
+
+```{r fig.height=6, fig.width=10, fig.align="center"}
+cut = 0.5
 plot(hc1, cex = 0.6, xlab="", ylab="", main= paste("Cut at height =",cut))
 rect.hclust(hc1, h = cut, border = 2:5)
 ```
