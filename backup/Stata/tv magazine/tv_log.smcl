@@ -1,0 +1,1164 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/tv magazine/tv_log.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}24 Aug 2016, 12:04:39
+
+{com}. do "/var/folders/bm/6m3cf9zd2xdgxpfdh8c74p480000gn/T//SD00767.000000"
+{txt}
+{com}. drop e_sub1 e_sub2 e_sub3 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "/var/folders/bm/6m3cf9zd2xdgxpfdh8c74p480000gn/T//SD00767.000000"
+{txt}
+{com}. 
+. tsset time
+{res}{txt}{col 9}time variable:  {res}{col 25}time, 55 to 106
+{txt}{col 17}delta:  {res}1 unit
+{txt}
+{com}. 
+. 
+. **** Assign Globals ****
+. *************************
+. 
+. **** Sub1 
+. global y11list retailTVMovie
+{txt}
+{com}. global x11list aboTVMovie contentTVMovie
+{txt}
+{com}. global y11listlog log_retailTVMovie
+{txt}
+{com}. 
+. global y21list adsiteTVMovie
+{txt}
+{com}. global y21listlog log_adsiteTVMovie
+{txt}
+{com}. 
+. 
+. **** Sub2
+. global y12list retailTVSpielfilm
+{txt}
+{com}. global x12list aboTVSpielfilm contentTVSpielfilm
+{txt}
+{com}. global y12listlog log_retailTVSpielfilm
+{txt}
+{com}. 
+. 
+. global y22list adsiteTVSpielfilm
+{txt}
+{com}. global y22listlog log_totaladsiteTVSpielfilm
+{txt}
+{com}. 
+. 
+. ****  Sub3
+. global y13list retailTVToday
+{txt}
+{com}. global x13list aboTVToday contentTVToday
+{txt}
+{com}. global y13listlog log_retailTVToday
+{txt}
+{com}. 
+. global y23list adsiteTVToday
+{txt}
+{com}. global y23listlog log_adsiteTVToday
+{txt}
+{com}. 
+. 
+. * Graphical Analysis
+. tsline $y11list $y12list $y13list, xtitle("") xlabel(55 "1/2005" 69 "15/2005" 81 "01/2006" ///
+> 95 "15/2006" 106 "26/2006") ///
+> lw(medthick medium) ytitle("Retail Sales") ///    
+> legend(ring(0) position(9) row(2) label(1 "TVMovie") label(2 "TVSpielfilm") ///
+> label(3 "TVToday"))
+{res}{txt}
+{com}. 
+. graph2tex, epsfile(circ_tv)
+% exported graph to circ_tv.eps
+\begin{figure}[h]
+\begin{centering}
+  \includegraphics[height=3in]{circ_tv}
+\end{centering}
+\end{figure}
+{txt}
+{com}. 
+. tsline $y21list $y22list $y23list, xtitle("") xlabel(55 "1/2005" 69 "15/2005" 81 "01/2006" ///
+> 95 "15/2006" 106 "26/2006") ///
+> lw(medthick medium) ytitle("Relative ad-sites per Copy") ///    
+> legend(ring(0) position(6) row(2) label(1 "TVMovie") label(2 "TVSpielfilm") ///
+> label(3 "TVToday"))   
+{res}{txt}
+{com}. 
+. graph2tex, epsfile(ads_tv)
+% exported graph to ads_tv.eps
+\begin{figure}[h]
+\begin{centering}
+  \includegraphics[height=3in]{ads_tv}
+\end{centering}
+\end{figure}
+{txt}
+{com}.  
+. 
+.                 **** 1) ARMA ****
+. *------------------------------------------------------------------------*
+. 
+.         *** Circulation ***
+.         *******************
+. 
+. arima $y11list $y12list $y13list, arima(1,1,0) r
+
+{txt}Number of gaps in sample:  {res}1
+{txt}(note: filtering over missing observations)
+
+(setting optimization to BHHH)
+{res}{txt}Iteration 0:{col 16}log pseudolikelihood = {res}-564.63196{txt}  
+{res}{txt}Iteration 1:{col 16}log pseudolikelihood = {res}-564.48415{txt}  
+{res}{txt}Iteration 2:{col 16}log pseudolikelihood = {res}-564.45564{txt}  
+{res}{txt}Iteration 3:{col 16}log pseudolikelihood = {res} -564.4135{txt}  
+{res}{txt}Iteration 4:{col 16}log pseudolikelihood = {res}-564.40138{txt}  
+{res}{txt}(switching optimization to BFGS)
+{res}{txt}Iteration 5:{col 16}log pseudolikelihood = {res}-564.39863{txt}  
+{res}{txt}Iteration 6:{col 16}log pseudolikelihood = {res} -564.3971{txt}  
+{res}{txt}Iteration 7:{col 16}log pseudolikelihood = {res}-564.39709{txt}  
+{res}{txt}Iteration 8:{col 16}log pseudolikelihood = {res}-564.39708{txt}  
+{res}
+{txt}ARIMA regression
+
+Sample:  {res}57 - 106, but with a gap               {txt}Number of obs     = {res}        48
+                                                {txt}Wald chi2({res}3{txt})      =  {res}    58.57
+{txt}Log pseudolikelihood = {res}-564.3971                {txt}Prob > chi2       =     {res}0.0000
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}  Semirobust
+{col 1}  D.retailTVMovie{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      z{col 51}   P>|z|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}retailTVMovie     {txt}{c |}
+retailTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .2843932{col 31}{space 2} .2182726{col 42}{space 1}    1.30{col 51}{space 3}0.193{col 59}{space 4}-.1434132{col 72}{space 3} .7121997
+{txt}{space 17} {c |}
+{space 4}retailTVToday {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} 1.509395{col 31}{space 2} .6395856{col 42}{space 1}    2.36{col 51}{space 3}0.018{col 59}{space 4} .2558301{col 72}{space 3} 2.762959
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2} 1657.236{col 31}{space 2} 3261.121{col 42}{space 1}    0.51{col 51}{space 3}0.611{col 59}{space 4}-4734.444{col 72}{space 3} 8048.917
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}ARMA              {txt}{c |}
+{space 15}ar {c |}
+{space 14}L1. {c |}{col 19}{res}{space 2}-.4336904{col 31}{space 2} .1338205{col 42}{space 1}   -3.24{col 51}{space 3}0.001{col 59}{space 4}-.6959738{col 72}{space 3} -.171407
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+           /sigma {c |}{col 19}{res}{space 2} 30792.45{col 31}{space 2} 3545.683{col 42}{space 1}    8.68{col 51}{space 3}0.000{col 59}{space 4} 23843.03{col 72}{space 3} 37741.86
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 79}Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.{p_end}
+
+{com}. *Calculate the error term (residuals)
+. predict e_sub1, resid
+{txt}(4 missing values generated)
+
+{com}. *Estimate autocorrelation
+. corrgram e_sub1, lags(12)
+{txt}(note: time series has 1 gap)
+
+{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.0821{col 18}-0.0824{col 27} .34448{col 36}0.5573{col 44}        {c |}        {col 63}        {c |}        
+{txt}2     {res}{col 9}-0.1089{col 18}-0.1191{col 27} .96288{col 36}0.6179{col 44}        {c |}        {col 63}        {c |}        
+{txt}3     {res}{col 9} 0.1383{col 18} 0.1479{col 27} 1.9837{col 36}0.5758{col 44}        {c LT}{hline 1}       {col 63}        {c LT}{hline 1}       
+{txt}4     {res}{col 9} 0.0897{col 18} 0.1229{col 27} 2.4229{col 36}0.6585{col 44}        {c |}        {col 63}        {c |}        
+{txt}5     {res}{col 9}-0.0588{col 18}-0.0136{col 27}  2.616{col 36}0.7589{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9}-0.1601{col 18}-0.3539{col 27}   4.08{col 36}0.6658{col 44}       {hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}7     {res}{col 9}-0.0460{col 18}-0.1557{col 27} 4.2041{col 36}0.7560{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}8     {res}{col 9}-0.0868{col 18}-0.1161{col 27}  4.656{col 36}0.7936{col 44}        {c |}        {col 63}        {c |}        
+{txt}9     {res}{col 9} 0.0583{col 18} 0.4674{col 27}  4.865{col 36}0.8459{col 44}        {c |}        {col 63}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}10    {res}{col 9}-0.0982{col 18}-0.3827{col 27} 5.4737{col 36}0.8574{col 44}        {c |}        {col 63}     {hline 1}{hline 1}{hline 1}{c RT}        
+{txt}11    {res}{col 9} 0.0817{col 18} 0.0086{col 27} 5.9072{col 36}0.8795{col 44}        {c |}        {col 63}        {c |}        
+{txt}12    {res}{col 9}-0.0709{col 18}-0.3028{col 27} 6.2427{col 36}0.9034{col 44}        {c |}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}
+{com}. 
+. arima $y12list $y11list $y13list, arima(1,1,0) r
+
+{txt}Number of gaps in sample:  {res}1
+{txt}(note: filtering over missing observations)
+
+(setting optimization to BHHH)
+{res}{txt}Iteration 0:{col 16}log pseudolikelihood = {res}-538.19497{txt}  
+{res}{txt}Iteration 1:{col 16}log pseudolikelihood = {res}-538.18226{txt}  
+{res}{txt}Iteration 2:{col 16}log pseudolikelihood = {res}-538.17801{txt}  
+{res}{txt}Iteration 3:{col 16}log pseudolikelihood = {res}-538.17562{txt}  
+{res}{txt}Iteration 4:{col 16}log pseudolikelihood = {res}-538.17366{txt}  
+{res}{txt}(switching optimization to BFGS)
+{res}{txt}Iteration 5:{col 16}log pseudolikelihood = {res} -538.1722{txt}  
+{res}{txt}Iteration 6:{col 16}log pseudolikelihood = {res}-538.16825{txt}  
+{res}{txt}BFGS stepping has contracted, resetting BFGS Hessian (0)
+Iteration 7:{col 16}log pseudolikelihood = {res} -538.1647{txt}  
+{res}{txt}Iteration 8:{col 16}log pseudolikelihood = {res}-538.16455{txt}  (backed up)
+{res}{txt}Iteration 9:{col 16}log pseudolikelihood = {res}-538.16433{txt}  
+{res}{txt}Iteration 10:{col 16}log pseudolikelihood = {res}-538.16427{txt}  
+{res}{txt}Iteration 11:{col 16}log pseudolikelihood = {res}-538.16417{txt}  
+{res}{txt}Iteration 12:{col 16}log pseudolikelihood = {res}-538.16417{txt}  
+{res}
+{txt}ARIMA regression
+
+Sample:  {res}57 - 106, but with a gap               {txt}Number of obs     = {res}        48
+                                                {txt}Wald chi2({res}3{txt})      =  {res}    33.54
+{txt}Log pseudolikelihood = {res}-538.1642                {txt}Prob > chi2       =     {res}0.0000
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}D.               {col 19}{c |}{col 31}  Semirobust
+{col 1}retailTVSpielfilm{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      z{col 51}   P>|z|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}retailTVSpielfilm {txt}{c |}
+{space 4}retailTVMovie {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2}   .11241{col 31}{space 2}  .054135{col 42}{space 1}    2.08{col 51}{space 3}0.038{col 59}{space 4} .0063072{col 72}{space 3} .2185127
+{txt}{space 17} {c |}
+{space 4}retailTVToday {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} 1.666569{col 31}{space 2} .5566858{col 42}{space 1}    2.99{col 51}{space 3}0.003{col 59}{space 4} .5754849{col 72}{space 3} 2.757653
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2}  837.583{col 31}{space 2} 2450.203{col 42}{space 1}    0.34{col 51}{space 3}0.732{col 59}{space 4}-3964.727{col 72}{space 3} 5639.893
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}ARMA              {txt}{c |}
+{space 15}ar {c |}
+{space 14}L1. {c |}{col 19}{res}{space 2}-.1426855{col 31}{space 2} .2977658{col 42}{space 1}   -0.48{col 51}{space 3}0.632{col 59}{space 4}-.7262958{col 72}{space 3} .4409249
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+           /sigma {c |}{col 19}{res}{space 2} 17891.48{col 31}{space 2}  3246.82{col 42}{space 1}    5.51{col 51}{space 3}0.000{col 59}{space 4} 11527.83{col 72}{space 3} 24255.13
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 79}Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.{p_end}
+
+{com}. predict e_sub2, resid
+{txt}(4 missing values generated)
+
+{com}. corrgram e_sub2, lags(12)
+{txt}(note: time series has 1 gap)
+
+{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.0541{col 18}-0.0561{col 27} .14966{col 36}0.6989{col 44}        {c |}        {col 63}        {c |}        
+{txt}2     {res}{col 9}-0.3288{col 18}-0.3533{col 27} 5.7917{col 36}0.0553{col 44}      {hline 1}{hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}3     {res}{col 9} 0.0992{col 18} 0.0557{col 27}  6.316{col 36}0.0972{col 44}        {c |}        {col 63}        {c |}        
+{txt}4     {res}{col 9}-0.0639{col 18}-0.1782{col 27} 6.5389{col 36}0.1624{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}5     {res}{col 9}-0.0535{col 18}-0.0530{col 27} 6.6985{col 36}0.2440{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9} 0.0190{col 18}-0.2414{col 27} 6.7192{col 36}0.3476{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}7     {res}{col 9}-0.0978{col 18}-0.1988{col 27} 7.2788{col 36}0.4004{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}8     {res}{col 9} 0.0856{col 18} 0.1049{col 27} 7.7189{col 36}0.4614{col 44}        {c |}        {col 63}        {c |}        
+{txt}9     {res}{col 9} 0.1541{col 18} 0.2508{col 27} 9.1806{col 36}0.4208{col 44}        {c LT}{hline 1}       {col 63}        {c LT}{hline 1}{hline 1}      
+{txt}10    {res}{col 9}-0.0570{col 18} 0.3953{col 27} 9.3856{col 36}0.4959{col 44}        {c |}        {col 63}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}11    {res}{col 9}-0.0385{col 18}-0.0883{col 27} 9.4818{col 36}0.5775{col 44}        {c |}        {col 63}        {c |}        
+{txt}12    {res}{col 9}-0.0004{col 18} 0.1425{col 27} 9.4818{col 36}0.6613{col 44}        {c |}        {col 63}        {c LT}{hline 1}       
+{txt}
+{com}. 
+. arima $y13list $y11list $y12list, arima(1,1,0) r
+
+{txt}Number of gaps in sample:  {res}1
+{txt}(note: filtering over missing observations)
+
+(setting optimization to BHHH)
+{res}{txt}Iteration 0:{col 16}log pseudolikelihood = {res}-487.88844{txt}  
+{res}{txt}Iteration 1:{col 16}log pseudolikelihood = {res}-487.70077{txt}  
+{res}{txt}Iteration 2:{col 16}log pseudolikelihood = {res}-487.67227{txt}  
+{res}{txt}Iteration 3:{col 16}log pseudolikelihood = {res}-487.66561{txt}  
+{res}{txt}Iteration 4:{col 16}log pseudolikelihood = {res}-487.66214{txt}  
+{res}{txt}(switching optimization to BFGS)
+{res}{txt}BFGS stepping has contracted, resetting BFGS Hessian (0)
+Iteration 5:{col 16}log pseudolikelihood = {res}-487.66054{txt}  
+{res}{txt}Iteration 6:{col 16}log pseudolikelihood = {res} -487.6599{txt}  (backed up)
+{res}{txt}Iteration 7:{col 16}log pseudolikelihood = {res}-487.65984{txt}  (backed up)
+{res}{txt}Iteration 8:{col 16}log pseudolikelihood = {res}-487.65965{txt}  
+{res}{txt}Iteration 9:{col 16}log pseudolikelihood = {res}-487.65947{txt}  
+{res}{txt}Iteration 10:{col 16}log pseudolikelihood = {res}-487.65947{txt}  
+{res}{txt}Iteration 11:{col 16}log pseudolikelihood = {res}-487.65947{txt}  
+{res}{txt}Iteration 12:{col 16}log pseudolikelihood = {res}-487.65945{txt}  
+{res}{txt}BFGS stepping has contracted, resetting BFGS Hessian (1)
+Iteration 13:{col 16}log pseudolikelihood = {res} -487.6591{txt}  
+{res}{txt}Iteration 14:{col 16}log pseudolikelihood = {res}-487.65887{txt}  (backed up)
+{res}{txt}(switching optimization to BHHH)
+{res}{txt}Iteration 15:{col 16}log pseudolikelihood = {res}-487.65877{txt}  (backed up)
+{res}{txt}Iteration 16:{col 16}log pseudolikelihood = {res}-487.65801{txt}  
+{res}{txt}Iteration 17:{col 16}log pseudolikelihood = {res}-487.65786{txt}  
+{res}{txt}Iteration 18:{col 16}log pseudolikelihood = {res}-487.65777{txt}  
+{res}{txt}Iteration 19:{col 16}log pseudolikelihood = {res}-487.65771{txt}  
+{res}{txt}(switching optimization to BFGS)
+{res}{txt}Iteration 20:{col 16}log pseudolikelihood = {res}-487.65767{txt}  
+{res}{txt}BFGS stepping has contracted, resetting BFGS Hessian (2)
+Iteration 21:{col 16}log pseudolikelihood = {res}-487.65756{txt}  
+{res}{txt}Iteration 22:{col 16}log pseudolikelihood = {res}-487.65756{txt}  (backed up)
+{res}{txt}Iteration 23:{col 16}log pseudolikelihood = {res}-487.65756{txt}  (backed up)
+{res}{txt}Iteration 24:{col 16}log pseudolikelihood = {res}-487.65756{txt}  
+{res}
+{txt}ARIMA regression
+
+Sample:  {res}57 - 106, but with a gap               {txt}Number of obs     = {res}        48
+                                                {txt}Wald chi2({res}3{txt})      =  {res}    15.36
+{txt}Log pseudolikelihood = {res}-487.6576                {txt}Prob > chi2       =     {res}0.0015
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}  Semirobust
+{col 1}  D.retailTVToday{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      z{col 51}   P>|z|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}retailTVToday     {txt}{c |}
+{space 4}retailTVMovie {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2}  .054971{col 31}{space 2} .0424182{col 42}{space 1}    1.30{col 51}{space 3}0.195{col 59}{space 4}-.0281672{col 72}{space 3} .1381092
+{txt}{space 17} {c |}
+retailTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .2047953{col 31}{space 2} .0797276{col 42}{space 1}    2.57{col 51}{space 3}0.010{col 59}{space 4} .0485321{col 72}{space 3} .3610586
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2}-1185.866{col 31}{space 2} 787.3557{col 42}{space 1}   -1.51{col 51}{space 3}0.132{col 59}{space 4}-2729.055{col 72}{space 3} 357.3226
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}ARMA              {txt}{c |}
+{space 15}ar {c |}
+{space 14}L1. {c |}{col 19}{res}{space 2}-.2925293{col 31}{space 2} .1839069{col 42}{space 1}   -1.59{col 51}{space 3}0.112{col 59}{space 4}-.6529803{col 72}{space 3} .0679217
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+           /sigma {c |}{col 19}{res}{space 2} 6240.402{col 31}{space 2} 911.4121{col 42}{space 1}    6.85{col 51}{space 3}0.000{col 59}{space 4} 4454.067{col 72}{space 3} 8026.737
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 79}Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.{p_end}
+
+{com}. predict e_sub3, resid
+{txt}(4 missing values generated)
+
+{com}. corrgram e_sub3, lags(12)
+{txt}(note: time series has 1 gap)
+
+{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.0635{col 18}-0.0725{col 27} .20561{col 36}0.6502{col 44}        {c |}        {col 63}        {c |}        
+{txt}2     {res}{col 9}-0.1643{col 18}-0.1888{col 27} 1.6142{col 36}0.4461{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}3     {res}{col 9} 0.0272{col 18}-0.0020{col 27} 1.6537{col 36}0.6473{col 44}        {c |}        {col 63}        {c |}        
+{txt}4     {res}{col 9}-0.0190{col 18}-0.0456{col 27} 1.6733{col 36}0.7956{col 44}        {c |}        {col 63}        {c |}        
+{txt}5     {res}{col 9}-0.0887{col 18}-0.2124{col 27}  2.112{col 36}0.8334{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}6     {res}{col 9}-0.0862{col 18}-0.2309{col 27} 2.5371{col 36}0.8643{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}7     {res}{col 9} 0.1221{col 18} 0.1478{col 27} 3.4099{col 36}0.8447{col 44}        {c |}        {col 63}        {c LT}{hline 1}       
+{txt}8     {res}{col 9} 0.1484{col 18}-0.0169{col 27} 4.7303{col 36}0.7860{col 44}        {c LT}{hline 1}       {col 63}        {c |}        
+{txt}9     {res}{col 9}-0.0203{col 18} 0.0075{col 27} 4.7557{col 36}0.8551{col 44}        {c |}        {col 63}        {c |}        
+{txt}10    {res}{col 9}-0.2071{col 18}-0.0695{col 27} 7.4643{col 36}0.6810{col 44}       {hline 1}{c RT}        {col 63}        {c |}        
+{txt}11    {res}{col 9} 0.0860{col 18} 0.1635{col 27} 7.9446{col 36}0.7183{col 44}        {c |}        {col 63}        {c LT}{hline 1}       
+{txt}12    {res}{col 9} 0.0457{col 18} 0.2370{col 27} 8.0838{col 36}0.7786{col 44}        {c |}        {col 63}        {c LT}{hline 1}       
+{txt}
+{com}. 
+. 
+. *** Crosscorrelation: Circulation ***
+. xcorr e_sub1 e_sub2, lags(6) tab gen(sub1_2_1)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.0047{col 19}        {c |}        
+{txt}-5    {res}{col 9} 0.1899{col 19}        {c LT}{hline 1}       
+{txt}-4    {res}{col 9}-0.1618{col 19}       {hline 1}{c RT}        
+{txt}-3    {res}{col 9}-0.1277{col 19}       {hline 1}{c RT}        
+{txt}-2    {res}{col 9} 0.1762{col 19}        {c LT}{hline 1}       
+{txt}-1    {res}{col 9} 0.2249{col 19}        {c LT}{hline 1}       
+{txt}0     {res}{col 9}-0.2505{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}1     {res}{col 9}-0.1812{col 19}       {hline 1}{c RT}        
+{txt}2     {res}{col 9} 0.3330{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}3     {res}{col 9} 0.1956{col 19}        {c LT}{hline 1}       
+{txt}4     {res}{col 9} 0.0645{col 19}        {c |}        
+{txt}5     {res}{col 9} 0.0011{col 19}        {c |}        
+{txt}6     {res}{col 9}-0.1081{col 19}        {c |}        
+{txt}
+{com}. xcorr e_sub1 e_sub3, lags(6) tab gen(sub1_3_1)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.2020{col 19}        {c LT}{hline 1}       
+{txt}-5    {res}{col 9}-0.1211{col 19}        {c |}        
+{txt}-4    {res}{col 9} 0.0406{col 19}        {c |}        
+{txt}-3    {res}{col 9} 0.1438{col 19}        {c LT}{hline 1}       
+{txt}-2    {res}{col 9} 0.1254{col 19}        {c LT}{hline 1}       
+{txt}-1    {res}{col 9}-0.1787{col 19}       {hline 1}{c RT}        
+{txt}0     {res}{col 9}-0.2422{col 19}       {hline 1}{c RT}        
+{txt}1     {res}{col 9} 0.3416{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}2     {res}{col 9}-0.2730{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}3     {res}{col 9}-0.1016{col 19}        {c |}        
+{txt}4     {res}{col 9}-0.1262{col 19}       {hline 1}{c RT}        
+{txt}5     {res}{col 9}-0.0259{col 19}        {c |}        
+{txt}6     {res}{col 9} 0.0615{col 19}        {c |}        
+{txt}
+{com}. xcorr e_sub3 e_sub2, lags(6) tab gen(sub3_2_1)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.0270{col 19}        {c |}        
+{txt}-5    {res}{col 9} 0.0659{col 19}        {c |}        
+{txt}-4    {res}{col 9} 0.0417{col 19}        {c |}        
+{txt}-3    {res}{col 9} 0.0420{col 19}        {c |}        
+{txt}-2    {res}{col 9} 0.2528{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}-1    {res}{col 9}-0.2402{col 19}       {hline 1}{c RT}        
+{txt}0     {res}{col 9}-0.5401{col 19}    {hline 1}{hline 1}{hline 1}{hline 1}{c RT}        
+{txt}1     {res}{col 9} 0.3564{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}2     {res}{col 9} 0.0950{col 19}        {c |}        
+{txt}3     {res}{col 9}-0.1280{col 19}       {hline 1}{c RT}        
+{txt}4     {res}{col 9} 0.1471{col 19}        {c LT}{hline 1}       
+{txt}5     {res}{col 9} 0.0804{col 19}        {c |}        
+{txt}6     {res}{col 9} 0.0587{col 19}        {c |}        
+{txt}
+{com}. 
+. * Graphical Analysis
+. tsline e_sub1 e_sub2 e_sub3, xtitle("") xlabel(55 "1/2005" 69 "15/2005" 81 "01/2006" ///
+> 95 "15/2006" 106 "26/2006") ///
+> lw(medthick medium) ytitle("Reader Market") ///    
+> legend(ring(0) position(12) row(2) label(1 "TVMovie") label(2 "TVSpielfilm") ///
+> label(3 "TVToday")) // 107 "1/2007" 159 "1/2009" 211 "1/2011" 263 "1/2013" 
+{res}{txt}
+{com}. 
+. graph2tex, epsfile(circ_arima_tv)
+% exported graph to circ_arima_tv.eps
+\begin{figure}[h]
+\begin{centering}
+  \includegraphics[height=3in]{circ_arima_tv}
+\end{centering}
+\end{figure}
+{txt}
+{com}. 
+. drop e_sub1 e_sub2 e_sub3 
+{txt}
+{com}. 
+. 
+. 
+.         *** Adsites ***
+.         ***************
+. arima $y21list $y22list $y23list, arima(1,1,0) r
+
+{txt}(setting optimization to BHHH)
+{res}{txt}Iteration 0:{col 16}log pseudolikelihood = {res}-51.554753{txt}  
+{res}{txt}Iteration 1:{col 16}log pseudolikelihood = {res}-50.303608{txt}  
+{res}{txt}Iteration 2:{col 16}log pseudolikelihood = {res}-49.831389{txt}  
+{res}{txt}Iteration 3:{col 16}log pseudolikelihood = {res}-49.716082{txt}  
+{res}{txt}Iteration 4:{col 16}log pseudolikelihood = {res}-49.429359{txt}  
+{res}{txt}(switching optimization to BFGS)
+{res}{txt}Iteration 5:{col 16}log pseudolikelihood = {res}-49.276864{txt}  
+{res}{txt}Iteration 6:{col 16}log pseudolikelihood = {res}-49.148302{txt}  
+{res}{txt}Iteration 7:{col 16}log pseudolikelihood = {res}-49.111585{txt}  
+{res}{txt}Iteration 8:{col 16}log pseudolikelihood = {res}-49.104321{txt}  
+{res}{txt}Iteration 9:{col 16}log pseudolikelihood = {res}-49.099292{txt}  
+{res}{txt}Iteration 10:{col 16}log pseudolikelihood = {res}-49.099056{txt}  
+{res}{txt}Iteration 11:{col 16}log pseudolikelihood = {res}-49.099056{txt}  
+{res}
+{txt}ARIMA regression
+
+Sample:  {res}56 - 106                               {txt}Number of obs     = {res}        51
+                                                {txt}Wald chi2({res}3{txt})      =  {res}    36.50
+{txt}Log pseudolikelihood = {res}-49.09906                {txt}Prob > chi2       =     {res}0.0000
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}  Semirobust
+{col 1}  D.adsiteTVMovie{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      z{col 51}   P>|z|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}adsiteTVMovie     {txt}{c |}
+adsiteTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .7479815{col 31}{space 2} .2692276{col 42}{space 1}    2.78{col 51}{space 3}0.005{col 59}{space 4} .2203051{col 72}{space 3} 1.275658
+{txt}{space 17} {c |}
+{space 4}adsiteTVToday {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2}  .173247{col 31}{space 2}  .209685{col 42}{space 1}    0.83{col 51}{space 3}0.409{col 59}{space 4}-.2377281{col 72}{space 3} .5842221
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2} .0045873{col 31}{space 2} .0573482{col 42}{space 1}    0.08{col 51}{space 3}0.936{col 59}{space 4}-.1078131{col 72}{space 3} .1169878
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}ARMA              {txt}{c |}
+{space 15}ar {c |}
+{space 14}L1. {c |}{col 19}{res}{space 2} -.571876{col 31}{space 2} .1448491{col 42}{space 1}   -3.95{col 51}{space 3}0.000{col 59}{space 4}-.8557749{col 72}{space 3} -.287977
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+           /sigma {c |}{col 19}{res}{space 2} .6312238{col 31}{space 2} .0632656{col 42}{space 1}    9.98{col 51}{space 3}0.000{col 59}{space 4} .5072255{col 72}{space 3}  .755222
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 79}Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.{p_end}
+
+{com}. predict e_sub1, resid
+{txt}(1 missing value generated)
+
+{com}. corrgram e_sub1, lags(12)
+
+{txt}{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.1210{col 18}-0.1214{col 27} .79176{col 36}0.3736{col 44}        {c |}        {col 63}        {c |}        
+{txt}2     {res}{col 9}-0.3002{col 18}-0.3154{col 27} 5.7639{col 36}0.0560{col 44}      {hline 1}{hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}3     {res}{col 9}-0.0961{col 18}-0.1965{col 27} 6.2844{col 36}0.0986{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}4     {res}{col 9} 0.0164{col 18}-0.1391{col 27} 6.2999{col 36}0.1778{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}5     {res}{col 9} 0.0646{col 18}-0.0840{col 27}  6.545{col 36}0.2567{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9} 0.0243{col 18}-0.0544{col 27} 6.5804{col 36}0.3614{col 44}        {c |}        {col 63}        {c |}        
+{txt}7     {res}{col 9}-0.0529{col 18}-0.0894{col 27} 6.7522{col 36}0.4551{col 44}        {c |}        {col 63}        {c |}        
+{txt}8     {res}{col 9}-0.1106{col 18}-0.1917{col 27}  7.521{col 36}0.4816{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}9     {res}{col 9} 0.0806{col 18}-0.0271{col 27} 7.9394{col 36}0.5403{col 44}        {c |}        {col 63}        {c |}        
+{txt}10    {res}{col 9} 0.1186{col 18} 0.0371{col 27} 8.8662{col 36}0.5448{col 44}        {c |}        {col 63}        {c |}        
+{txt}11    {res}{col 9}-0.1512{col 18}-0.1989{col 27}  10.41{col 36}0.4939{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}12    {res}{col 9} 0.1811{col 18} 0.2578{col 27} 12.684{col 36}0.3924{col 44}        {c LT}{hline 1}       {col 63}        {c LT}{hline 1}{hline 1}      
+{txt}
+{com}. 
+. arima $y22list $y21list $y23list, arima(1,1,0) r
+
+{txt}(setting optimization to BHHH)
+{res}{txt}Iteration 0:{col 16}log pseudolikelihood = {res}-36.791413{txt}  
+{res}{txt}Iteration 1:{col 16}log pseudolikelihood = {res}-35.770495{txt}  
+{res}{txt}Iteration 2:{col 16}log pseudolikelihood = {res}-35.668556{txt}  
+{res}{txt}Iteration 3:{col 16}log pseudolikelihood = {res}-35.600849{txt}  
+{res}{txt}Iteration 4:{col 16}log pseudolikelihood = {res}-35.540477{txt}  
+{res}{txt}(switching optimization to BFGS)
+{res}{txt}Iteration 5:{col 16}log pseudolikelihood = {res}-35.499233{txt}  
+{res}{txt}Iteration 6:{col 16}log pseudolikelihood = {res}-35.396543{txt}  
+{res}{txt}Iteration 7:{col 16}log pseudolikelihood = {res}  -35.3943{txt}  
+{res}{txt}Iteration 8:{col 16}log pseudolikelihood = {res}-35.394251{txt}  
+{res}{txt}Iteration 9:{col 16}log pseudolikelihood = {res}-35.394245{txt}  
+{res}{txt}Iteration 10:{col 16}log pseudolikelihood = {res}-35.394245{txt}  
+{res}
+{txt}ARIMA regression
+
+Sample:  {res}56 - 106                               {txt}Number of obs     = {res}        51
+                                                {txt}Wald chi2({res}3{txt})      =  {res}    44.64
+{txt}Log pseudolikelihood = {res}-35.39424                {txt}Prob > chi2       =     {res}0.0000
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}D.               {col 19}{c |}{col 31}  Semirobust
+{col 1}adsiteTVSpielfilm{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      z{col 51}   P>|z|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}adsiteTVSpielfilm {txt}{c |}
+{space 4}adsiteTVMovie {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .4206304{col 31}{space 2} .1853645{col 42}{space 1}    2.27{col 51}{space 3}0.023{col 59}{space 4} .0573227{col 72}{space 3} .7839382
+{txt}{space 17} {c |}
+{space 4}adsiteTVToday {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .1562839{col 31}{space 2}  .130778{col 42}{space 1}    1.20{col 51}{space 3}0.232{col 59}{space 4}-.1000363{col 72}{space 3} .4126041
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2}-.0110341{col 31}{space 2} .0434102{col 42}{space 1}   -0.25{col 51}{space 3}0.799{col 59}{space 4}-.0961164{col 72}{space 3} .0740483
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}ARMA              {txt}{c |}
+{space 15}ar {c |}
+{space 14}L1. {c |}{col 19}{res}{space 2}-.4892055{col 31}{space 2} .1846378{col 42}{space 1}   -2.65{col 51}{space 3}0.008{col 59}{space 4}-.8510889{col 72}{space 3}-.1273222
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+           /sigma {c |}{col 19}{res}{space 2} .4830594{col 31}{space 2}  .045681{col 42}{space 1}   10.57{col 51}{space 3}0.000{col 59}{space 4} .3935262{col 72}{space 3} .5725926
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 79}Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.{p_end}
+
+{com}. predict e_sub2, resid
+{txt}(1 missing value generated)
+
+{com}. corrgram e_sub2, lags(12)
+
+{txt}{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.0732{col 18}-0.0745{col 27} .28983{col 36}0.5903{col 44}        {c |}        {col 63}        {c |}        
+{txt}2     {res}{col 9}-0.0825{col 18}-0.0869{col 27} .66535{col 36}0.7170{col 44}        {c |}        {col 63}        {c |}        
+{txt}3     {res}{col 9} 0.0124{col 18} 0.0003{col 27} .67401{col 36}0.8793{col 44}        {c |}        {col 63}        {c |}        
+{txt}4     {res}{col 9}-0.0833{col 18}-0.0899{col 27} 1.0735{col 36}0.8985{col 44}        {c |}        {col 63}        {c |}        
+{txt}5     {res}{col 9} 0.0576{col 18} 0.0424{col 27} 1.2686{col 36}0.9381{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9}-0.3581{col 18}-0.3874{col 27}  8.971{col 36}0.1752{col 44}      {hline 1}{hline 1}{c RT}        {col 63}     {hline 1}{hline 1}{hline 1}{c RT}        
+{txt}7     {res}{col 9} 0.1017{col 18} 0.0484{col 27} 9.6068{col 36}0.2120{col 44}        {c |}        {col 63}        {c |}        
+{txt}8     {res}{col 9}-0.0303{col 18}-0.1399{col 27} 9.6645{col 36}0.2894{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}9     {res}{col 9}-0.0774{col 18}-0.1476{col 27}  10.05{col 36}0.3465{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}10    {res}{col 9}-0.0678{col 18}-0.2824{col 27} 10.353{col 36}0.4101{col 44}        {c |}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}11    {res}{col 9}-0.0809{col 18}-0.1321{col 27} 10.796{col 36}0.4605{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}12    {res}{col 9} 0.4682{col 18} 0.3458{col 27}  25.99{col 36}0.0108{col 44}        {c LT}{hline 1}{hline 1}{hline 1}     {col 63}        {c LT}{hline 1}{hline 1}      
+{txt}
+{com}. 
+. arima $y23list $y22list $y21list, arima(1,1,0) r
+
+{txt}(setting optimization to BHHH)
+{res}{txt}Iteration 0:{col 16}log pseudolikelihood = {res}-67.280568{txt}  
+{res}{txt}Iteration 1:{col 16}log pseudolikelihood = {res}-66.921974{txt}  
+{res}{txt}Iteration 2:{col 16}log pseudolikelihood = {res}-66.912016{txt}  
+{res}{txt}Iteration 3:{col 16}log pseudolikelihood = {res}-66.911309{txt}  
+{res}{txt}Iteration 4:{col 16}log pseudolikelihood = {res} -66.89604{txt}  
+{res}{txt}(switching optimization to BFGS)
+{res}{txt}Iteration 5:{col 16}log pseudolikelihood = {res}-66.881792{txt}  
+{res}{txt}Iteration 6:{col 16}log pseudolikelihood = {res}-66.867028{txt}  
+{res}{txt}Iteration 7:{col 16}log pseudolikelihood = {res}-66.866116{txt}  
+{res}{txt}Iteration 8:{col 16}log pseudolikelihood = {res}-66.865113{txt}  
+{res}{txt}Iteration 9:{col 16}log pseudolikelihood = {res}-66.862483{txt}  
+{res}{txt}Iteration 10:{col 16}log pseudolikelihood = {res} -66.86206{txt}  
+{res}{txt}Iteration 11:{col 16}log pseudolikelihood = {res}-66.861956{txt}  
+{res}{txt}Iteration 12:{col 16}log pseudolikelihood = {res}-66.861945{txt}  
+{res}{txt}Iteration 13:{col 16}log pseudolikelihood = {res}-66.861945{txt}  
+{res}
+{txt}ARIMA regression
+
+Sample:  {res}56 - 106                               {txt}Number of obs     = {res}        51
+                                                {txt}Wald chi2({res}3{txt})      =  {res}    26.61
+{txt}Log pseudolikelihood = {res}-66.86194                {txt}Prob > chi2       =     {res}0.0000
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}  Semirobust
+{col 1}  D.adsiteTVToday{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      z{col 51}   P>|z|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}adsiteTVToday     {txt}{c |}
+adsiteTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .5096459{col 31}{space 2}  .244852{col 42}{space 1}    2.08{col 51}{space 3}0.037{col 59}{space 4} .0297447{col 72}{space 3} .9895471
+{txt}{space 17} {c |}
+{space 4}adsiteTVMovie {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .3479558{col 31}{space 2} .2928735{col 42}{space 1}    1.19{col 51}{space 3}0.235{col 59}{space 4}-.2260658{col 72}{space 3} .9219774
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2}-.0745514{col 31}{space 2}  .101225{col 42}{space 1}   -0.74{col 51}{space 3}0.461{col 59}{space 4}-.2729487{col 72}{space 3}  .123846
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}ARMA              {txt}{c |}
+{space 15}ar {c |}
+{space 14}L1. {c |}{col 19}{res}{space 2}-.5731176{col 31}{space 2} .2819922{col 42}{space 1}   -2.03{col 51}{space 3}0.042{col 59}{space 4}-1.125812{col 72}{space 3}-.0204231
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+           /sigma {c |}{col 19}{res}{space 2} .8942025{col 31}{space 2} .2198867{col 42}{space 1}    4.07{col 51}{space 3}0.000{col 59}{space 4} .4632324{col 72}{space 3} 1.325173
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 79}Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.{p_end}
+
+{com}. predict e_sub3, resid
+{txt}(1 missing value generated)
+
+{com}. corrgram e_sub3, lags(12)
+
+{txt}{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.1158{col 18}-0.1162{col 27} .72502{col 36}0.3945{col 44}        {c |}        {col 63}        {c |}        
+{txt}2     {res}{col 9}-0.1970{col 18}-0.2144{col 27} 2.8652{col 36}0.2387{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}3     {res}{col 9}-0.0149{col 18}-0.0723{col 27} 2.8777{col 36}0.4109{col 44}        {c |}        {col 63}        {c |}        
+{txt}4     {res}{col 9} 0.0067{col 18}-0.0516{col 27} 2.8804{col 36}0.5780{col 44}        {c |}        {col 63}        {c |}        
+{txt}5     {res}{col 9}-0.1050{col 18}-0.1413{col 27} 3.5276{col 36}0.6192{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}6     {res}{col 9}-0.0370{col 18}-0.0967{col 27} 3.6097{col 36}0.7293{col 44}        {c |}        {col 63}        {c |}        
+{txt}7     {res}{col 9} 0.0548{col 18}-0.0243{col 27} 3.7942{col 36}0.8032{col 44}        {c |}        {col 63}        {c |}        
+{txt}8     {res}{col 9} 0.0190{col 18}-0.0195{col 27}  3.817{col 36}0.8732{col 44}        {c |}        {col 63}        {c |}        
+{txt}9     {res}{col 9} 0.0258{col 18} 0.0242{col 27} 3.8598{col 36}0.9204{col 44}        {c |}        {col 63}        {c |}        
+{txt}10    {res}{col 9} 0.0259{col 18} 0.0246{col 27} 3.9039{col 36}0.9516{col 44}        {c |}        {col 63}        {c |}        
+{txt}11    {res}{col 9}-0.1335{col 18}-0.1370{col 27} 5.1086{col 36}0.9258{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}12    {res}{col 9}-0.0397{col 18}-0.0818{col 27} 5.2178{col 36}0.9503{col 44}        {c |}        {col 63}        {c |}        
+{txt}
+{com}. 
+. *** Crosscorrelation: Circulation ***
+. xcorr e_sub1 e_sub2, lags(6) tab gen(sub1_2_2)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.1739{col 19}        {c LT}{hline 1}       
+{txt}-5    {res}{col 9}-0.1219{col 19}        {c |}        
+{txt}-4    {res}{col 9} 0.0963{col 19}        {c |}        
+{txt}-3    {res}{col 9} 0.0578{col 19}        {c |}        
+{txt}-2    {res}{col 9} 0.1062{col 19}        {c |}        
+{txt}-1    {res}{col 9}-0.0336{col 19}        {c |}        
+{txt}0     {res}{col 9}-0.5450{col 19}    {hline 1}{hline 1}{hline 1}{hline 1}{c RT}        
+{txt}1     {res}{col 9} 0.4173{col 19}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}2     {res}{col 9} 0.1052{col 19}        {c |}        
+{txt}3     {res}{col 9}-0.0815{col 19}        {c |}        
+{txt}4     {res}{col 9}-0.0845{col 19}        {c |}        
+{txt}5     {res}{col 9}-0.0055{col 19}        {c |}        
+{txt}6     {res}{col 9} 0.1058{col 19}        {c |}        
+{txt}
+{com}. xcorr e_sub1 e_sub3, lags(6) tab gen(sub1_3_2)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9}-0.2251{col 19}       {hline 1}{c RT}        
+{txt}-5    {res}{col 9} 0.2310{col 19}        {c LT}{hline 1}       
+{txt}-4    {res}{col 9}-0.0377{col 19}        {c |}        
+{txt}-3    {res}{col 9}-0.0430{col 19}        {c |}        
+{txt}-2    {res}{col 9} 0.0469{col 19}        {c |}        
+{txt}-1    {res}{col 9} 0.4707{col 19}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}0     {res}{col 9}-0.2432{col 19}       {hline 1}{c RT}        
+{txt}1     {res}{col 9}-0.3725{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}2     {res}{col 9}-0.0701{col 19}        {c |}        
+{txt}3     {res}{col 9} 0.0631{col 19}        {c |}        
+{txt}4     {res}{col 9} 0.0984{col 19}        {c |}        
+{txt}5     {res}{col 9} 0.0211{col 19}        {c |}        
+{txt}6     {res}{col 9}-0.2134{col 19}       {hline 1}{c RT}        
+{txt}
+{com}. xcorr e_sub3 e_sub2, lags(6) tab gen(sub3_2_2)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.1728{col 19}        {c LT}{hline 1}       
+{txt}-5    {res}{col 9}-0.0019{col 19}        {c |}        
+{txt}-4    {res}{col 9}-0.0729{col 19}        {c |}        
+{txt}-3    {res}{col 9}-0.0249{col 19}        {c |}        
+{txt}-2    {res}{col 9} 0.0947{col 19}        {c |}        
+{txt}-1    {res}{col 9} 0.1287{col 19}        {c LT}{hline 1}       
+{txt}0     {res}{col 9}-0.2949{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}1     {res}{col 9}-0.0590{col 19}        {c |}        
+{txt}2     {res}{col 9} 0.2339{col 19}        {c LT}{hline 1}       
+{txt}3     {res}{col 9}-0.0033{col 19}        {c |}        
+{txt}4     {res}{col 9} 0.0872{col 19}        {c |}        
+{txt}5     {res}{col 9}-0.2189{col 19}       {hline 1}{c RT}        
+{txt}6     {res}{col 9} 0.1802{col 19}        {c LT}{hline 1}       
+{txt}
+{com}. 
+. * Graphical Analysis
+. tsline e_sub1 e_sub2 e_sub3, xtitle("") xlabel(55 "1/2005" 69 "15/2005" 81 "01/2006" ///
+> 95 "15/2006" 106 "26/2006") ///
+> lw(medthick medium) ytitle("Ad Market") ///    
+> legend(ring(0) position(11) row(2) label(1 "TVMovie") label(2 "TVSpielfilm") ///
+> label(3 "TVToday"))
+{res}{txt}
+{com}. 
+. graph2tex, epsfile(ads_arima_tv)
+% exported graph to ads_arima_tv.eps
+\begin{figure}[h]
+\begin{centering}
+  \includegraphics[height=3in]{ads_arima_tv}
+\end{centering}
+\end{figure}
+{txt}
+{com}. 
+. drop e_sub1 e_sub2 e_sub3  
+{txt}
+{com}. 
+.                         **** 2) OLS regression ****
+. *----------------------------------------------------------------------------*
+. 
+.         *** Circulation A ***
+.         
+. reg d.$y11list d.$y12list d.$y13list, robust
+
+{txt}Linear regression                               Number of obs     = {res}        48
+                                                {txt}F(2, 45)          =  {res}    13.47
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2077
+                                                {txt}Root MSE          =    {res}  35389
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}    Robust
+{col 1}  D.retailTVMovie{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      t{col 51}   P>|t|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+retailTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .4133015{col 31}{space 2} .2343712{col 42}{space 1}    1.76{col 51}{space 3}0.085{col 59}{space 4}-.0587463{col 72}{space 3} .8853493
+{txt}{space 17} {c |}
+{space 4}retailTVToday {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} 1.065608{col 31}{space 2}   .63265{col 42}{space 1}    1.68{col 51}{space 3}0.099{col 59}{space 4}-.2086148{col 72}{space 3}  2.33983
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2} 1152.998{col 31}{space 2} 5036.382{col 42}{space 1}    0.23{col 51}{space 3}0.820{col 59}{space 4}-8990.797{col 72}{space 3} 11296.79
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. predict e_sub1, resid
+{txt}(4 missing values generated)
+
+{com}. corrgram e_sub1, lags(12)
+{txt}(note: time series has 1 gap)
+
+{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.4246{col 18}-0.4300{col 27} 9.2062{col 36}0.0024{col 44}     {hline 1}{hline 1}{hline 1}{c RT}        {col 63}     {hline 1}{hline 1}{hline 1}{c RT}        
+{txt}2     {res}{col 9} 0.0304{col 18}-0.1898{col 27} 9.2544{col 36}0.0098{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}3     {res}{col 9} 0.0794{col 18} 0.0595{col 27} 9.5909{col 36}0.0224{col 44}        {c |}        {col 63}        {c |}        
+{txt}4     {res}{col 9} 0.0447{col 18} 0.1113{col 27} 9.6999{col 36}0.0458{col 44}        {c |}        {col 63}        {c |}        
+{txt}5     {res}{col 9}-0.0373{col 18} 0.1175{col 27} 9.7774{col 36}0.0818{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9}-0.1136{col 18}-0.2757{col 27} 10.514{col 36}0.1046{col 44}        {c |}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}7     {res}{col 9} 0.0675{col 18}-0.1219{col 27} 10.781{col 36}0.1485{col 44}        {c |}        {col 63}        {c |}        
+{txt}8     {res}{col 9}-0.1448{col 18}-0.3701{col 27} 12.038{col 36}0.1495{col 44}       {hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}9     {res}{col 9} 0.1746{col 18} 0.5230{col 27} 13.915{col 36}0.1254{col 44}        {c LT}{hline 1}       {col 63}        {c LT}{hline 1}{hline 1}{hline 1}{hline 1}    
+{txt}10    {res}{col 9}-0.1660{col 18}-0.1472{col 27} 15.654{col 36}0.1100{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}11    {res}{col 9} 0.1446{col 18} 0.0759{col 27}  17.01{col 36}0.1076{col 44}        {c LT}{hline 1}       {col 63}        {c |}        
+{txt}12    {res}{col 9}-0.1388{col 18}-0.2341{col 27} 18.294{col 36}0.1070{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}
+{com}. 
+. reg d.$y12list d.$y11list d.$y13list, robust
+
+{txt}Linear regression                               Number of obs     = {res}        48
+                                                {txt}F(2, 45)          =  {res}    13.28
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.4481
+                                                {txt}Root MSE          =    {res}  18677
+
+{txt}{hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}D.           {col 15}{c |}{col 27}    Robust
+{col 1}retailTVSpi~m{col 15}{c |}      Coef.{col 27}   Std. Err.{col 39}      t{col 47}   P>|t|{col 55}     [95% Con{col 68}f. Interval]
+{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+retailTVMovie {c |}
+{space 10}D1. {c |}{col 15}{res}{space 2}  .115115{col 27}{space 2} .0485844{col 38}{space 1}    2.37{col 47}{space 3}0.022{col 55}{space 4}  .017261{col 68}{space 3}  .212969
+{txt}{space 13} {c |}
+retailTVToday {c |}
+{space 10}D1. {c |}{col 15}{res}{space 2} 1.607535{col 27}{space 2} .5035576{col 38}{space 1}    3.19{col 47}{space 3}0.003{col 55}{space 4} .5933184{col 68}{space 3} 2.621753
+{txt}{space 13} {c |}
+{space 8}_cons {c |}{col 15}{res}{space 2} 770.6497{col 27}{space 2} 2869.535{col 38}{space 1}    0.27{col 47}{space 3}0.789{col 55}{space 4} -5008.89{col 68}{space 3} 6550.189
+{txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. predict e_sub2, resid
+{txt}(4 missing values generated)
+
+{com}. corrgram e_sub2, lags(12)
+{txt}(note: time series has 1 gap)
+
+{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.1375{col 18}-0.1431{col 27} .96579{col 36}0.3257{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}2     {res}{col 9}-0.3114{col 18}-0.3613{col 27} 6.0246{col 36}0.0492{col 44}      {hline 1}{hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}3     {res}{col 9} 0.1478{col 18} 0.0341{col 27} 7.1901{col 36}0.0661{col 44}        {c LT}{hline 1}       {col 63}        {c |}        
+{txt}4     {res}{col 9}-0.0767{col 18}-0.1646{col 27} 7.5106{col 36}0.1112{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}5     {res}{col 9}-0.0442{col 18}-0.0419{col 27} 7.6196{col 36}0.1785{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9} 0.0390{col 18}-0.1893{col 27} 7.7067{col 36}0.2604{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}7     {res}{col 9}-0.1047{col 18}-0.2137{col 27} 8.3482{col 36}0.3029{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}8     {res}{col 9} 0.0730{col 18} 0.0813{col 27} 8.6678{col 36}0.3711{col 44}        {c |}        {col 63}        {c |}        
+{txt}9     {res}{col 9} 0.1463{col 18} 0.2253{col 27} 9.9854{col 36}0.3517{col 44}        {c LT}{hline 1}       {col 63}        {c LT}{hline 1}       
+{txt}10    {res}{col 9}-0.0624{col 18} 0.4741{col 27} 10.231{col 36}0.4205{col 44}        {c |}        {col 63}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}11    {res}{col 9}-0.0330{col 18}-0.0284{col 27} 10.302{col 36}0.5035{col 44}        {c |}        {col 63}        {c |}        
+{txt}12    {res}{col 9} 0.0224{col 18} 0.1119{col 27} 10.335{col 36}0.5866{col 44}        {c |}        {col 63}        {c |}        
+{txt}
+{com}. 
+. reg d.$y13list d.$y12list d.$y11list, robust
+
+{txt}Linear regression                               Number of obs     = {res}        48
+                                                {txt}F(2, 45)          =  {res}     6.03
+                                                {txt}Prob > F          = {res}    0.0048
+                                                {txt}R-squared         = {res}    0.4441
+                                                {txt}Root MSE          =    {res} 6691.8
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}    Robust
+{col 1}  D.retailTVToday{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      t{col 51}   P>|t|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+retailTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .2063626{col 31}{space 2} .0773065{col 42}{space 1}    2.67{col 51}{space 3}0.011{col 59}{space 4} .0506593{col 72}{space 3}  .362066
+{txt}{space 17} {c |}
+{space 4}retailTVMovie {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .0381007{col 31}{space 2} .0301638{col 42}{space 1}    1.26{col 51}{space 3}0.213{col 59}{space 4}-.0226524{col 72}{space 3} .0988538
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2}-1113.121{col 31}{space 2} 1023.413{col 42}{space 1}   -1.09{col 51}{space 3}0.283{col 59}{space 4}-3174.381{col 72}{space 3} 948.1397
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. predict e_sub3, resid
+{txt}(4 missing values generated)
+
+{com}. corrgram e_sub3, lags(12)
+{txt}(note: time series has 1 gap)
+
+{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.2325{col 18}-0.2762{col 27} 2.7615{col 36}0.0966{col 44}       {hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}2     {res}{col 9}-0.1153{col 18}-0.2108{col 27} 3.4553{col 36}0.1777{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}3     {res}{col 9} 0.0780{col 18}-0.0326{col 27} 3.7801{col 36}0.2862{col 44}        {c |}        {col 63}        {c |}        
+{txt}4     {res}{col 9}-0.0218{col 18}-0.0216{col 27} 3.8059{col 36}0.4329{col 44}        {c |}        {col 63}        {c |}        
+{txt}5     {res}{col 9}-0.0810{col 18}-0.1862{col 27} 4.1723{col 36}0.5249{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}6     {res}{col 9}-0.0606{col 18}-0.2741{col 27} 4.3819{col 36}0.6251{col 44}        {c |}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}7     {res}{col 9} 0.1025{col 18} 0.1085{col 27} 4.9966{col 36}0.6604{col 44}        {c |}        {col 63}        {c |}        
+{txt}8     {res}{col 9} 0.1141{col 18} 0.0366{col 27} 5.7772{col 36}0.6722{col 44}        {c |}        {col 63}        {c |}        
+{txt}9     {res}{col 9} 0.0090{col 18} 0.0283{col 27} 5.7822{col 36}0.7615{col 44}        {c |}        {col 63}        {c |}        
+{txt}10    {res}{col 9}-0.1770{col 18} 0.0103{col 27} 7.7612{col 36}0.6521{col 44}       {hline 1}{c RT}        {col 63}        {c |}        
+{txt}11    {res}{col 9} 0.0891{col 18} 0.0701{col 27} 8.2762{col 36}0.6884{col 44}        {c |}        {col 63}        {c |}        
+{txt}12    {res}{col 9} 0.0740{col 18} 0.3408{col 27} 8.6411{col 36}0.7332{col 44}        {c |}        {col 63}        {c LT}{hline 1}{hline 1}      
+{txt}
+{com}. 
+. 
+. *** Crosscorrelation: Circulation A ***
+. xcorr e_sub1 e_sub2, lags(6) tab gen(sub1_2_3)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9}-0.0795{col 19}        {c |}        
+{txt}-5    {res}{col 9} 0.2504{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}-4    {res}{col 9}-0.1151{col 19}        {c |}        
+{txt}-3    {res}{col 9}-0.1300{col 19}       {hline 1}{c RT}        
+{txt}-2    {res}{col 9} 0.1045{col 19}        {c |}        
+{txt}-1    {res}{col 9} 0.2350{col 19}        {c LT}{hline 1}       
+{txt}0     {res}{col 9}-0.2181{col 19}       {hline 1}{c RT}        
+{txt}1     {res}{col 9}-0.2019{col 19}       {hline 1}{c RT}        
+{txt}2     {res}{col 9} 0.2726{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}3     {res}{col 9} 0.1034{col 19}        {c |}        
+{txt}4     {res}{col 9} 0.0467{col 19}        {c |}        
+{txt}5     {res}{col 9} 0.0378{col 19}        {c |}        
+{txt}6     {res}{col 9}-0.0959{col 19}        {c |}        
+{txt}
+{com}. xcorr e_sub1 e_sub3, lags(6) tab gen(sub1_3_3)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.2518{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}-5    {res}{col 9}-0.2101{col 19}       {hline 1}{c RT}        
+{txt}-4    {res}{col 9} 0.0444{col 19}        {c |}        
+{txt}-3    {res}{col 9} 0.0823{col 19}        {c |}        
+{txt}-2    {res}{col 9} 0.0919{col 19}        {c |}        
+{txt}-1    {res}{col 9}-0.0850{col 19}        {c |}        
+{txt}0     {res}{col 9}-0.2015{col 19}       {hline 1}{c RT}        
+{txt}1     {res}{col 9} 0.4535{col 19}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}2     {res}{col 9}-0.3562{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}3     {res}{col 9} 0.0176{col 19}        {c |}        
+{txt}4     {res}{col 9}-0.0518{col 19}        {c |}        
+{txt}5     {res}{col 9}-0.0286{col 19}        {c |}        
+{txt}6     {res}{col 9} 0.0589{col 19}        {c |}        
+{txt}
+{com}. xcorr e_sub3 e_sub2, lags(6) tab gen(sub3_2_3)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.0220{col 19}        {c |}        
+{txt}-5    {res}{col 9} 0.0820{col 19}        {c |}        
+{txt}-4    {res}{col 9} 0.0160{col 19}        {c |}        
+{txt}-3    {res}{col 9}-0.0503{col 19}        {c |}        
+{txt}-2    {res}{col 9} 0.2777{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}-1    {res}{col 9}-0.0625{col 19}        {c |}        
+{txt}0     {res}{col 9}-0.5760{col 19}    {hline 1}{hline 1}{hline 1}{hline 1}{c RT}        
+{txt}1     {res}{col 9} 0.3820{col 19}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}2     {res}{col 9} 0.0955{col 19}        {c |}        
+{txt}3     {res}{col 9}-0.1523{col 19}       {hline 1}{c RT}        
+{txt}4     {res}{col 9} 0.1575{col 19}        {c LT}{hline 1}       
+{txt}5     {res}{col 9} 0.0474{col 19}        {c |}        
+{txt}6     {res}{col 9} 0.0235{col 19}        {c |}        
+{txt}
+{com}. 
+. * Graphical Analysis
+. tsline e_sub1 e_sub2 e_sub3, xtitle("") xlabel(55 "1/2005" 69 "15/2005" 81 "01/2006" ///
+> 95 "15/2006" 106 "26/2006") ///
+> lw(medthick medium) ytitle("Reader Market") ///    
+> legend(ring(0) position(7) row(2) label(1 "TVMovie") label(2 "TVSpielfilm") ///
+> label(3 "TVToday"))
+{res}{txt}
+{com}. 
+. graph2tex, epsfile(circ_ols_tv)
+% exported graph to circ_ols_tv.eps
+\begin{figure}[h]
+\begin{centering}
+  \includegraphics[height=3in]{circ_ols_tv}
+\end{centering}
+\end{figure}
+{txt}
+{com}. 
+. drop e_sub1 e_sub2 e_sub3  
+{txt}
+{com}. 
+. 
+. 
+.         *** Adsites A ***
+.         
+. reg d.$y21list d.$y22list d.$y23list, r
+
+{txt}Linear regression                               Number of obs     = {res}        51
+                                                {txt}F(2, 48)          =  {res}     3.65
+                                                {txt}Prob > F          = {res}    0.0335
+                                                {txt}R-squared         = {res}    0.2332
+                                                {txt}Root MSE          =    {res} .76093
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}    Robust
+{col 1}  D.adsiteTVMovie{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      t{col 51}   P>|t|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+adsiteTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2}  .491337{col 31}{space 2} .2271865{col 42}{space 1}    2.16{col 51}{space 3}0.036{col 59}{space 4} .0345479{col 72}{space 3}  .948126
+{txt}{space 17} {c |}
+{space 4}adsiteTVToday {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .1133165{col 31}{space 2} .1473832{col 42}{space 1}    0.77{col 51}{space 3}0.446{col 59}{space 4}-.1830174{col 72}{space 3} .4096504
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2}-.0247806{col 31}{space 2} .1100579{col 42}{space 1}   -0.23{col 51}{space 3}0.823{col 59}{space 4}-.2460668{col 72}{space 3} .1965057
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. predict e_sub1, resid
+{txt}(1 missing value generated)
+
+{com}. corrgram e_sub1, lags(12)
+
+{txt}{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.4262{col 18}-0.4266{col 27} 9.8218{col 36}0.0017{col 44}     {hline 1}{hline 1}{hline 1}{c RT}        {col 63}     {hline 1}{hline 1}{hline 1}{c RT}        
+{txt}2     {res}{col 9} 0.0398{col 18}-0.1524{col 27} 9.9091{col 36}0.0071{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}3     {res}{col 9}-0.1575{col 18}-0.2600{col 27} 11.307{col 36}0.0102{col 44}       {hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}4     {res}{col 9} 0.0906{col 18}-0.1373{col 27} 11.779{col 36}0.0191{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}5     {res}{col 9}-0.0039{col 18}-0.0470{col 27}  11.78{col 36}0.0379{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9} 0.0530{col 18}-0.0080{col 27} 11.949{col 36}0.0631{col 44}        {c |}        {col 63}        {c |}        
+{txt}7     {res}{col 9}-0.0995{col 18}-0.0933{col 27} 12.556{col 36}0.0837{col 44}        {c |}        {col 63}        {c |}        
+{txt}8     {res}{col 9}-0.0460{col 18}-0.1962{col 27} 12.689{col 36}0.1230{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}9     {res}{col 9}-0.0029{col 18}-0.1936{col 27}  12.69{col 36}0.1772{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}10    {res}{col 9} 0.1985{col 18} 0.0671{col 27} 15.286{col 36}0.1220{col 44}        {c LT}{hline 1}       {col 63}        {c |}        
+{txt}11    {res}{col 9}-0.2870{col 18}-0.3771{col 27}  20.85{col 36}0.0350{col 44}      {hline 1}{hline 1}{c RT}        {col 63}     {hline 1}{hline 1}{hline 1}{c RT}        
+{txt}12    {res}{col 9} 0.3189{col 18} 0.1559{col 27} 27.897{col 36}0.0057{col 44}        {c LT}{hline 1}{hline 1}      {col 63}        {c LT}{hline 1}       
+{txt}
+{com}. 
+. reg d.$y22list d.$y23list d.$y21list, r
+
+{txt}Linear regression                               Number of obs     = {res}        51
+                                                {txt}F(2, 48)          =  {res}    21.60
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.3158
+                                                {txt}Root MSE          =    {res} .55829
+
+{txt}{hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}D.           {col 15}{c |}{col 27}    Robust
+{col 1}adsiteTVSpi~m{col 15}{c |}      Coef.{col 27}   Std. Err.{col 39}      t{col 47}   P>|t|{col 55}     [95% Con{col 68}f. Interval]
+{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+adsiteTVToday {c |}
+{space 10}D1. {c |}{col 15}{res}{space 2} .1805519{col 27}{space 2} .1412006{col 38}{space 1}    1.28{col 47}{space 3}0.207{col 55}{space 4} -.103351{col 68}{space 3} .4644548
+{txt}{space 13} {c |}
+adsiteTVMovie {c |}
+{space 10}D1. {c |}{col 15}{res}{space 2} .2644932{col 27}{space 2} .1246747{col 38}{space 1}    2.12{col 47}{space 3}0.039{col 55}{space 4} .0138179{col 68}{space 3} .5151684
+{txt}{space 13} {c |}
+{space 8}_cons {c |}{col 15}{res}{space 2} -.013401{col 27}{space 2} .0751286{col 38}{space 1}   -0.18{col 47}{space 3}0.859{col 55}{space 4}-.1644572{col 68}{space 3} .1376552
+{txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. predict e_sub2, resid
+{txt}(1 missing value generated)
+
+{com}. corrgram e_sub2, lags(12)
+
+{txt}{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.3952{col 18}-0.3997{col 27} 8.4449{col 36}0.0037{col 44}     {hline 1}{hline 1}{hline 1}{c RT}        {col 63}     {hline 1}{hline 1}{hline 1}{c RT}        
+{txt}2     {res}{col 9} 0.1294{col 18}-0.0300{col 27} 9.3693{col 36}0.0092{col 44}        {c LT}{hline 1}       {col 63}        {c |}        
+{txt}3     {res}{col 9} 0.0139{col 18} 0.0708{col 27} 9.3801{col 36}0.0246{col 44}        {c |}        {col 63}        {c |}        
+{txt}4     {res}{col 9}-0.1831{col 18}-0.1755{col 27} 11.308{col 36}0.0233{col 44}       {hline 1}{c RT}        {col 63}       {hline 1}{c RT}        
+{txt}5     {res}{col 9} 0.2622{col 18} 0.1465{col 27} 15.347{col 36}0.0090{col 44}        {c LT}{hline 1}{hline 1}      {col 63}        {c LT}{hline 1}       
+{txt}6     {res}{col 9}-0.4598{col 18}-0.3654{col 27} 28.048{col 36}0.0001{col 44}     {hline 1}{hline 1}{hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}7     {res}{col 9} 0.2811{col 18}-0.0303{col 27} 32.902{col 36}0.0000{col 44}        {c LT}{hline 1}{hline 1}      {col 63}        {c |}        
+{txt}8     {res}{col 9}-0.1297{col 18}-0.0610{col 27} 33.958{col 36}0.0000{col 44}       {hline 1}{c RT}        {col 63}        {c |}        
+{txt}9     {res}{col 9}-0.0670{col 18}-0.1413{col 27} 34.247{col 36}0.0001{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}10    {res}{col 9} 0.0305{col 18}-0.3012{col 27} 34.308{col 36}0.0002{col 44}        {c |}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}11    {res}{col 9}-0.2356{col 18}-0.3270{col 27} 38.061{col 36}0.0001{col 44}       {hline 1}{c RT}        {col 63}      {hline 1}{hline 1}{c RT}        
+{txt}12    {res}{col 9} 0.5510{col 18} 0.3663{col 27} 59.105{col 36}0.0000{col 44}        {c LT}{hline 1}{hline 1}{hline 1}{hline 1}    {col 63}        {c LT}{hline 1}{hline 1}      
+{txt}
+{com}. 
+. reg d.$y23list d.$y21list d.$y22list, r 
+
+{txt}Linear regression                               Number of obs     = {res}        51
+                                                {txt}F(2, 48)          =  {res}     5.22
+                                                {txt}Prob > F          = {res}    0.0089
+                                                {txt}R-squared         = {res}    0.2357
+                                                {txt}Root MSE          =    {res} 1.1269
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}    Robust
+{col 1}  D.adsiteTVToday{col 19}{c |}      Coef.{col 31}   Std. Err.{col 43}      t{col 51}   P>|t|{col 59}     [95% Con{col 72}f. Interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}adsiteTVMovie {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .2485276{col 31}{space 2} .2658638{col 42}{space 1}    0.93{col 51}{space 3}0.355{col 59}{space 4}-.2860274{col 72}{space 3} .7830827
+{txt}{space 17} {c |}
+adsiteTVSpielfilm {c |}
+{space 14}D1. {c |}{col 19}{res}{space 2} .7356116{col 31}{space 2} .2319517{col 42}{space 1}    3.17{col 51}{space 3}0.003{col 59}{space 4} .2692413{col 72}{space 3} 1.201982
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2}-.0666931{col 31}{space 2} .1760113{col 42}{space 1}   -0.38{col 51}{space 3}0.706{col 59}{space 4}-.4205874{col 72}{space 3} .2872013
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. predict e_sub3, resid
+{txt}(1 missing value generated)
+
+{com}. corrgram e_sub3, lags(12)
+
+{txt}{col 43}-1       0       1 -1       0       1
+ LAG       AC       PAC      Q     Prob>Q  [Autocorrelation]  [Partial Autocor]
+{hline 79}
+1     {res}{col 9}-0.5654{col 18}-0.5657{col 27} 17.284{col 36}0.0000{col 44}    {hline 1}{hline 1}{hline 1}{hline 1}{c RT}        {col 63}    {hline 1}{hline 1}{hline 1}{hline 1}{c RT}        
+{txt}2     {res}{col 9} 0.1794{col 18}-0.2071{col 27} 19.059{col 36}0.0001{col 44}        {c LT}{hline 1}       {col 63}       {hline 1}{c RT}        
+{txt}3     {res}{col 9}-0.1152{col 18}-0.1693{col 27} 19.806{col 36}0.0002{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}4     {res}{col 9} 0.0737{col 18}-0.0744{col 27} 20.119{col 36}0.0005{col 44}        {c |}        {col 63}        {c |}        
+{txt}5     {res}{col 9}-0.0509{col 18}-0.0642{col 27} 20.271{col 36}0.0011{col 44}        {c |}        {col 63}        {c |}        
+{txt}6     {res}{col 9}-0.0413{col 18}-0.1545{col 27} 20.374{col 36}0.0024{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}7     {res}{col 9} 0.0602{col 18}-0.0716{col 27} 20.596{col 36}0.0044{col 44}        {c |}        {col 63}        {c |}        
+{txt}8     {res}{col 9}-0.0018{col 18}-0.0005{col 27} 20.596{col 36}0.0083{col 44}        {c |}        {col 63}        {c |}        
+{txt}9     {res}{col 9} 0.0006{col 18} 0.0102{col 27} 20.596{col 36}0.0146{col 44}        {c |}        {col 63}        {c |}        
+{txt}10    {res}{col 9} 0.0419{col 18} 0.0842{col 27} 20.712{col 36}0.0232{col 44}        {c |}        {col 63}        {c |}        
+{txt}11    {res}{col 9}-0.0931{col 18}-0.0433{col 27} 21.298{col 36}0.0304{col 44}        {c |}        {col 63}        {c |}        
+{txt}12    {res}{col 9} 0.0074{col 18}-0.1325{col 27} 21.301{col 36}0.0461{col 44}        {c |}        {col 63}       {hline 1}{c RT}        
+{txt}
+{com}. 
+. 
+. *** Crosscorrelation: Adsite A ***
+. xcorr e_sub1 e_sub2, lags(6) tab gen(sub1_2_4)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.1565{col 19}        {c LT}{hline 1}       
+{txt}-5    {res}{col 9}-0.1778{col 19}       {hline 1}{c RT}        
+{txt}-4    {res}{col 9} 0.1050{col 19}        {c |}        
+{txt}-3    {res}{col 9} 0.0233{col 19}        {c |}        
+{txt}-2    {res}{col 9}-0.0893{col 19}        {c |}        
+{txt}-1    {res}{col 9} 0.2159{col 19}        {c LT}{hline 1}       
+{txt}0     {res}{col 9}-0.3605{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}1     {res}{col 9} 0.5033{col 19}        {c LT}{hline 1}{hline 1}{hline 1}{hline 1}    
+{txt}2     {res}{col 9}-0.1022{col 19}        {c |}        
+{txt}3     {res}{col 9}-0.0677{col 19}        {c |}        
+{txt}4     {res}{col 9} 0.0084{col 19}        {c |}        
+{txt}5     {res}{col 9}-0.1126{col 19}        {c |}        
+{txt}6     {res}{col 9} 0.1766{col 19}        {c LT}{hline 1}       
+{txt}
+{com}. xcorr e_sub1 e_sub3, lags(6) tab gen(sub1_3_4)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9}-0.2497{col 19}       {hline 1}{c RT}        
+{txt}-5    {res}{col 9} 0.2909{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}-4    {res}{col 9}-0.1909{col 19}       {hline 1}{c RT}        
+{txt}-3    {res}{col 9} 0.1292{col 19}        {c LT}{hline 1}       
+{txt}-2    {res}{col 9}-0.1875{col 19}       {hline 1}{c RT}        
+{txt}-1    {res}{col 9} 0.4336{col 19}        {c LT}{hline 1}{hline 1}{hline 1}     
+{txt}0     {res}{col 9}-0.1678{col 19}       {hline 1}{c RT}        
+{txt}1     {res}{col 9}-0.1963{col 19}       {hline 1}{c RT}        
+{txt}2     {res}{col 9}-0.0108{col 19}        {c |}        
+{txt}3     {res}{col 9} 0.0597{col 19}        {c |}        
+{txt}4     {res}{col 9}-0.0221{col 19}        {c |}        
+{txt}5     {res}{col 9} 0.1223{col 19}        {c |}        
+{txt}6     {res}{col 9}-0.2473{col 19}       {hline 1}{c RT}        
+{txt}
+{com}. xcorr e_sub3 e_sub2, lags(6) tab gen(sub3_2_4)
+
+{txt}                 -1       0       1
+ LAG      CORR   [Cross-correlation]
+{hline 36}
+-6    {res}{col 9} 0.2712{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}-5    {res}{col 9}-0.1109{col 19}        {c |}        
+{txt}-4    {res}{col 9} 0.0185{col 19}        {c |}        
+{txt}-3    {res}{col 9} 0.0032{col 19}        {c |}        
+{txt}-2    {res}{col 9}-0.0374{col 19}        {c |}        
+{txt}-1    {res}{col 9} 0.1759{col 19}        {c LT}{hline 1}       
+{txt}0     {res}{col 9}-0.3644{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}1     {res}{col 9} 0.0833{col 19}        {c |}        
+{txt}2     {res}{col 9} 0.2251{col 19}        {c LT}{hline 1}       
+{txt}3     {res}{col 9}-0.2284{col 19}       {hline 1}{c RT}        
+{txt}4     {res}{col 9} 0.2988{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}5     {res}{col 9}-0.3446{col 19}      {hline 1}{hline 1}{c RT}        
+{txt}6     {res}{col 9} 0.2812{col 19}        {c LT}{hline 1}{hline 1}      
+{txt}
+{com}. 
+. * Graphical Analysis
+. tsline e_sub1 e_sub2 e_sub3, xtitle("") xlabel(55 "1/2005" 69 "15/2005" 81 "01/2006" ///
+> 95 "15/2006" 106 "26/2006") ///
+> lw(medthick medium) ytitle("Ad Market") ///    
+> legend(ring(0) position(11) row(2) label(1 "TVMovie") label(2 "TVSpielfilm") ///
+> label(3 "TVToday"))
+{res}{txt}
+{com}. 
+. graph2tex, epsfile(ads_ols_tv)
+% exported graph to ads_ols_tv.eps
+\begin{figure}[h]
+\begin{centering}
+  \includegraphics[height=3in]{ads_ols_tv}
+\end{centering}
+\end{figure}
+{txt}
+{com}. 
+. drop e_sub1 e_sub2 e_sub3 
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. export excel using "/Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/xcorr.xls", sheet("2") sheetreplace firstrow(variables)
+{res}{txt}file /Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/xcorr.xls saved
+
+{com}. export excel using "/Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/xcorr.xls", sheet("2") sheetreplace firstrow(variables)
+{res}{txt}file /Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/xcorr.xls saved
+
+{com}. export excel using "/Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/xcorr.xls", sheet("2") sheetreplace firstrow(variables)
+{res}{txt}file /Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/xcorr.xls saved
+
+{com}. use "/Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/tv magazine/tv 2weekly_nopanel.dta", clear
+
+. keep if year > 2013
+{txt}(287 observations deleted)
+
+{com}. keep if year < 2016
+{txt}(17 observations deleted)
+
+{com}. browse HeftNr time
+
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/Franzi/Google Drive/HSU/Paper/2sm/Stata/tv magazine/tv_log.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}24 Aug 2016, 12:48:51
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

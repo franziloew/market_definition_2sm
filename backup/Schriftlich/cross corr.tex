@@ -1,0 +1,109 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\begin{document}
+\section{Impact of $d, g, \theta, \mu$ on Cross Correlation of Quantities}
+
+\subsection{Cross correlation within a market side}
+
+Figure \ref{QQ} shows the effect of the sum of the indirect network effects $d$ and $g$ (INE) and the substitution parameter $\mu$ \footnote{for simplicity we assume $\mu=\theta$ } on the correlation of quantities $q_i,q_j$ on market side $a$.  A high degree of homogeneity causes the negative correlation to increase, which is consistent with what we observe in markets without INE. Homogenous products cause higher degree of competition which leads to a higher negative correlation of quantities. What is new is the effect of INE on the correlation: The higher the absolute amount of INE, the higher the negative correlation. 
+
+\begin{figure}[H]
+	\centering
+	\newlength\figureheight 
+	\newlength\figurewidth 
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{10cm}
+	\input{QQ_d_g_mu.tikz}
+	\caption{Cross Correlations QQ}
+	\label{QQ}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{8cm}
+	\input{QQ_mu.tikz}
+	\caption{Cross Correlations QQ for d=g=0}
+	\label{QQ2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{8cm}
+	\input{mu_1.tikz}
+	\caption{Cross Correlations QQ for $\mu=1$}
+	\label{QQ2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{8cm}
+	\input{mu_7.tikz}
+	\caption{Cross Correlations QQ for $\mu=0.7$}
+	\label{QQ2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{8cm}
+	\input{mu_5.tikz}
+	\caption{Cross Correlations QQ for $\mu=0.5$}
+	\label{QQ2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{8cm}
+	\input{mu_3.tikz}
+	\caption{Cross Correlations QQ for $\mu=0.3$}
+	\label{QQ2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{8cm}
+	\input{mu_0.tikz}
+	\caption{Cross Correlations QQ for $\mu=0$}
+	\label{QQ2}
+\end{figure}
+
+
+
+\subsection{Crosscorrelation between market sides}
+
+Figure \ref{QS} shows the correlation between the quantities $q_i$ and $s_i$ of platform $i$ on market side $a$ and $b$. The substitution parameters $\mu$ and $\theta$ nearly have no impact on the correlation (see also Figure \ref{QS2} \footnote{A change in the substitution parameters does not seem to have any impact on the cross correlation coefficient. The variation of the cross correlation goes from $-0,04$ to $0,04$.}), while the sum of the INE has an important effect on the correlation. Different to Figure 1, we can see a difference between the sign of the sum of INE: If the sum has a negative sing, correlation gets negative. A quantity increase on one market side - say $b$ - causes a decrease on market side $a$. One can think of a real world example as a TV-Program. If the negative impact ($g$) of advertisement (side $b$) on viewers (side $a$) is much larger than the positive effect of viewers on advertiser ($d$) so that $d+g < 0$, negative correlations of quantities might be possible. 
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{10cm}
+	\input{QS_d_g_mu.tikz}
+	\caption{Cross Correlations QS}
+	\label{QS}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm} 
+	\setlength\figurewidth{8cm}
+	\input{QS_mu.tikz}
+	\caption{Cross Correlations QS for d=g=0}
+	\label{QS2}
+\end{figure}
+
+\end{document}

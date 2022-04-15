@@ -1,0 +1,378 @@
+%% Created by Maple 2015.2, Mac OS X
+%% Source Worksheet: model2.mw
+%% Generated: Thu Feb 16 18:03:46 CET 2017
+\documentclass{article}
+\usepackage{maplestd2e}
+\def\emptyline{\vspace{12pt}}
+\begin{document}
+\pagestyle{empty}
+\DefineParaStyle{Maple Bullet Item}
+\DefineParaStyle{Maple Heading 1}
+\DefineParaStyle{Maple Warning}
+\DefineParaStyle{Maple Heading 4}
+\DefineParaStyle{Maple Heading 2}
+\DefineParaStyle{Maple Heading 3}
+\DefineParaStyle{Maple Dash Item}
+\DefineParaStyle{Maple Error}
+\DefineParaStyle{Maple Title}
+\DefineParaStyle{Maple Text Output}
+\DefineParaStyle{Maple Normal}
+\DefineCharStyle{Maple 2D Output}
+\DefineCharStyle{Maple 2D Input}
+\DefineCharStyle{Maple Maple Input}
+\DefineCharStyle{Maple 2D Math}
+\DefineCharStyle{Maple Hyperlink}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{restart; 1}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{p__i := -beta__a*q__i+d*s__i-q__j*theta+nu__a}{\[p_{i}\, := \,-\beta_{a}\,q_{i}+ds_{i}-q_{j}\,\theta+\nu_{a}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{p__i := -beta__a*q__i+d*s__i-q__j*theta+nu__a}{\[\displaystyle p_{i}\, := \,-\beta_{a}\,q_{i}+ds_{i}-q_{j}\,\theta+\nu_{a}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{r__i := -beta__b*s__i+g*q__i-mu*s__j+nu__b}{\[r_{i}\, := \,-\beta_{b}\,s_{i}+gq_{i}-\mu\,s_{j}+\nu_{b}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{r__i := -beta__b*s__i+g*q__i-mu*s__j+nu__b}{\[\displaystyle r_{i}\, := \,-\beta_{b}\,s_{i}+gq_{i}-\mu\,s_{j}+\nu_{b}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{p__j := -beta__a*q__j+d*s__j-q__i*theta+nu__a}{\[p_{j}\, := \,-\beta_{a}\,q_{j}+ds_{j}-\theta\,q_{i}+\nu_{a}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{p__j := -beta__a*q__j+d*s__j-q__i*theta+nu__a}{\[\displaystyle p_{j}\, := \,-\beta_{a}\,q_{j}+ds_{j}-\theta\,q_{i}+\nu_{a}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{r__j := -beta__b*s__j+g*q__j-mu*s__i+nu__b}{\[r_{j}\, := \,-\beta_{b}\,s_{j}+gq_{j}-\mu\,s_{i}+\nu_{b}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{r__j := -beta__b*s__j+g*q__j-mu*s__i+nu__b}{\[\displaystyle r_{j}\, := \,-\beta_{b}\,s_{j}+gq_{j}-\mu\,s_{i}+\nu_{b}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{pi__i := (p__i-c__i)*q__i+(r__i-f__i)*s__i; 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{pi__i := (-beta__a*q__i+d*s__i-q__j*theta-c__i+nu__a)*q__i+(-beta__b*s__i+g*q__i-mu*s__j-f__i+nu__b)*s__i}{\[\displaystyle \pi_{i}\, := \, \left( -\beta_{a}\,q_{i}+ds_{i}-q_{j}\,\theta-c_{i}+\nu_{a} \right) q_{i}+ \left( -\beta_{b}\,s_{i}+gq_{i}-\mu\,s_{j}-f_{i}+\nu_{b} \right) s_{i}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{pi__j := (p__j-c__j)*q__j+(r__j-f__j)*s__j; 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{pi__j := (-beta__a*q__j+d*s__j-q__i*theta-c__j+nu__a)*q__j+(-beta__b*s__j+g*q__j-mu*s__i-f__j+nu__b)*s__j}{\[\displaystyle \pi_{j}\, := \, \left( -\beta_{a}\,q_{j}+ds_{j}-q_{i}\,\theta-c_{j}+\nu_{a} \right) q_{j}+ \left( -\beta_{b}\,s_{j}+gq_{j}-\mu\,s_{i}-f_{j}+\nu_{b} \right) s_{j}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{r1 := diff(pi__i, q__i); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{r1 := -2*beta__a*q__i+d*s__i+g*s__i-q__j*theta-c__i+nu__a}{\[\displaystyle {\it r1}\, := \,-2\,\beta_{a}\,q_{i}+ds_{i}+gs_{i}-q_{j}\,\theta-c_{i}+\nu_{a}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{r2 := diff(pi__i, s__i); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{r2 := -2*beta__b*s__i+d*q__i+g*q__i-mu*s__j-f__i+nu__b}{\[\displaystyle {\it r2}\, := \,-2\,\beta_{b}\,s_{i}+dq_{i}+gq_{i}-\mu\,s_{j}-f_{i}+\nu_{b}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{r3 := diff(pi__j, q__j); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{r3 := -2*beta__a*q__j+d*s__j+g*s__j-q__i*theta-c__j+nu__a}{\[\displaystyle {\it r3}\, := \,-2\,\beta_{a}\,q_{j}+ds_{j}+gs_{j}-q_{i}\,\theta-c_{j}+\nu_{a}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{r4 := diff(pi__j, s__j); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{r4 := -2*beta__b*s__j+d*q__j+g*q__j-mu*s__i-f__j+nu__b}{\[\displaystyle {\it r4}\, := \,-2\,\beta_{b}\,s_{j}+dq_{j}+gq_{j}-\mu\,s_{i}-f_{j}+\nu_{b}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{r5 := solve({r1, r2, r3, r4}, {q__i, q__j, s__i, s__j}); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{r5 := {q__i = -(8*beta__a*beta__b^2*c__i-8*beta__a*beta__b^2*nu__a+4*beta__a*beta__b*d*f__i-4*beta__a*beta__b*d*nu__b+4*beta__a*beta__b*f__i*g-4*beta__a*beta__b*g*nu__b-2*beta__a*c__i*mu^2-2*beta__a*d*f__j*mu+2*beta__a*d*mu*nu__b-2*beta__a*f__j*g*mu+2*beta__a*g*mu*nu__b+2*beta__a*mu^2*nu__a-4*beta__b^2*c__j*theta+4*beta__b^2*nu__a*theta-2*beta__b*c__i*d^2-4*beta__b*c__i*d*g-2*beta__b*c__i*g^2+2*beta__b*d^2*nu__a-2*beta__b*d*f__j*theta+4*beta__b*d*g*nu__a+2*beta__b*d*nu__b*theta-2*beta__b*f__j*g*theta+2*beta__b*g^2*nu__a+2*beta__b*g*nu__b*theta-c__j*d^2*mu-2*c__j*d*g*mu-c__j*g^2*mu+c__j*mu^2*theta-d^3*f__i+d^3*nu__b-3*d^2*f__i*g+3*d^2*g*nu__b+d^2*mu*nu__a-3*d*f__i*g^2+d*f__i*mu*theta+3*d*g^2*nu__b+2*d*g*mu*nu__a-d*mu*nu__b*theta-f__i*g^3+f__i*g*mu*theta+g^3*nu__b+g^2*mu*nu__a-g*mu*nu__b*theta-mu^2*nu__a*theta)/(16*beta__a^2*beta__b^2-4*beta__a^2*mu^2-8*beta__a*beta__b*d^2-16*beta__a*beta__b*d*g-8*beta__a*beta__b*g^2-4*beta__b^2*theta^2+d^4+4*d^3*g+6*d^2*g^2-2*d^2*mu*theta+4*d*g^3-4*d*g*mu*theta+g^4-2*g^2*mu*theta+mu^2*theta^2), q__j = -(8*beta__a*beta__b^2*c__j-8*beta__a*beta__b^2*nu__a+4*beta__a*beta__b*d*f__j-4*beta__a*beta__b*d*nu__b+4*beta__a*beta__b*f__j*g-4*beta__a*beta__b*g*nu__b-2*beta__a*c__j*mu^2-2*beta__a*d*f__i*mu+2*beta__a*d*mu*nu__b-2*beta__a*f__i*g*mu+2*beta__a*g*mu*nu__b+2*beta__a*mu^2*nu__a-4*beta__b^2*c__i*theta+4*beta__b^2*nu__a*theta-2*beta__b*c__j*d^2-4*beta__b*c__j*d*g-2*beta__b*c__j*g^2+2*beta__b*d^2*nu__a-2*beta__b*d*f__i*theta+4*beta__b*d*g*nu__a+2*beta__b*d*nu__b*theta-2*beta__b*f__i*g*theta+2*beta__b*g^2*nu__a+2*beta__b*g*nu__b*theta-c__i*d^2*mu-2*c__i*d*g*mu-c__i*g^2*mu+c__i*mu^2*theta-d^3*f__j+d^3*nu__b-3*d^2*f__j*g+3*d^2*g*nu__b+d^2*mu*nu__a-3*d*f__j*g^2+d*f__j*mu*theta+3*d*g^2*nu__b+2*d*g*mu*nu__a-d*mu*nu__b*theta-f__j*g^3+f__j*g*mu*theta+g^3*nu__b+g^2*mu*nu__a-g*mu*nu__b*theta-mu^2*nu__a*theta)/(16*beta__a^2*beta__b^2-4*beta__a^2*mu^2-8*beta__a*beta__b*d^2-16*beta__a*beta__b*d*g-8*beta__a*beta__b*g^2-4*beta__b^2*theta^2+d^4+4*d^3*g+6*d^2*g^2-2*d^2*mu*theta+4*d*g^3-4*d*g*mu*theta+g^4-2*g^2*mu*theta+mu^2*theta^2), s__i = -(8*beta__a^2*beta__b*f__i-8*beta__a^2*beta__b*nu__b-4*beta__a^2*f__j*mu+4*beta__a^2*mu*nu__b+4*beta__a*beta__b*c__i*d+4*beta__a*beta__b*c__i*g-4*beta__a*beta__b*d*nu__a-4*beta__a*beta__b*g*nu__a-2*beta__a*c__j*d*mu-2*beta__a*c__j*g*mu-2*beta__a*d^2*f__i+2*beta__a*d^2*nu__b-4*beta__a*d*f__i*g+4*beta__a*d*g*nu__b+2*beta__a*d*mu*nu__a-2*beta__a*f__i*g^2+2*beta__a*g^2*nu__b+2*beta__a*g*mu*nu__a-2*beta__b*c__j*d*theta-2*beta__b*c__j*g*theta+2*beta__b*d*nu__a*theta-2*beta__b*f__i*theta^2+2*beta__b*g*nu__a*theta+2*beta__b*nu__b*theta^2-c__i*d^3-3*c__i*d^2*g-3*c__i*d*g^2+c__i*d*mu*theta-c__i*g^3+c__i*g*mu*theta+d^3*nu__a-d^2*f__j*theta+3*d^2*g*nu__a+d^2*nu__b*theta-2*d*f__j*g*theta+3*d*g^2*nu__a+2*d*g*nu__b*theta-d*mu*nu__a*theta-f__j*g^2*theta+f__j*mu*theta^2+g^3*nu__a+g^2*nu__b*theta-g*mu*nu__a*theta-mu*nu__b*theta^2)/(16*beta__a^2*beta__b^2-4*beta__a^2*mu^2-8*beta__a*beta__b*d^2-16*beta__a*beta__b*d*g-8*beta__a*beta__b*g^2-4*beta__b^2*theta^2+d^4+4*d^3*g+6*d^2*g^2-2*d^2*mu*theta+4*d*g^3-4*d*g*mu*theta+g^4-2*g^2*mu*theta+mu^2*theta^2), s__j = -(8*beta__a^2*beta__b*f__j-8*beta__a^2*beta__b*nu__b-4*beta__a^2*f__i*mu+4*beta__a^2*mu*nu__b+4*beta__a*beta__b*c__j*d+4*beta__a*beta__b*c__j*g-4*beta__a*beta__b*d*nu__a-4*beta__a*beta__b*g*nu__a-2*beta__a*c__i*d*mu-2*beta__a*c__i*g*mu-2*beta__a*d^2*f__j+2*beta__a*d^2*nu__b-4*beta__a*d*f__j*g+4*beta__a*d*g*nu__b+2*beta__a*d*mu*nu__a-2*beta__a*f__j*g^2+2*beta__a*g^2*nu__b+2*beta__a*g*mu*nu__a-2*beta__b*c__i*d*theta-2*beta__b*c__i*g*theta+2*beta__b*d*nu__a*theta-2*beta__b*f__j*theta^2+2*beta__b*g*nu__a*theta+2*beta__b*nu__b*theta^2-c__j*d^3-3*c__j*d^2*g-3*c__j*d*g^2+c__j*d*mu*theta-c__j*g^3+c__j*g*mu*theta+d^3*nu__a-d^2*f__i*theta+3*d^2*g*nu__a+d^2*nu__b*theta-2*d*f__i*g*theta+3*d*g^2*nu__a+2*d*g*nu__b*theta-d*mu*nu__a*theta-f__i*g^2*theta+f__i*mu*theta^2+g^3*nu__a+g^2*nu__b*theta-g*mu*nu__a*theta-mu*nu__b*theta^2)/(16*beta__a^2*beta__b^2-4*beta__a^2*mu^2-8*beta__a*beta__b*d^2-16*beta__a*beta__b*d*g-8*beta__a*beta__b*g^2-4*beta__b^2*theta^2+d^4+4*d^3*g+6*d^2*g^2-2*d^2*mu*theta+4*d*g^3-4*d*g*mu*theta+g^4-2*g^2*mu*theta+mu^2*theta^2)}}{\[\displaystyle {\it r5}\, := \, \left\{ q_{i}=-{\frac {8\,\beta_{a}\,{\beta_{b}}^{2}c_{i}-8\,\beta_{a}\,{\beta_{b}}^{2}\nu_{a}+4\,\beta_{a}\,\beta_{b}\,df_{i}-4\,\beta_{a}\,\beta_{b}\,d\nu_{b}+4\,\beta_{a}\,\beta_{b}\,f_{i}\,g-4\,\beta_{a}\,\beta_{b}\,g\nu_{b}-2\,\beta_{a}\,c_{i}\,{\mu}^{2}-2\,\beta_{a}\,df_{j}\,\mu+2\,\beta_{a}\,d\mu\,\nu_{b}-2\,\beta_{a}\,f_{j}\,g\mu+2\,\beta_{a}\,g\mu\,\nu_{b}\\
+\mbox{}+2\,\beta_{a}\,{\mu}^{2}\nu_{a}-4\,{\beta_{b}}^{2}c_{j}\,\theta+4\,{\beta_{b}}^{2}\nu_{a}\,\theta-2\,\beta_{b}\,c_{i}\,{d}^{2}-4\,\beta_{b}\,c_{i}\,dg-2\,\beta_{b}\,c_{i}\,{g}^{2}+2\,\beta_{b}\,{d}^{2}\nu_{a}-2\,\beta_{b}\,df_{j}\,\theta+4\,\beta_{b}\,dg\nu_{a}+2\,\beta_{b}\,d\nu_{b}\,\theta-2\,\beta_{b}\,f_{j}\,g\theta+2\,\beta_{b}\,{g}^{2}\nu_{a}+2\,\beta_{b}\,g\nu_{b}\,\theta-c_{j}\,{d}^{2}\mu-2\,c_{j}\,dg\mu\\
+\mbox{}-c_{j}\,{g}^{2}\mu+c_{j}\,{\mu}^{2}\theta-{d}^{3}f_{i}+{d}^{3}\nu_{b}-3\,{d}^{2}f_{i}\,g+3\,{d}^{2}g\nu_{b}+{d}^{2}\mu\,\nu_{a}-3\,df_{i}\,{g}^{2}+df_{i}\,\mu\,\theta+3\,d{g}^{2}\nu_{b}+2\,dg\mu\,\nu_{a}-d\mu\,\nu_{b}\,\theta-f_{i}\,{g}^{3}+f_{i}\,g\mu\,\theta+{g}^{3}\nu_{b}+{g}^{2}\mu\,\nu_{a}-g\mu\,\nu_{b}\,\theta-{\mu}^{2}\nu_{a}\,\theta}{16\,{\beta_{a}}^{2}{\beta_{b}}^{2}\\
+\mbox{}-4\,{\beta_{a}}^{2}{\mu}^{2}-8\,\beta_{a}\,\beta_{b}\,{d}^{2}-16\,\beta_{a}\,\beta_{b}\,dg-8\,\beta_{a}\,\beta_{b}\,{g}^{2}-4\,{\beta_{b}}^{2}{\theta}^{2}+{d}^{4}+4\,{d}^{3}g+6\,{d}^{2}{g}^{2}-2\,{d}^{2}\mu\,\theta+4\,d{g}^{3}-4\,dg\mu\,\theta+{g}^{4}-2\,{g}^{2}\mu\,\theta+{\mu}^{2}{\theta}^{2}\\
+\mbox{}}},q_{j}=-{\frac {8\,\beta_{a}\,{\beta_{b}}^{2}c_{j}-8\,\beta_{a}\,{\beta_{b}}^{2}\nu_{a}+4\,\beta_{a}\,\beta_{b}\,df_{j}-4\,\beta_{a}\,\beta_{b}\,d\nu_{b}+4\,\beta_{a}\,\beta_{b}\,f_{j}\,g-4\,\beta_{a}\,\beta_{b}\,g\nu_{b}-2\,\beta_{a}\,c_{j}\,{\mu}^{2}-2\,\beta_{a}\,df_{i}\,\mu+2\,\beta_{a}\,d\mu\,\nu_{b}-2\,\beta_{a}\,f_{i}\,g\mu+2\,\beta_{a}\,g\mu\,\nu_{b}+2\,\beta_{a}\,{\mu}^{2}\nu_{a}-4\,{\beta_{b}}^{2}c_{i}\,\theta+4\,{\beta_{b}}^{2}\nu_{a}\,\theta-2\,\beta_{b}\,c_{j}\,{d}^{2}-4\,\beta_{b}\,c_{j}\,dg-2\,\beta_{b}\,c_{j}\,{g}^{2}\\
+\mbox{}+2\,\beta_{b}\,{d}^{2}\nu_{a}-2\,\beta_{b}\,df_{i}\,\theta+4\,\beta_{b}\,dg\nu_{a}+2\,\beta_{b}\,d\nu_{b}\,\theta-2\,\beta_{b}\,f_{i}\,g\theta+2\,\beta_{b}\,{g}^{2}\nu_{a}+2\,\beta_{b}\,g\nu_{b}\,\theta-c_{i}\,{d}^{2}\mu-2\,c_{i}\,dg\mu-c_{i}\,{g}^{2}\mu+c_{i}\,{\mu}^{2}\theta-{d}^{3}f_{j}+{d}^{3}\nu_{b}-3\,{d}^{2}f_{j}\,g+3\,{d}^{2}g\nu_{b}+{d}^{2}\mu\,\nu_{a}-3\,df_{j}\,{g}^{2}\\
+\mbox{}+df_{j}\,\mu\,\theta+3\,d{g}^{2}\nu_{b}+2\,dg\mu\,\nu_{a}-d\mu\,\nu_{b}\,\theta-f_{j}\,{g}^{3}+f_{j}\,g\mu\,\theta+{g}^{3}\nu_{b}+{g}^{2}\mu\,\nu_{a}-g\mu\,\nu_{b}\,\theta-{\mu}^{2}\nu_{a}\,\theta}{16\,{\beta_{a}}^{2}{\beta_{b}}^{2}-4\,{\beta_{a}}^{2}{\mu}^{2}-8\,\beta_{a}\,\beta_{b}\,{d}^{2}-16\,\beta_{a}\,\beta_{b}\,dg-8\,\beta_{a}\,\beta_{b}\,{g}^{2}-4\,{\beta_{b}}^{2}{\theta}^{2}+{d}^{4}+4\,{d}^{3}g\\
+\mbox{}+6\,{d}^{2}{g}^{2}-2\,{d}^{2}\mu\,\theta+4\,d{g}^{3}-4\,dg\mu\,\theta+{g}^{4}-2\,{g}^{2}\mu\,\theta+{\mu}^{2}{\theta}^{2}}},s_{i}=-{\frac {8\,{\beta_{a}}^{2}\beta_{b}\,f_{i}-8\,{\beta_{a}}^{2}\beta_{b}\,\nu_{b}-4\,{\beta_{a}}^{2}f_{j}\,\mu+4\,{\beta_{a}}^{2}\mu\,\nu_{b}+4\,\beta_{a}\,\beta_{b}\,c_{i}\,d+4\,\beta_{a}\,\beta_{b}\,c_{i}\,g-4\,\beta_{a}\,\beta_{b}\,d\nu_{a}\\
+\mbox{}-4\,\beta_{a}\,\beta_{b}\,g\nu_{a}-2\,\beta_{a}\,c_{j}\,d\mu-2\,\beta_{a}\,c_{j}\,g\mu-2\,\beta_{a}\,{d}^{2}f_{i}+2\,\beta_{a}\,{d}^{2}\nu_{b}-4\,\beta_{a}\,df_{i}\,g+4\,\beta_{a}\,dg\nu_{b}+2\,\beta_{a}\,d\mu\,\nu_{a}-2\,\beta_{a}\,f_{i}\,{g}^{2}+2\,\beta_{a}\,{g}^{2}\nu_{b}+2\,\beta_{a}\,g\mu\,\nu_{a}-2\,\beta_{b}\,c_{j}\,d\theta-2\,\beta_{b}\,c_{j}\,g\theta+2\,\beta_{b}\,d\nu_{a}\,\theta-2\,\beta_{b}\,f_{i}\,{\theta}^{2}+2\,\beta_{b}\,g\nu_{a}\,\theta+2\,\beta_{b}\,\nu_{b}\,{\theta}^{2}-c_{i}\,{d}^{3}-3\,c_{i}\,{d}^{2}g\\
+\mbox{}-3\,c_{i}\,d{g}^{2}+c_{i}\,d\mu\,\theta-c_{i}\,{g}^{3}+c_{i}\,g\mu\,\theta+{d}^{3}\nu_{a}-{d}^{2}f_{j}\,\theta+3\,{d}^{2}g\nu_{a}+{d}^{2}\nu_{b}\,\theta-2\,df_{j}\,g\theta+3\,d{g}^{2}\nu_{a}+2\,dg\nu_{b}\,\theta-d\mu\,\nu_{a}\,\theta-f_{j}\,{g}^{2}\theta+f_{j}\,\mu\,{\theta}^{2}+{g}^{3}\nu_{a}+{g}^{2}\nu_{b}\,\theta-g\mu\,\nu_{a}\,\theta-\mu\,\nu_{b}\,{\theta}^{2}}{16\,{\beta_{a}}^{2}{\beta_{b}}^{2}-4\,{\beta_{a}}^{2}{\mu}^{2}\\
+\mbox{}-8\,\beta_{a}\,\beta_{b}\,{d}^{2}-16\,\beta_{a}\,\beta_{b}\,dg-8\,\beta_{a}\,\beta_{b}\,{g}^{2}-4\,{\beta_{b}}^{2}{\theta}^{2}+{d}^{4}+4\,{d}^{3}g+6\,{d}^{2}{g}^{2}-2\,{d}^{2}\mu\,\theta+4\,d{g}^{3}-4\,dg\mu\,\theta+{g}^{4}-2\,{g}^{2}\mu\,\theta+{\mu}^{2}{\theta}^{2}}},s_{j}=-{\frac {8\,{\beta_{a}}^{2}\beta_{b}\,f_{j}\\
+\mbox{}-8\,{\beta_{a}}^{2}\beta_{b}\,\nu_{b}-4\,{\beta_{a}}^{2}f_{i}\,\mu+4\,{\beta_{a}}^{2}\mu\,\nu_{b}+4\,\beta_{a}\,\beta_{b}\,c_{j}\,d+4\,\beta_{a}\,\beta_{b}\,c_{j}\,g-4\,\beta_{a}\,\beta_{b}\,d\nu_{a}-4\,\beta_{a}\,\beta_{b}\,g\nu_{a}-2\,\beta_{a}\,c_{i}\,d\mu-2\,\beta_{a}\,c_{i}\,g\mu-2\,\beta_{a}\,{d}^{2}f_{j}+2\,\beta_{a}\,{d}^{2}\nu_{b}-4\,\beta_{a}\,df_{j}\,g+4\,\beta_{a}\,dg\nu_{b}+2\,\beta_{a}\,d\mu\,\nu_{a}-2\,\beta_{a}\,f_{j}\,{g}^{2}+2\,\beta_{a}\,{g}^{2}\nu_{b}+2\,\beta_{a}\,g\mu\,\nu_{a}-2\,\beta_{b}\,c_{i}\,d\theta\\
+\mbox{}-2\,\beta_{b}\,c_{i}\,g\theta+2\,\beta_{b}\,d\nu_{a}\,\theta-2\,\beta_{b}\,f_{j}\,{\theta}^{2}+2\,\beta_{b}\,g\nu_{a}\,\theta+2\,\beta_{b}\,\nu_{b}\,{\theta}^{2}-c_{j}\,{d}^{3}-3\,c_{j}\,{d}^{2}g-3\,c_{j}\,d{g}^{2}+c_{j}\,d\mu\,\theta-c_{j}\,{g}^{3}+c_{j}\,g\mu\,\theta+{d}^{3}\nu_{a}-{d}^{2}f_{i}\,\theta+3\,{d}^{2}g\nu_{a}+{d}^{2}\nu_{b}\,\theta-2\,df_{i}\,g\theta+3\,d{g}^{2}\nu_{a}+2\,dg\nu_{b}\,\theta-d\mu\,\nu_{a}\,\theta-f_{i}\,{g}^{2}\theta\\
+\mbox{}+f_{i}\,\mu\,{\theta}^{2}+{g}^{3}\nu_{a}+{g}^{2}\nu_{b}\,\theta-g\mu\,\nu_{a}\,\theta-\mu\,\nu_{b}\,{\theta}^{2}}{16\,{\beta_{a}}^{2}{\beta_{b}}^{2}-4\,{\beta_{a}}^{2}{\mu}^{2}-8\,\beta_{a}\,\beta_{b}\,{d}^{2}-16\,\beta_{a}\,\beta_{b}\,dg-8\,\beta_{a}\,\beta_{b}\,{g}^{2}-4\,{\beta_{b}}^{2}{\theta}^{2}+{d}^{4}+4\,{d}^{3}g+6\,{d}^{2}{g}^{2}-2\,{d}^{2}\mu\,\theta\\
+\mbox{}+4\,d{g}^{3}-4\,dg\mu\,\theta+{g}^{4}-2\,{g}^{2}\mu\,\theta+{\mu}^{2}{\theta}^{2}}} \right\} \]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{assign(r5); 1}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{}{\[\displaystyle \]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{simplify(q__i); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{-(8*beta__a*beta__b^2*c__i-8*beta__a*beta__b^2*nu__a+4*beta__a*beta__b*d*f__i-4*beta__a*beta__b*d*nu__b+4*beta__a*beta__b*f__i*g-4*beta__a*beta__b*g*nu__b-2*beta__a*c__i*mu^2-2*beta__a*d*f__j*mu+2*beta__a*d*mu*nu__b-2*beta__a*f__j*g*mu+2*beta__a*g*mu*nu__b+2*beta__a*mu^2*nu__a-4*beta__b^2*c__j*theta+4*beta__b^2*nu__a*theta-2*beta__b*c__i*d^2-4*beta__b*c__i*d*g-2*beta__b*c__i*g^2+2*beta__b*d^2*nu__a-2*beta__b*d*f__j*theta+4*beta__b*d*g*nu__a+2*beta__b*d*nu__b*theta-2*beta__b*f__j*g*theta+2*beta__b*g^2*nu__a+2*beta__b*g*nu__b*theta-c__j*d^2*mu-2*c__j*d*g*mu-c__j*g^2*mu+c__j*mu^2*theta-d^3*f__i+d^3*nu__b-3*d^2*f__i*g+3*d^2*g*nu__b+d^2*mu*nu__a-3*d*f__i*g^2+d*f__i*mu*theta+3*d*g^2*nu__b+2*d*g*mu*nu__a-d*mu*nu__b*theta-f__i*g^3+f__i*g*mu*theta+g^3*nu__b+g^2*mu*nu__a-g*mu*nu__b*theta-mu^2*nu__a*theta)/(16*beta__a^2*beta__b^2-4*beta__a^2*mu^2-8*beta__a*beta__b*d^2-16*beta__a*beta__b*d*g-8*beta__a*beta__b*g^2-4*beta__b^2*theta^2+d^4+4*d^3*g+6*d^2*g^2-2*d^2*mu*theta+4*d*g^3-4*d*g*mu*theta+g^4-2*g^2*mu*theta+mu^2*theta^2)}{\[\displaystyle -{\frac {8\,\beta_{a}\,{\beta_{b}}^{2}c_{i}-8\,\beta_{a}\,{\beta_{b}}^{2}\nu_{a}+4\,\beta_{a}\,\beta_{b}\,df_{i}-4\,\beta_{a}\,\beta_{b}\,d\nu_{b}+4\,\beta_{a}\,\beta_{b}\,f_{i}\,g-4\,\beta_{a}\,\beta_{b}\,g\nu_{b}-2\,\beta_{a}\,c_{i}\,{\mu}^{2}-2\,\beta_{a}\,df_{j}\,\mu+2\,\beta_{a}\,d\mu\,\nu_{b}-2\,\beta_{a}\,f_{j}\,g\mu+2\,\beta_{a}\,g\mu\,\nu_{b}+2\,\beta_{a}\,{\mu}^{2}\nu_{a}\\
+\mbox{}-4\,{\beta_{b}}^{2}c_{j}\,\theta+4\,{\beta_{b}}^{2}\nu_{a}\,\theta-2\,\beta_{b}\,c_{i}\,{d}^{2}-4\,\beta_{b}\,c_{i}\,dg-2\,\beta_{b}\,c_{i}\,{g}^{2}+2\,\beta_{b}\,{d}^{2}\nu_{a}-2\,\beta_{b}\,df_{j}\,\theta+4\,\beta_{b}\,dg\nu_{a}+2\,\beta_{b}\,d\nu_{b}\,\theta-2\,\beta_{b}\,f_{j}\,g\theta+2\,\beta_{b}\,{g}^{2}\nu_{a}+2\,\beta_{b}\,g\nu_{b}\,\theta-c_{j}\,{d}^{2}\mu-2\,c_{j}\,dg\mu-c_{j}\,{g}^{2}\mu+c_{j}\,{\mu}^{2}\theta\\
+\mbox{}-{d}^{3}f_{i}+{d}^{3}\nu_{b}-3\,{d}^{2}f_{i}\,g+3\,{d}^{2}g\nu_{b}+{d}^{2}\mu\,\nu_{a}-3\,df_{i}\,{g}^{2}+df_{i}\,\mu\,\theta+3\,d{g}^{2}\nu_{b}+2\,dg\mu\,\nu_{a}-d\mu\,\nu_{b}\,\theta-f_{i}\,{g}^{3}+f_{i}\,g\mu\,\theta+{g}^{3}\nu_{b}+{g}^{2}\mu\,\nu_{a}-g\mu\,\nu_{b}\,\theta-{\mu}^{2}\nu_{a}\,\theta}{16\,{\beta_{a}}^{2}{\beta_{b}}^{2}-4\,{\beta_{a}}^{2}{\mu}^{2}\\
+\mbox{}-8\,\beta_{a}\,\beta_{b}\,{d}^{2}-16\,\beta_{a}\,\beta_{b}\,dg-8\,\beta_{a}\,\beta_{b}\,{g}^{2}-4\,{\beta_{b}}^{2}{\theta}^{2}+{d}^{4}+4\,{d}^{3}g+6\,{d}^{2}{g}^{2}-2\,{d}^{2}\mu\,\theta+4\,d{g}^{3}-4\,dg\mu\,\theta+{g}^{4}-2\,{g}^{2}\mu\,\theta+{\mu}^{2}{\theta}^{2}}}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{1d}{}{}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{simplify(s__i); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{-(8*beta__a^2*beta__b*f__i-8*beta__a^2*beta__b*nu__b-4*beta__a^2*f__j*mu+4*beta__a^2*mu*nu__b+4*beta__a*beta__b*c__i*d+4*beta__a*beta__b*c__i*g-4*beta__a*beta__b*d*nu__a-4*beta__a*beta__b*g*nu__a-2*beta__a*c__j*d*mu-2*beta__a*c__j*g*mu-2*beta__a*d^2*f__i+2*beta__a*d^2*nu__b-4*beta__a*d*f__i*g+4*beta__a*d*g*nu__b+2*beta__a*d*mu*nu__a-2*beta__a*f__i*g^2+2*beta__a*g^2*nu__b+2*beta__a*g*mu*nu__a-2*beta__b*c__j*d*theta-2*beta__b*c__j*g*theta+2*beta__b*d*nu__a*theta-2*beta__b*f__i*theta^2+2*beta__b*g*nu__a*theta+2*beta__b*nu__b*theta^2-c__i*d^3-3*c__i*d^2*g-3*c__i*d*g^2+c__i*d*mu*theta-c__i*g^3+c__i*g*mu*theta+d^3*nu__a-d^2*f__j*theta+3*d^2*g*nu__a+d^2*nu__b*theta-2*d*f__j*g*theta+3*d*g^2*nu__a+2*d*g*nu__b*theta-d*mu*nu__a*theta-f__j*g^2*theta+f__j*mu*theta^2+g^3*nu__a+g^2*nu__b*theta-g*mu*nu__a*theta-mu*nu__b*theta^2)/(16*beta__a^2*beta__b^2-4*beta__a^2*mu^2-8*beta__a*beta__b*d^2-16*beta__a*beta__b*d*g-8*beta__a*beta__b*g^2-4*beta__b^2*theta^2+d^4+4*d^3*g+6*d^2*g^2-2*d^2*mu*theta+4*d*g^3-4*d*g*mu*theta+g^4-2*g^2*mu*theta+mu^2*theta^2)}{\[\displaystyle -{\frac {8\,{\beta_{a}}^{2}\beta_{b}\,f_{i}-8\,{\beta_{a}}^{2}\beta_{b}\,\nu_{b}-4\,{\beta_{a}}^{2}f_{j}\,\mu+4\,{\beta_{a}}^{2}\mu\,\nu_{b}+4\,\beta_{a}\,\beta_{b}\,c_{i}\,d+4\,\beta_{a}\,\beta_{b}\,c_{i}\,g-4\,\beta_{a}\,\beta_{b}\,d\nu_{a}-4\,\beta_{a}\,\beta_{b}\,g\nu_{a}-2\,\beta_{a}\,c_{j}\,d\mu-2\,\beta_{a}\,c_{j}\,g\mu-2\,\beta_{a}\,{d}^{2}f_{i}\\
+\mbox{}+2\,\beta_{a}\,{d}^{2}\nu_{b}-4\,\beta_{a}\,df_{i}\,g+4\,\beta_{a}\,dg\nu_{b}+2\,\beta_{a}\,d\mu\,\nu_{a}-2\,\beta_{a}\,f_{i}\,{g}^{2}+2\,\beta_{a}\,{g}^{2}\nu_{b}+2\,\beta_{a}\,g\mu\,\nu_{a}-2\,\beta_{b}\,c_{j}\,d\theta-2\,\beta_{b}\,c_{j}\,g\theta+2\,\beta_{b}\,d\nu_{a}\,\theta-2\,\beta_{b}\,f_{i}\,{\theta}^{2}+2\,\beta_{b}\,g\nu_{a}\,\theta+2\,\beta_{b}\,\nu_{b}\,{\theta}^{2}-c_{i}\,{d}^{3}-3\,c_{i}\,{d}^{2}g-3\,c_{i}\,d{g}^{2}+c_{i}\,d\mu\,\theta\\
+\mbox{}-c_{i}\,{g}^{3}+c_{i}\,g\mu\,\theta+{d}^{3}\nu_{a}-{d}^{2}f_{j}\,\theta+3\,{d}^{2}g\nu_{a}+{d}^{2}\nu_{b}\,\theta-2\,df_{j}\,g\theta+3\,d{g}^{2}\nu_{a}+2\,dg\nu_{b}\,\theta-d\mu\,\nu_{a}\,\theta-f_{j}\,{g}^{2}\theta+f_{j}\,\mu\,{\theta}^{2}+{g}^{3}\nu_{a}+{g}^{2}\nu_{b}\,\theta-g\mu\,\nu_{a}\,\theta-\mu\,\nu_{b}\,{\theta}^{2}}{16\,{\beta_{a}}^{2}{\beta_{b}}^{2}-4\,{\beta_{a}}^{2}{\mu}^{2}\\
+\mbox{}-8\,\beta_{a}\,\beta_{b}\,{d}^{2}-16\,\beta_{a}\,\beta_{b}\,dg-8\,\beta_{a}\,\beta_{b}\,{g}^{2}-4\,{\beta_{b}}^{2}{\theta}^{2}+{d}^{4}+4\,{d}^{3}g+6\,{d}^{2}{g}^{2}-2\,{d}^{2}\mu\,\theta+4\,d{g}^{3}-4\,dg\mu\,\theta+{g}^{4}-2\,{g}^{2}\mu\,\theta+{\mu}^{2}{\theta}^{2}}}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{v__a := 1; 1}{\[\]}
+\newpage
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{v__a := 1}{\[\displaystyle v_{a}\, := \,1\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{nu__b := 1; 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{nu__b := 1}{\[\displaystyle \nu_{b}\, := \,1\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{c__i := 0; 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{c__i := 0}{\[\displaystyle c_{i}\, := \,0\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{c__j := c__i}{\[c_{j}\, := \,c_{i}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{c__j := 0}{\[\displaystyle c_{j}\, := \,0\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{f__i := c__i}{\[f_{i}\, := \,c_{i}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{f__i := 0}{\[\displaystyle f_{i}\, := \,0\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{f__j := c__i}{\[f_{j}\, := \,c_{i}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{f__j := 0}{\[\displaystyle f_{j}\, := \,0\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{beta__a := 1}{\[\beta_{a}\, := \,1\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{beta__a := 1}{\[\displaystyle \beta_{a}\, := \,1\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{beta__b := 1}{\[\beta_{b}\, := \,1\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{beta__b := 1}{\[\displaystyle \beta_{b}\, := \,1\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{q__i}{\[q_{i}\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{-(d^3+3*d^2*g+d^2*mu+3*d*g^2+2*d*g*mu-d*mu*theta+g^3+g^2*mu-g*mu*theta-mu^2*theta+2*d^2+4*d*g+2*d*mu+2*d*theta+2*g^2+2*g*mu+2*g*theta+2*mu^2-4*d-4*g+4*theta-8)/(d^4+4*d^3*g+6*d^2*g^2-2*d^2*mu*theta+4*d*g^3-4*d*g*mu*theta+g^4-2*g^2*mu*theta+mu^2*theta^2-8*d^2-16*d*g-8*g^2-4*mu^2-4*theta^2+16)}{\[\displaystyle -{\frac {{d}^{3}+3\,{d}^{2}g+{d}^{2}\mu+3\,d{g}^{2}+2\,dg\mu-d\mu\,\theta+{g}^{3}+{g}^{2}\mu-g\mu\,\theta-{\mu}^{2}\theta+2\,{d}^{2}+4\,dg+2\,d\mu+2\,d\theta+2\,{g}^{2}+2\,g\mu\\
+\mbox{}+2\,g\theta+2\,{\mu}^{2}-4\,d-4\,g+4\,\theta-8}{{d}^{4}+4\,{d}^{3}g+6\,{d}^{2}{g}^{2}-2\,{d}^{2}\mu\,\theta+4\,d{g}^{3}-4\,dg\mu\,\theta+{g}^{4}-2\,{g}^{2}\mu\,\theta+{\mu}^{2}{\theta}^{2}-8\,{d}^{2}-16\,dg-8\,{g}^{2}\\
+\mbox{}-4\,{\mu}^{2}-4\,{\theta}^{2}+16}}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{simplify(q__i); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{-(d+g+mu+2)/(d^2+2*d*g+g^2-mu*theta-2*mu-2*theta-4)}{\[\displaystyle -{\frac {d+g+\mu+2}{{d}^{2}+2\,dg+{g}^{2}-\mu\,\theta-2\,\mu-2\,\theta-4}}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{simplify(q__j); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{-(d+g+mu+2)/(d^2+2*d*g+g^2-mu*theta-2*mu-2*theta-4)}{\[\displaystyle -{\frac {d+g+\mu+2}{{d}^{2}+2\,dg+{g}^{2}-\mu\,\theta-2\,\mu-2\,\theta-4}}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{simplify(s__i); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{-(d+g+theta+2)/(d^2+2*d*g+g^2-mu*theta-2*mu-2*theta-4)}{\[\displaystyle -{\frac {d+g+\theta+2}{{d}^{2}+2\,dg+{g}^{2}-\mu\,\theta-2\,\mu-2\,\theta-4}}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{simplify(s__j); 1}{\[\]}
+\end{mapleinput}
+\mapleresult
+\begin{maplelatex}
+\mapleinline{inert}{2d}{-(d+g+theta+2)/(d^2+2*d*g+g^2-mu*theta-2*mu-2*theta-4)}{\[\displaystyle -{\frac {d+g+\theta+2}{{d}^{2}+2\,dg+{g}^{2}-\mu\,\theta-2\,\mu-2\,\theta-4}}\]}
+\end{maplelatex}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\begin{maplegroup}
+\begin{mapleinput}
+\mapleinline{active}{2d}{}{\[\]}
+\end{mapleinput}
+\end{maplegroup}
+\end{document}

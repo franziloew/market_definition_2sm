@@ -1,0 +1,50 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+\section{Introduction}
+
+
+\subsection{A semi structural Model}
+In this section we develop a a differentiated Cournot duopoly where two platforms chose quantity simultaneously.
+Given utility functions of consumers, we derive demand of the two sides of the market. After that we obtain optimal quantities from the assumption that two platforms maximize their profit by chosing their qunatity simultaneously, taking into account that the demand on both market sides are interdependent. 
+
+hildebrand: After specifying this structural model, I derive the reduced-form revenue equations from equilibrium prices and number of users, explain how they can be estimated by Ordinary Least Squares and turn to the most important problem of identification in order to draw conclusions on the coefficients of the original structural model, in particular on the existence of network effects.
+
+\subsection{Utility and Demand}
+We adapt the model of a two-sided market developed by Armstrong(2006) with two competing platforms assuming for exogenous reasons that each agent chooses to join a single platform.\footnote{See also Kaiser and Wright (2006) for a similar approach.} There are two groups of agents, $j= a, b$ and two platforms, $ i = 1,2$, which enable the two groups to interact. The utility of each group of consumers if they join platform $i$ is respectively given by 
+
+\begin{equation}
+u^a_i = ds_i-\theta p_i+\nu^a+\epsilon^a_i-t_1*x
+\end{equation} and \begin{equation}
+ u^b_i = gq_i-\mu r_i+\nu_a+\epsilon^b_i-t_2*x
+\end{equation}
+
+where $p_i$ and $r_i$ are the platform's prices for the two sides $a$ and $b$ respectiveliy, $q_i$ and $s_i$ are the number of users on the other market side of platform $i$ and $d$ and $g$ measure their impact on the utility. $d$ and $g$ therefore describe the network effects while the intensity of competition is measured by the parameters $\theta$ and $\mu$. $\nu^a$ and $\nu^b$ represent the unobserved fixed-effect of a consumer. $t$ is a measure of the individual transport cost which cpatures the influence of product differentiation and the error term $\epsilon_i$ is i.i.d.. Assuming $x$ is uniformly distributed between 0 and 1 and using the fact that $q_j=1-q_i$ and $s_j=1-s_i$, gives the implicit Hotelling expression for market shares. 
+
+\begin{equation}
+ q^i=\frac{1}{2}+\frac{d(2s_i-1)+\theta*(p_j-p_i)}{2t_1}
+\end{equation} and \begin{equation}
+s^i=\frac{1}{2}+\frac{g(2q_i-1)+\mu*(r_j-r_i)}{2t_2} \end{equation} 
+
+Keeping everything fixed, platform $i$'s market share on market side $a$ increases if the number of users in market side $b$ by factor $d/t$. With a stronger indirect network effect $d$, the effect of size on the other market side increases. The opposite is true for $t$ which measures the influence of product differenciation. To keep things simple, we assume $t_1=t_2=1/2$. Rational expectations imply unique demands, which are the simulteaneous solutions to (1)-(2). 
+
+The profits of platform $i$ are assumed to be
+\begin{equation}
+\pi_i=(p_i-f_i)q_i+(r_i-c_i)s_i-F_i
+\end{equation}
+
+where $f_i$ and $c_i$ are the marginal cost on market side $a$ and $b$ respectively, and $F_i$ is other fixed cost. Each platform maximizes its profits by setting $p_i$ and $r_i$ given the choice of the rival. 
+Taking the first order conditions after substituting the unique demands for $i=1,2$ into (5) following equilibrium conditions hold. 
+\begin{equation}
+p_i=\frac{d(s_i-s_j)+\theta(p_j+f_i)+\frac{1}{2}}{2\theta}
+\end{equation} and 
+\begin{equation}
+r_i=\frac{g(q_i-q_j)+\mu(r_j+c_i)+\frac{1}{2}}{2\mu}
+\end{equation}
+
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+\section{Introduction}
+
+
+\subsection{A semi structural Model}
+In this section we develop a a differentiated Cournot duopoly where two platforms chose quantity simultaneously.
+Given utility functions of consumers, we derive demand of the two sides of the market. After that we obtain optimal quantities from the assumption that two platforms maximize their profit by chosing their qunatity simultaneously, taking into account that the demand on both market sides are interdependent. 
+
+hildebrand: After specifying this structural model, I derive the reduced-form revenue equations from equilibrium prices and number of users, explain how they can be estimated by Ordinary Least Squares and turn to the most important problem of identification in order to draw conclusions on the coefficients of the original structural model, in particular on the existence of network effects.
+
+\subsection{Utility and Demand}
+We adapt the model of a two-sided market developed by Armstrong(2006) with two competing platforms assuming for exogenous reasons that each agent chooses to join a single platform. There are two groups of agents, $j= a, b$ and two platforms, $ i = 1,2$, which enable the two groups to interact. The utility of each group of consumers if they join platform $i$ is respectively given by 
+
+$$ u^i_a = ds_i-\theta p_i+\nu_a+\epsilon^i_a-t_1*x$$ and $$ u^i_b = gq_i-\mu r_i+\nu_b+\epsilon^j_b-t_2*x$$
+
+where $p_i$ and $r_i$ are the platform's prices for the two sides $a$ and $b$ respectiveliy, $q_i$ and $s_i$ are the number of users on the other market side of platform $i$ and $d$ and $g$ measure their impact on the utility. $d$ and $g$ therefore describe the network effects while the intensity of competition (or the inverse of the extent of product differentiation) is measured by the parameters $\theta$ and $\mu$. $\nu_a$ and $\nu_b$ represent the consumer type which captures the preference of an individual consumer for a platform $i$ on market side $a$ and $b$ respectively. $t$ is a measure of the individual transport cost which cpatures the preference of an individual for platform $i$. Assuming $x$ is uniformly distributed between 0 and 1 and using the fact that $q^j=1-q^i$ and $s^j=1-s^i$, gives the implicit Hotelling expression for market shares. 
+
+$$q^i=\frac{1}{2}+\frac{d(2s_i-1)+\theta*(p_j-p_i)}{2t_1}$$ $$s^i=\frac{1}{2}+\frac{g(2q_i-1)+\mu*(r_j-r_i)}{2t_2}$$
+
+Keeping everything fixed, platform $i$'s market share on market side $a$ increases if the number of users in market side $b$ by factor $d/t$. With a stronger indirect network effect $d$, the effect of size on the other market side increases. The opposite is true for $t$ which measures the influence of product differenciation. To keep things simple, we assume $t_1=t_2=1/2$. Rational expectations imply unique demands, which are the simulteaneous solutions to (-)-(-). 
+
+The profits of platform $i$ are assumed to be
+$$\pi_i=(p_i-f_i)q_i+(r_i-c_i)s_i-F_i$$ 
+
+
+Suppose that $\nu_j$ is distributed according to the cumulative distribution function $F_j(\nu_j)$ and that $u_j$ is continuous and increasing in $\nu_j$. Without loss of generality $\nu_j$ denotes a rank-ordering of the consumer types on side $j$. Users on the two sides maximize utility, given the expected network size on the other side in equilibrium. Consumers will participate if and only if their utility is non-negative. 
+Assuming an interior solution, for each side there exists an indifferent consumer of type $\nu^*_j$ s.t. $\nu^*_a=\theta p_i-ds_i$ and  $\nu^*_b=\mu r_i-gq_i$. \footnote{In this context, the interior solutions means that $0<\nu^*_a\nu^*_b<1$} Consumers on side $a$ will join if and only if their type $\nu_a$ is bigger than $\nu^*_a$, i.e. if and only if $\nu_a \geq \nu^*_a = \theta p_1-ds_i$. The same holds symmetrically for side $b$. The implicit system of demand is then given by $q_i=1-F_a(\nu^*_a)=1-F_a(\theta p_i-ds_i)$ and $s_i=1-F_b(\nu^*_b)=1-F_b(\mu r_i-gq_i)$ which can be simplified to: $$ q_i=1-F_a(\theta p_i-dF_b(r_i-gq_i))$$
+
+
+\end{document}

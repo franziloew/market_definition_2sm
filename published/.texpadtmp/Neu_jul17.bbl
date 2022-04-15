@@ -1,0 +1,1989 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{ackerberg_quantifying_2006}{report}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=6c9250fee55dad4605a4e86dcc1715be}{%
+           family={Ackerberg},
+           familyi={A\bibinitperiod},
+           given={Daniel\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0a50529a83288b6963d0a8cc885b0069}{%
+           family={Gowrisankaran},
+           familyi={G\bibinitperiod},
+           given={Gautam},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {National Bureau of Economic Research}%
+      }
+      \strng{namehash}{f0cd20df098b6c729ce8f5ce18c2a1d7}
+      \strng{fullhash}{f0cd20df098b6c729ce8f5ce18c2a1d7}
+      \strng{bibnamehash}{f0cd20df098b6c729ce8f5ce18c2a1d7}
+      \strng{authorbibnamehash}{f0cd20df098b6c729ce8f5ce18c2a1d7}
+      \strng{authornamehash}{f0cd20df098b6c729ce8f5ce18c2a1d7}
+      \strng{authorfullhash}{f0cd20df098b6c729ce8f5ce18c2a1d7}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We seek to determine the causes and magnitudes of network externalities for the automated clearinghouse (ACH) electronic payments system. We construct an equilibrium model of customer and bank adoption of ACH. We structurally estimate the parameters of the model using an indirect inference procedure and panel data. The parameters are identified from exogenous variation in the adoption decisions of banks based outside the network and other factors. We find that most of the impediment to ACH adoption is from large customer fixed costs of adoption. Policies to provide moderate subsidies to customers and larger subsidies to banks for ACH adoption could increase welfare significantly.}
+      \field{month}{8}
+      \field{number}{12488}
+      \field{title}{Quantifying {Equilibrium} {Network} {Externalities} in the {ACH} {Banking} {Industry}}
+      \field{type}{Working {Paper}}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{year}{2006}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb NBER Full Text PDF:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/26SGPGXH/Ackerberg und Gowrisankaran - 2006 - Quantifying Equilibrium Network Externalities in t.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nber.org/papers/w12488
+      \endverb
+      \verb{url}
+      \verb http://www.nber.org/papers/w12488
+      \endverb
+    \endentry
+    \entry{alexandrov_antitrust_2011}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=2095b7d2365678c69dfbe7c20796f9ff}{%
+           family={Alexandrov},
+           familyi={A\bibinitperiod},
+           given={Alexei},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2b49b09e0f4abba8c8a16108686add6d}{%
+           family={Deltas},
+           familyi={D\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=3a64b8fc61e0d992d17a7d5426e26561}{%
+           family={Spulber},
+           familyi={S\bibinitperiod},
+           given={Daniel\bibnamedelima F.},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{7f69120d4aba28d70a61028c99706b73}
+      \strng{fullhash}{7f69120d4aba28d70a61028c99706b73}
+      \strng{bibnamehash}{7f69120d4aba28d70a61028c99706b73}
+      \strng{authorbibnamehash}{7f69120d4aba28d70a61028c99706b73}
+      \strng{authornamehash}{7f69120d4aba28d70a61028c99706b73}
+      \strng{authorfullhash}{7f69120d4aba28d70a61028c99706b73}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article extends antitrust analysis to two-sided markets in which a virtual monopolist competes with local bricks-and-mortar dealers. The discussion examines the market power of an Internet market maker as well as an Internet matchmaker. The analysis shows that equilibrium in a two-sided market can be characterized as a one-sided market in which transaction demand depends on the bid-ask spread of the central market maker. This allows for a straightforward extension of critical demand elasticity and critical loss analysis from one-sided markets to two-sided markets, with antitrust tests based on the hypothetical monopolist's bid-ask spread. Antitrust analysis of a one-sided market also carries over to a two-sided market with a matchmaker where antitrust tests are based on the sum of participation fees.}
+      \field{issn}{1744-6414, 1744-6422}
+      \field{journaltitle}{Journal of Competition Law and Economics}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{Antitrust and {Competition} in {Two}-{Sided} {Markets}}
+      \field{urlday}{3}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{volume}{7}
+      \field{year}{2011}
+      \field{urldateera}{ce}
+      \field{pages}{775\bibrangedash 812}
+      \range{pages}{38}
+      \verb{doi}
+      \verb 10.1093/joclec/nhr012
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/9WVSWFQE/Alexandrov et al. - 2011 - Antitrust and Competition in Two-Sided Markets.pdf:application/pdf;Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/NPSKPTWR/775.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://jcle.oxfordjournals.org/content/7/4/775
+      \endverb
+      \verb{url}
+      \verb http://jcle.oxfordjournals.org/content/7/4/775
+      \endverb
+    \endentry
+    \entry{argentesi_estimating_2007}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=b97f607b25221ec3d9421e6c346ec01c}{%
+           family={Argentesi},
+           familyi={A\bibinitperiod},
+           given={Elena},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a9e501bf33cd1bc33b2b14c20f45fb08}{%
+           family={Filistrucchi},
+           familyi={F\bibinitperiod},
+           given={Lapo},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b1db417c92b3e0d70232ad0cc0850035}
+      \strng{fullhash}{b1db417c92b3e0d70232ad0cc0850035}
+      \strng{bibnamehash}{b1db417c92b3e0d70232ad0cc0850035}
+      \strng{authorbibnamehash}{b1db417c92b3e0d70232ad0cc0850035}
+      \strng{authornamehash}{b1db417c92b3e0d70232ad0cc0850035}
+      \strng{authorfullhash}{b1db417c92b3e0d70232ad0cc0850035}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The newspaper industry is a two-sided market: the readers market and the advertising market are closely linked by inter-market network externalities. We estimate market power in the Italian newspaper industry by building a structural model which encompasses a demand estimation for differentiated products on both sides of the market and where profit maximization by the publishing firms takes into account the interaction between them. The question that we address is whether the observed price pattern is consistent with profit-maximizing behaviour by competing firms or is instead driven by some form of (tacit or explicit) coordinated practice. Copyright © 2007 John Wiley \& Sons, Ltd.}
+      \field{journaltitle}{Journal of Applied Econometrics}
+      \field{number}{7}
+      \field{shorttitle}{Estimating market power in a two-sided market}
+      \field{title}{Estimating market power in a two-sided market: {The} case of newspapers}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{22}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{1247\bibrangedash 1266}
+      \range{pages}{20}
+      \verb{file}
+      \verb RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/GTW7AKKD/v22y2007i7p1247-1266.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/jae/japmet/v22y2007i7p1247-1266.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/jae/japmet/v22y2007i7p1247-1266.html
+      \endverb
+    \endentry
+    \entry{armstrong_competition_2006}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=2e381f0784053652dae51c069503bf47}{%
+           family={Armstrong},
+           familyi={A\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2e381f0784053652dae51c069503bf47}
+      \strng{fullhash}{2e381f0784053652dae51c069503bf47}
+      \strng{bibnamehash}{2e381f0784053652dae51c069503bf47}
+      \strng{authorbibnamehash}{2e381f0784053652dae51c069503bf47}
+      \strng{authornamehash}{2e381f0784053652dae51c069503bf47}
+      \strng{authorfullhash}{2e381f0784053652dae51c069503bf47}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1756-2171}
+      \field{journaltitle}{The RAND Journal of Economics}
+      \field{number}{3}
+      \field{title}{Competition in two-sided markets}
+      \field{volume}{37}
+      \field{year}{2006}
+      \field{pages}{668\bibrangedash 691}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1111/j.1756-2171.2006.tb00037.x
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1111/j.1756-2171.2006.tb00037.x
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1111/j.1756-2171.2006.tb00037.x
+      \endverb
+    \endentry
+    \entry{box_time_2008}{book}{}
+      \name{author}{3}{}{%
+        {{uniquename=2,uniquepart=given,hash=55911e7dd73a9ab7592c871dd1115249}{%
+           family={Box},
+           familyi={B\bibinitperiod},
+           given={George\bibnamedelimb E.\bibnamedelimi P.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=2}}%
+        {{uniquename=0,uniquepart=base,hash=0b4c326c6f8c91b78b2d8f9730425439}{%
+           family={Jenkins},
+           familyi={J\bibinitperiod},
+           given={Gwilym\bibnamedelima M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=64d31e8a99cec253b4fe363ecff48428}{%
+           family={Reinsel},
+           familyi={R\bibinitperiod},
+           given={Gregory\bibnamedelima C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Hoboken, NJ}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{1dcfa80011a9fb7e0cb755811f68fde2}
+      \strng{fullhash}{1dcfa80011a9fb7e0cb755811f68fde2}
+      \strng{bibnamehash}{1dcfa80011a9fb7e0cb755811f68fde2}
+      \strng{authorbibnamehash}{1dcfa80011a9fb7e0cb755811f68fde2}
+      \strng{authornamehash}{1dcfa80011a9fb7e0cb755811f68fde2}
+      \strng{authorfullhash}{1dcfa80011a9fb7e0cb755811f68fde2}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{4}
+      \field{isbn}{978-0-470-27284-8}
+      \field{series}{Wiley series in probability and statistics}
+      \field{shorttitle}{Time series analysis}
+      \field{title}{Time series analysis: forecasting and control}
+      \field{year}{2008}
+      \keyw{*Time-series analysis / Prediction theory / Transfer functions / Feedback control systems -- Mathematical models,*Zeitreihenanalyse / Kontrolltheorie / Rückkopplung / Mathematisches Modell}
+    \endentry
+    \entry{cabyova_impact_2014}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=c397c15762261d25b93782c9c1207c12}{%
+           family={Cabyova},
+           familyi={C\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=6b9803d99b0143c6d3938cae75bcbe32}{%
+           family={Krajcovic},
+           familyi={K\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f955606a89787c95cd42ece145336828}{%
+           family={Ptacin},
+           familyi={P\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Stef 92 Technology}%
+      }
+      \strng{namehash}{0f1d434591e6a2c293d6943e612a71f6}
+      \strng{fullhash}{0f1d434591e6a2c293d6943e612a71f6}
+      \strng{bibnamehash}{0f1d434591e6a2c293d6943e612a71f6}
+      \strng{authorbibnamehash}{0f1d434591e6a2c293d6943e612a71f6}
+      \strng{authornamehash}{0f1d434591e6a2c293d6943e612a71f6}
+      \strng{authorfullhash}{0f1d434591e6a2c293d6943e612a71f6}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Monitored incomes from the sale of advertising space in print media have continuously declined since 2009, and despite a slight increase in 2013, the volume of sold advertising in newspapers and magazines significantly lags behind the advertising in the electronic media, especially in television. And it is despite the fact that several studies conducted on the effectiveness and efficiency of the so-called print advertising confirm that advertising in newspapers and magazines positively influences buying behavior of consumers. One of the causes of the low volume sales of advertising space in print media can be considered as decreasing marketability of newspapers and magazines and easier access to their online editions, which are for the reader in most cases free, respectively at low price compared to the annual pre-paid printed edition of the periodical. The paper analyzes the way of use of the advertising space in print media and its electronic editions on the market for mobile operators. It examines the attractiveness of advertising space in newspapers and magazines in comparison to their electronic version. The aim is to evaluate the impact of digitization on the use of advertising space in print media and evaluate the potential of advertising space in online editions of these media in terms of advertisers}
+      \field{booktitle}{{SGEM}2014 {Conference} on {Psychology} and {Psychiatry}, {Sociology} and {Healthcare}, {Education}}
+      \field{isbn}{978-619-7105-23-0}
+      \field{title}{{THE} {IMPACT} {OF} {DIGITIZATION} {ON} {ADVERTISING} {IN} {PRINT} {MEDIA}}
+      \field{urlday}{26}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{2}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{969\bibrangedash 976 pp}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.5593/sgemsocial2014/B12/S2.124
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.5593/sgemsocial2014/B12/S2.124
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.5593/sgemsocial2014/B12/S2.124
+      \endverb
+      \keyw{2014,advertising,digitization,internet,magazines,newspapers}
+    \endentry
+    \entry{caillaud_chicken_2003}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=5fa3ef1e684c3fdaf8c579e50678a0d2}{%
+           family={Caillaud},
+           familyi={C\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=87795c52871c3960a3458857421f7727}{%
+           family={Jullien},
+           familyi={J\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{03008b6c501f96e495a8a0717e3e84b7}
+      \strng{fullhash}{03008b6c501f96e495a8a0717e3e84b7}
+      \strng{bibnamehash}{03008b6c501f96e495a8a0717e3e84b7}
+      \strng{authorbibnamehash}{03008b6c501f96e495a8a0717e3e84b7}
+      \strng{authornamehash}{03008b6c501f96e495a8a0717e3e84b7}
+      \strng{authorfullhash}{03008b6c501f96e495a8a0717e3e84b7}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We analyze a model of imperfect price competition between intermediation service providers. We insist on features that are relevant for informational intermediation via the Internet: the presence of indirect network externalities, the possibility of using the nonexclusive services of several intermediaries, and the widespread practice of price discrimination based on users' identity and on usage. Efficient market structures emerge in equilibrium, as well as some specific form of inefficient structures. Intermediaries have incentives to propose non-exclusive services, as this moderates competition and allows them to exert market power. We analyze in detail the pricing and business strategies followed by intermediation services providers. Copyright 2003 by the RAND Corporation.}
+      \field{issn}{0741-6261}
+      \field{journaltitle}{RAND Journal of Economics}
+      \field{number}{2}
+      \field{shorttitle}{Chicken \& {Egg}}
+      \field{title}{Chicken \& {Egg}: {Competition} among {Intermediation} {Service} {Providers}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{volume}{34}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \field{pages}{309\bibrangedash 28}
+      \range{pages}{20}
+      \verb{file}
+      \verb RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/GD5R58G2/v_3a34_3ay_3a2003_3ai_3a2_3ap_3a309-28.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://econpapers.repec.org/article/rjerandje/v_3a34_3ay_3a2003_3ai_3a2_3ap_3a309-28.htm
+      \endverb
+      \verb{url}
+      \verb http://econpapers.repec.org/article/rjerandje/v_3a34_3ay_3a2003_3ai_3a2_3ap_3a309-28.htm
+      \endverb
+    \endentry
+    \entry{chandra_mergers_2009}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=722c8da44ca1bb8aaad46597b11ad414}{%
+           family={Chandra},
+           familyi={C\bibinitperiod},
+           given={Ambarish},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c5a4479df7cf7db935e6023bf5709beb}{%
+           family={Collard-Wexler},
+           familyi={C\bibinithyphendelim W\bibinitperiod},
+           given={Allan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{3e10ded8102e2daadbbfbce89d951ab0}
+      \strng{fullhash}{3e10ded8102e2daadbbfbce89d951ab0}
+      \strng{bibnamehash}{3e10ded8102e2daadbbfbce89d951ab0}
+      \strng{authorbibnamehash}{3e10ded8102e2daadbbfbce89d951ab0}
+      \strng{authornamehash}{3e10ded8102e2daadbbfbce89d951ab0}
+      \strng{authorfullhash}{3e10ded8102e2daadbbfbce89d951ab0}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In this paper, we study mergers in two-sided industries and, in particular, the effects of mergers in the newspaper industry. We present a model which shows that mergers in two-sided markets may not necessarily lead to higher prices for either side of the market. We test our conclusions by examining a spate of mergers in the Canadian newspaper industry in the late 1990s. Specifically, we analyze prices for both circulation and advertising to try to understand the impact that these mergers had on consumer welfare. We find that greater concentration did not lead to higher prices for either newspaper subscribers or advertisers.}
+      \field{issn}{1530-9134}
+      \field{journaltitle}{Journal of Economics \& Management Strategy}
+      \field{number}{4}
+      \field{shorttitle}{Mergers in {Two}-{Sided} {Markets}}
+      \field{title}{Mergers in {Two}-{Sided} {Markets}: {An} {Application} to the {Canadian} {Newspaper} {Industry}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{18}
+      \field{year}{2009}
+      \field{urldateera}{ce}
+      \field{pages}{1045\bibrangedash 1070}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1111/j.1530-9134.2009.00237.x
+      \endverb
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/Q2S4BAT6/abstract.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://onlinelibrary.wiley.com/doi/10.1111/j.1530-9134.2009.00237.x/abstract
+      \endverb
+      \verb{url}
+      \verb http://onlinelibrary.wiley.com/doi/10.1111/j.1530-9134.2009.00237.x/abstract
+      \endverb
+    \endentry
+    \entry{dewenter_essays_2004}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=ff4ecf694d2adc3bb76289eecde5c611}{%
+           family={Dewenter},
+           familyi={D\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Nomos}%
+      }
+      \strng{namehash}{ff4ecf694d2adc3bb76289eecde5c611}
+      \strng{fullhash}{ff4ecf694d2adc3bb76289eecde5c611}
+      \strng{bibnamehash}{ff4ecf694d2adc3bb76289eecde5c611}
+      \strng{authorbibnamehash}{ff4ecf694d2adc3bb76289eecde5c611}
+      \strng{authornamehash}{ff4ecf694d2adc3bb76289eecde5c611}
+      \strng{authorfullhash}{ff4ecf694d2adc3bb76289eecde5c611}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-8329-0697-9}
+      \field{month}{1}
+      \field{note}{Google-Books-ID: O0FiAAAAMAAJ}
+      \field{title}{Essays on {Interrelated} {Media} {Markets}}
+      \field{year}{2004}
+    \endentry
+    \entry{dixit_model_1979}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f84da1f0789e9be1355e60ec6c608482}{%
+           family={Dixit},
+           familyi={D\bibinitperiod},
+           given={Avinash},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f84da1f0789e9be1355e60ec6c608482}
+      \strng{fullhash}{f84da1f0789e9be1355e60ec6c608482}
+      \strng{bibnamehash}{f84da1f0789e9be1355e60ec6c608482}
+      \strng{authorbibnamehash}{f84da1f0789e9be1355e60ec6c608482}
+      \strng{authornamehash}{f84da1f0789e9be1355e60ec6c608482}
+      \strng{authorfullhash}{f84da1f0789e9be1355e60ec6c608482}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper analyzes a model of duopoly with fixed costs. Leadership by one "established" firm may yield an outcome in which the second is inactive, but entry prevention is not a prior constraint. We find that two aspects of product differentiation have distinct effects: an absolute advantage in demand for the established firm makes entry harder, but a lower cross-price effect facilitates it. In the basic model we maintain the same quantity after entry. An extension of the model deals with the case where the threat of a predatory output increase after entry is made credible by carrying excess capacity prior to entry.}
+      \field{issn}{0361-915X}
+      \field{journaltitle}{The Bell Journal of Economics}
+      \field{number}{1}
+      \field{title}{A {Model} of {Duopoly} {Suggesting} a {Theory} of {Entry} {Barriers}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{10}
+      \field{year}{1979}
+      \field{urldateera}{ce}
+      \field{pages}{20\bibrangedash 32}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.2307/3003317
+      \endverb
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/3003317
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/3003317
+      \endverb
+    \endentry
+    \entry{emch_market_2006}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=44a3e6d065951d9aa99bead9c6b504ae}{%
+           family={Emch},
+           familyi={E\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4c10aece2e91aae966a83bd293d11c39}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={T.\bibnamedelimi Scott},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{390d49bd90c45d2f6ca727b6d000d28e}
+      \strng{fullhash}{390d49bd90c45d2f6ca727b6d000d28e}
+      \strng{bibnamehash}{390d49bd90c45d2f6ca727b6d000d28e}
+      \strng{authorbibnamehash}{390d49bd90c45d2f6ca727b6d000d28e}
+      \strng{authornamehash}{390d49bd90c45d2f6ca727b6d000d28e}
+      \strng{authorfullhash}{390d49bd90c45d2f6ca727b6d000d28e}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We discuss competition among payment card networks, and in particular how antitrust practitioners might approach questions of market definition and market power in these markets. Application of the hypothetical monopolist test to define markets, and the use of traditional metrics to measure market power, may be less straightforward for card networks than for many markets. The "two-sidedness" of the market does not, however, overturn the basic logic of the hypothetical monopolist test or traditional measurements of market power. We demonstrate some practical ways to apply these antitrust principles to competition among payment card networks.}
+      \field{issn}{1446-9022}
+      \field{journaltitle}{Review of Network Economics}
+      \field{number}{1}
+      \field{title}{Market {Definition} and {Market} {Power} in {Payment} {Card} {Networks}}
+      \field{urlday}{3}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{volume}{5}
+      \field{year}{2006}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2202/1446-9022.1088
+      \endverb
+      \verb{urlraw}
+      \verb https://www.degruyter.com/view/j/rne.2006.5.issue-1/rne.2006.5.1.1088/rne.2006.5.1.1088.xml
+      \endverb
+      \verb{url}
+      \verb https://www.degruyter.com/view/j/rne.2006.5.issue-1/rne.2006.5.1.1088/rne.2006.5.1.1088.xml
+      \endverb
+    \endentry
+    \entry{evans_antitrust_2003}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=8c243ec63eae723c8373f506fcffd3b7}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{fullhash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{bibnamehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{authorbibnamehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{authornamehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{authorfullhash}{8c243ec63eae723c8373f506fcffd3b7}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0741-9457}
+      \field{journaltitle}{Yale Journal on Regulation}
+      \field{month}{1}
+      \field{number}{2}
+      \field{title}{The {Antitrust} {Economics} of {Multi}-{Sided} {Platform} {Markets}}
+      \field{volume}{20}
+      \field{year}{2003}
+      \verb{file}
+      \verb "The Antitrust Economics of Multi-Sided Platform Markets" by David S. Evans:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/Z8SPAGTV/4.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://digitalcommons.law.yale.edu/yjreg/vol20/iss2/4
+      \endverb
+      \verb{url}
+      \verb http://digitalcommons.law.yale.edu/yjreg/vol20/iss2/4
+      \endverb
+    \endentry
+    \entry{evans_two-sided_2012}{incollection}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=8c243ec63eae723c8373f506fcffd3b7}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Rochester, NY}%
+      }
+      \list{publisher}{1}{%
+        {ABA Book Publishing}%
+      }
+      \strng{namehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{fullhash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{bibnamehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{authorbibnamehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{authornamehash}{8c243ec63eae723c8373f506fcffd3b7}
+      \strng{authorfullhash}{8c243ec63eae723c8373f506fcffd3b7}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper addresses the analysis of market definition when the parties involved in an antitrust or merger analysis include one or more two-sided platforms. We discuss how standard market definition measures such as SSNIP tests, diversion ratios, and conditional logit demand analyses have to be modified to account for the unique characteristics of two-sided platforms. We also review how market definition of two- sided platforms was treated in recent US and EC case law.}
+      \field{booktitle}{Market {Definition} in {Antitrust}: {Theory} and {Case} {Studies}}
+      \field{isbn}{978-1-61438-366-6}
+      \field{title}{Two-{Sided} {Market} {Definition}}
+      \field{year}{2012}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/HSU8IIVQ/papers.html:text/html
+      \endverb
+      \keyw{antitrust analysis,market definition,merger analysis,multi-sided platforms,Two-Sided Markets,two-sided platforms}
+    \endentry
+    \entry{evans_defining_2007}{report}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=8c243ec63eae723c8373f506fcffd3b7}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=02998ee2388a37de9b3bb5f3da2b80d3}{%
+           family={Noel},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Social Science Research Network}%
+      }
+      \list{location}{1}{%
+        {Rochester, NY}%
+      }
+      \strng{namehash}{677f79650d6b74226dafe07088907306}
+      \strng{fullhash}{677f79650d6b74226dafe07088907306}
+      \strng{bibnamehash}{677f79650d6b74226dafe07088907306}
+      \strng{authorbibnamehash}{677f79650d6b74226dafe07088907306}
+      \strng{authornamehash}{677f79650d6b74226dafe07088907306}
+      \strng{authorfullhash}{677f79650d6b74226dafe07088907306}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A multi-sided platform (MSP) serves as an intermediary for two or more groups of customers who are linked by indirect network effects. Recent research has found that MSPs are significant in many industries and that some standard economic results - such as the Lerner Index - do not apply to them, in material ways, without some significant modification to take linkages between the multiple sides into account. This article extends several key tools used for the analysis of mergers to situations in which one or more of the suppliers are MSPs. It shows that the application of traditional tools to mergers involving MSPs results in biases the direction of which depends on the particular tool being used and other conditions. It also extends these tools to the analysis of the merger of MSPs. The techniques are illustrated with an application to an acquisition by Google in the online advertising industry.}
+      \field{month}{11}
+      \field{number}{ID 1089073}
+      \field{shorttitle}{Defining {Markets} that {Involve} {Multi}-{Sided} {Platform} {Businesses}}
+      \field{title}{Defining {Markets} that {Involve} {Multi}-{Sided} {Platform} {Businesses}: {An} {Empirical} {Framework} with an {Application} to {Google}'s {Purchase} of {DoubleClick}}
+      \field{type}{{SSRN} {Scholarly} {Paper}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/7Z5RZP4R/papers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://papers.ssrn.com/abstract=1089073
+      \endverb
+      \verb{url}
+      \verb http://papers.ssrn.com/abstract=1089073
+      \endverb
+      \keyw{David S. Evans,Defining Markets that Involve Multi-Sided Platform Businesses: An Empirical Framework with an Application to Google's Purchase of DoubleClick,Michael D. Noel,SSRN}
+    \endentry
+    \entry{evans_analysis_2008}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=8c243ec63eae723c8373f506fcffd3b7}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=02998ee2388a37de9b3bb5f3da2b80d3}{%
+           family={Noel},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{677f79650d6b74226dafe07088907306}
+      \strng{fullhash}{677f79650d6b74226dafe07088907306}
+      \strng{bibnamehash}{677f79650d6b74226dafe07088907306}
+      \strng{authorbibnamehash}{677f79650d6b74226dafe07088907306}
+      \strng{authornamehash}{677f79650d6b74226dafe07088907306}
+      \strng{authorfullhash}{677f79650d6b74226dafe07088907306}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A multisided platform (MSP) serves as an intermediary for two or more groups of customers who are linked by indirect network effects. Recent research has found that MSPs are significant in many industries and that some standard economic results—such as the Lerner Index—do not apply to them, in material ways, without some significant modification to take linkages between the multiple sides into account. This article extends several key tools used for the analysis of mergers to situations in which one or more of the suppliers are MSPs. It shows that the application of traditional tools to mergers involving MSPs results in biases, the direction of which depends on the particular tool being used and other conditions. It also extends these tools to the analysis of the merger of MSPs. The techniques are illustrated with an application to an acquisition involving the multisided online advertising industry.}
+      \field{issn}{1744-6414, 1744-6422}
+      \field{journaltitle}{Journal of Competition Law and Economics}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{The {Analysis} of {Mergers} {That} {Involve} {Multisided} {Platform} {Businesses}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{4}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \field{pages}{663\bibrangedash 695}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1093/joclec/nhn017
+      \endverb
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/NG9A9ZSJ/663.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://jcle.oxfordjournals.org/content/4/3/663
+      \endverb
+      \verb{url}
+      \verb http://jcle.oxfordjournals.org/content/4/3/663
+      \endverb
+    \endentry
+    \entry{evans_industrial_2007}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=8c243ec63eae723c8373f506fcffd3b7}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4a248c42806779a485fb89901cb0d821}{%
+           family={Schmalensee},
+           familyi={S\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7dd0ebb121c5bf12bbd0a22d8722846f}
+      \strng{fullhash}{7dd0ebb121c5bf12bbd0a22d8722846f}
+      \strng{bibnamehash}{7dd0ebb121c5bf12bbd0a22d8722846f}
+      \strng{authorbibnamehash}{7dd0ebb121c5bf12bbd0a22d8722846f}
+      \strng{authornamehash}{7dd0ebb121c5bf12bbd0a22d8722846f}
+      \strng{authorfullhash}{7dd0ebb121c5bf12bbd0a22d8722846f}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper provides a brief introduction to the economics of two-sided platforms and the implications for antitrust analysis.}
+      \field{journaltitle}{CPI Journal}
+      \field{title}{The {Industrial} {Organization} of {Markets} with {Two}-{Sided} {Platforms}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{3}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/B876CR9E/3.1.2007i=4907.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/cpi/cpijrn/3.1.2007i=4907.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/cpi/cpijrn/3.1.2007i=4907.html
+      \endverb
+    \endentry
+    \entry{filistrucchi_ssnip_2008}{report}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=a9e501bf33cd1bc33b2b14c20f45fb08}{%
+           family={Filistrucchi},
+           familyi={F\bibinitperiod},
+           given={Lapo},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Social Science Research Network}%
+      }
+      \list{location}{1}{%
+        {Rochester, NY}%
+      }
+      \strng{namehash}{a9e501bf33cd1bc33b2b14c20f45fb08}
+      \strng{fullhash}{a9e501bf33cd1bc33b2b14c20f45fb08}
+      \strng{bibnamehash}{a9e501bf33cd1bc33b2b14c20f45fb08}
+      \strng{authorbibnamehash}{a9e501bf33cd1bc33b2b14c20f45fb08}
+      \strng{authornamehash}{a9e501bf33cd1bc33b2b14c20f45fb08}
+      \strng{authorfullhash}{a9e501bf33cd1bc33b2b14c20f45fb08}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{I discuss the design and implementation of a SSNIP test in order to identify the relevant market in a media market. I argue that in such a two-sided market the traditional SSNIP test cannot be applied as it is usually conceived but rather should be modified in order to take into account indirect network externalities. I discuss the issues of which price the hypothetical monopolist should be thought of as raising, of whether we should look at profits changes on only one side or on both sides of the market and of which feedback among the two sides of the market we should take into account. I then derive the relevant formulas for Critical Loss Analysis. These look much uglier than in a single-sided market but in fact they are easy to calculate as they are still expressed in terms of elasticities and of current observed markups, prices and quantities. Data requirements are however higher as one needs to estimate the matrixes of the own and cross price elasticities of demand on the two-sides of the market and the matrixes of the network effects. The paper fills a gap in the economic literature, so much more as market definition in media markets is at the centre of many recent competition policy and regulation cases around the world.}
+      \field{month}{10}
+      \field{number}{ID 1287442}
+      \field{shorttitle}{A {SSNIP} {Test} for {Two}-{Sided} {Markets}}
+      \field{title}{A {SSNIP} {Test} for {Two}-{Sided} {Markets}: {The} {Case} of {Media}}
+      \field{type}{{SSRN} {Scholarly} {Paper}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/5EF8R939/papers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/abstract=1287442
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/abstract=1287442
+      \endverb
+      \keyw{critical loss analysis,Hypothetical Monopolist test,SSNIP test,Two-Sided Markets}
+    \endentry
+    \entry{filistrucchi_market_2013}{report}{}
+      \name{author}{4}{uniquelist=3}{%
+        {{uniquename=0,uniquepart=base,hash=a9e501bf33cd1bc33b2b14c20f45fb08}{%
+           family={Filistrucchi},
+           familyi={F\bibinitperiod},
+           given={Lapo},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4b4a90f14ffa0a3d2ae145e5a091ad6a}{%
+           family={Geradin},
+           familyi={G\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=1,uniquepart=given,hash=e36a1b844d091e8a4517aa826eb6f78b}{%
+           family={Damme},
+           familyi={D\bibinitperiod},
+           given={Eric\bibnamedelima van},
+           giveni={E\bibinitperiod\bibinitdelim v\bibinitperiod},
+           givenun=1}}%
+        {{uniquename=0,uniquepart=base,hash=12d616c8d3a01c4d6e8b5db55d535fbd}{%
+           family={Affeldt},
+           familyi={A\bibinitperiod},
+           given={Pauline},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universita' degli Studi di Firenze, Dipartimento di Scienze per l'Economia e l'Impresa}%
+      }
+      \strng{namehash}{30bfc998f8169a433ecd36ae23c9002e}
+      \strng{fullhash}{ed96b712f1d432b09bcf9e256346fd7c}
+      \strng{bibnamehash}{30bfc998f8169a433ecd36ae23c9002e}
+      \strng{authorbibnamehash}{30bfc998f8169a433ecd36ae23c9002e}
+      \strng{authornamehash}{30bfc998f8169a433ecd36ae23c9002e}
+      \strng{authorfullhash}{ed96b712f1d432b09bcf9e256346fd7c}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Drawing from the economics of two-sided markets, we provide suggestions for the definition of the relevant market in cases involving two-sided platforms, such as media outlets, online intermediaries, payment cards companies and auction houses. We also discuss when a one-sided approach may be harmless and when instead it can potentially lead to a wrong decision. We then show that the current practice of market definition in two-sided markets is only in part consistent with the above suggestions. Divergence between our suggestions and practice is due to the failure to fully incorporate the lessons from the economic theory of two-sided markets, to the desire to be consistent with previous practice and to the higher data requirements and the higher complexity of empirical analysis in cases involving two-sided platforms. In particular, competition authorities have failed to recognize the crucial difference between two-sided transaction and non-transaction markets and have been misled by the traditional argument that where there is no price, there is no market.}
+      \field{number}{wp2013\_05.rdf}
+      \field{shorttitle}{Market {Definition} in {Two}-{Sided} {Markets}}
+      \field{title}{Market {Definition} in {Two}-{Sided} {Markets}: {Theory} and {Practice}}
+      \field{type}{Working {Papers} - {Economics}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb RePEc PDF:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/DJSRMECS/Filistrucchi et al. - 2013 - Market Definition in Two-Sided Markets Theory and.pdf:application/pdf;RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/MV5CNC4H/wp2013_05.rdf.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/p/frz/wpaper/wp2013_05.rdf.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/p/frz/wpaper/wp2013_05.rdf.html
+      \endverb
+      \keyw{Hypothetical Monopolist test,market definition,SSNIP test,Two-Sided Markets,two-sided platforms}
+    \endentry
+    \entry{filistrucchi_identifying_2012}{report}{}
+      \name{author}{4}{uniquelist=3}{%
+        {{uniquename=0,uniquepart=base,hash=a9e501bf33cd1bc33b2b14c20f45fb08}{%
+           family={Filistrucchi},
+           familyi={F\bibinitperiod},
+           given={Lapo},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4b4a90f14ffa0a3d2ae145e5a091ad6a}{%
+           family={Geradin},
+           familyi={G\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=1,uniquepart=given,hash=47edbdc6061c4fb2973f6546c31e910f}{%
+           family={Damme},
+           familyi={D\bibinitperiod},
+           given={Van},
+           giveni={V\bibinitperiod},
+           givenun=1}}%
+        {{uniquename=0,uniquepart=base,hash=77dcd555f38b965d220a13a3bb080260}{%
+           family={Eric},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Social Science Research Network}%
+      }
+      \list{location}{1}{%
+        {Rochester, NY}%
+      }
+      \strng{namehash}{a84cdf67a7c2dce0e13c71d86e7384ec}
+      \strng{fullhash}{1d62564293727a6b6c954bb58bed06c7}
+      \strng{bibnamehash}{a84cdf67a7c2dce0e13c71d86e7384ec}
+      \strng{authorbibnamehash}{a84cdf67a7c2dce0e13c71d86e7384ec}
+      \strng{authornamehash}{a84cdf67a7c2dce0e13c71d86e7384ec}
+      \strng{authorfullhash}{1d62564293727a6b6c954bb58bed06c7}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We review the burgeoning literature on two-sided markets focusing on the different definitions that have been proposed. In particular, we show that the well-known definition given by Evans is a particular case of the more general definition proposed by Rochet and Tirole. We then identify the crucial elements that make a market two-sided and, drawing from both theory and practice, derive suggestions for the identification of the two-sided nature of a market. Our suggestions are relevant not only for the analysis of traditional two-sided markets, such as newspapers and payment cards, but also for the analysis of many new markets, such as those for online social networks, online search engines and Internet news aggregators.}
+      \field{month}{2}
+      \field{number}{ID 2008661}
+      \field{title}{Identifying {Two}-{Sided} {Markets}}
+      \field{type}{{SSRN} {Scholarly} {Paper}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/J9VDPHRI/papers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/abstract=2008661
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/abstract=2008661
+      \endverb
+      \keyw{network effects,platforms,Two-Sided Markets}
+    \endentry
+    \entry{gual_market_2003}{report}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=82ac9171cfa76264ec22a668f2dd0d05}{%
+           family={Gual},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Social Science Research Network}%
+      }
+      \list{location}{1}{%
+        {Rochester, NY}%
+      }
+      \strng{namehash}{82ac9171cfa76264ec22a668f2dd0d05}
+      \strng{fullhash}{82ac9171cfa76264ec22a668f2dd0d05}
+      \strng{bibnamehash}{82ac9171cfa76264ec22a668f2dd0d05}
+      \strng{authorbibnamehash}{82ac9171cfa76264ec22a668f2dd0d05}
+      \strng{authornamehash}{82ac9171cfa76264ec22a668f2dd0d05}
+      \strng{authorfullhash}{82ac9171cfa76264ec22a668f2dd0d05}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Market definition for antitrust purposes is by now firmly rooted in economic analysis both in the US and the EU, even if the approaches are slightly different. This paper examines the theoretical basis for the legal definitions and assesses whether the general principles need to be adapted when dealing with the telecommunications services industry. The paper finds that the conventional antitrust methodology for market definition can be, to a large extent, readily applied to the telecoms industry but points out some key adjustments that have to be made to this methodology to ensure that the antitrust and regulatory authorities end up defining markets which capture adequately the nature of the competitive interaction in this industry. The definition of markets should be based on a detailed analysis of demand (both complementarities and substitutabilities) and the consideration of all companies which have the assets and capabilities to satisfy these consumer needs. Such an exercise should be done first, and distinguished from the subsequent analysis of the competitive conditions in the markets defined as relevant.}
+      \field{month}{9}
+      \field{number}{ID 462280}
+      \field{title}{Market {Definition} in the {Telecoms} {Industry}}
+      \field{type}{{SSRN} {Scholarly} {Paper}}
+      \field{urlday}{15}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/VUFBFZI8/papers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/abstract=462280
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/abstract=462280
+      \endverb
+      \keyw{antitrus,market definition,regulation,Telecommunications}
+    \endentry
+    \entry{harrington_detecting_2008}{incollection}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=5d134e384bf5cc08ba2e97139c5f3c40}{%
+           family={Harrington},
+           familyi={H\bibinitperiod},
+           given={Joseph\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge MA}%
+      }
+      \list{publisher}{1}{%
+        {The MIT Press}%
+      }
+      \strng{namehash}{5d134e384bf5cc08ba2e97139c5f3c40}
+      \strng{fullhash}{5d134e384bf5cc08ba2e97139c5f3c40}
+      \strng{bibnamehash}{5d134e384bf5cc08ba2e97139c5f3c40}
+      \strng{authorbibnamehash}{5d134e384bf5cc08ba2e97139c5f3c40}
+      \strng{authornamehash}{5d134e384bf5cc08ba2e97139c5f3c40}
+      \strng{authorfullhash}{5d134e384bf5cc08ba2e97139c5f3c40}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Handbook of {Antitrust} {Economics}. {Edited} by {P}. {Buccirossi}.}
+      \field{title}{Detecting {Cartels}}
+      \field{year}{2008}
+      \verb{file}
+      \verb PhilPapers - Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/6JNG8853/undefined.html:text/html
+      \endverb
+    \endentry
+    \entry{harvey_modeling_1997}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=b51bdf29f43594f309b0ac297b11e614}{%
+           family={Harvey},
+           familyi={H\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=04d1f9473fab4f9f6f4637e842a50e8f}{%
+           family={Koopman},
+           familyi={K\bibinitperiod},
+           given={Siem\bibnamedelima Jan},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0956a0f6ed56f7a71ccf7d55fd90dcd6}{%
+           family={Riani},
+           familyi={R\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6e27232ff8495e07409154a2e018763c}
+      \strng{fullhash}{6e27232ff8495e07409154a2e018763c}
+      \strng{bibnamehash}{6e27232ff8495e07409154a2e018763c}
+      \strng{authorbibnamehash}{6e27232ff8495e07409154a2e018763c}
+      \strng{authornamehash}{6e27232ff8495e07409154a2e018763c}
+      \strng{authorfullhash}{6e27232ff8495e07409154a2e018763c}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Several important economic time series are recorded on a particular day every week. Seasonal adjustment of such series is difficult because the number of weeks varies between 52 and 53 and the position of the recording day changes from year to year. In addition certain festivals, most notably Easter, take place at different times according to the year. This article presents a solution to problems of this kind by setting up a structural time series model that allows the seasonal pattern to evolve over time and enables trend extraction and seasonal adjustment to be carried out by means of state-space filtering and smoothing algorithms. The method is illustrated with a Bank of England series on the money supply.}
+      \field{issn}{0735-0015}
+      \field{journaltitle}{Journal of Business \& Economic Statistics}
+      \field{number}{3}
+      \field{title}{The {Modeling} and {Seasonal} {Adjustment} of {Weekly} {Observations}}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{volume}{15}
+      \field{year}{1997}
+      \field{urldateera}{ce}
+      \field{pages}{354\bibrangedash 368}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.2307/1392339
+      \endverb
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/1392339
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/1392339
+      \endverb
+    \endentry
+    \entry{kaiser_price_2006}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=a64b9f8696d37979632975780f032e45}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Ulrich},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=1022f600ae81af5a9aab3562b89da5ae}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{77c5efda7a5e6af2332e922198b88c2f}
+      \strng{fullhash}{77c5efda7a5e6af2332e922198b88c2f}
+      \strng{bibnamehash}{77c5efda7a5e6af2332e922198b88c2f}
+      \strng{authorbibnamehash}{77c5efda7a5e6af2332e922198b88c2f}
+      \strng{authornamehash}{77c5efda7a5e6af2332e922198b88c2f}
+      \strng{authorfullhash}{77c5efda7a5e6af2332e922198b88c2f}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0167-7187}
+      \field{journaltitle}{International Journal of Industrial Organization}
+      \field{number}{1}
+      \field{shorttitle}{Price structure in two-sided markets}
+      \field{title}{Price structure in two-sided markets: {Evidence} from the magazine industry}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{24}
+      \field{year}{2006}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 28}
+      \range{pages}{28}
+      \verb{file}
+      \verb RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/NSC8QSNB/v_3a24_3ay_3a2006_3ai_3a1_3ap_3a1-28.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://econpapers.repec.org/article/eeeindorg/v_3a24_3ay_3a2006_3ai_3a1_3ap_3a1-28.htm
+      \endverb
+      \verb{url}
+      \verb http://econpapers.repec.org/article/eeeindorg/v_3a24_3ay_3a2006_3ai_3a1_3ap_3a1-28.htm
+      \endverb
+    \endentry
+    \entry{kaltenhaeuser_abstimmung_2005}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=1c9f14763316c09c844278808007b514}{%
+           family={Kaltenhaeuser},
+           familyi={K\bibinitperiod},
+           given={Bettina},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Deutscher Universitats-Verlag}%
+      }
+      \strng{namehash}{1c9f14763316c09c844278808007b514}
+      \strng{fullhash}{1c9f14763316c09c844278808007b514}
+      \strng{bibnamehash}{1c9f14763316c09c844278808007b514}
+      \strng{authorbibnamehash}{1c9f14763316c09c844278808007b514}
+      \strng{authornamehash}{1c9f14763316c09c844278808007b514}
+      \strng{authorfullhash}{1c9f14763316c09c844278808007b514}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-8244-4617-9}
+      \field{month}{1}
+      \field{title}{Abstimmung am {Kiosk}: {Der} {Einfluss} der {Titelseitengestaltung} politischer {Publikumszeitschriften} auf die {Einzelverkaufsauflage}}
+      \field{year}{2005}
+    \endentry
+    \entry{kind_competition_2006}{report}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=f68cdd6a59eb95c1ad5f32b5f7ff7759}{%
+           family={Kind},
+           familyi={K\bibinitperiod},
+           given={Hans\bibnamedelima Jarle},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b745c4a26dfdfa6ef5b61ac6eaf16396}{%
+           family={Nilssen},
+           familyi={N\bibinitperiod},
+           given={Tore},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=681def0fb2c58a8acc7f020e61e9bf7f}{%
+           family={Sorgard},
+           familyi={S\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Social Science Research Network}%
+      }
+      \list{location}{1}{%
+        {Rochester, NY}%
+      }
+      \strng{namehash}{c3d0fe37fda5cac8b17a47baddb712b1}
+      \strng{fullhash}{c3d0fe37fda5cac8b17a47baddb712b1}
+      \strng{bibnamehash}{c3d0fe37fda5cac8b17a47baddb712b1}
+      \strng{authorbibnamehash}{c3d0fe37fda5cac8b17a47baddb712b1}
+      \strng{authornamehash}{c3d0fe37fda5cac8b17a47baddb712b1}
+      \strng{authorfullhash}{c3d0fe37fda5cac8b17a47baddb712b1}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We consider a model of a TV oligopoly where TV channels transmit advertising and viewers dislike such commercials. We show that advertisers make a lower profit the larger the number of TV channels. If TV channels are sufficiently close substitutes, there will be underprovision of advertising relative to social optimum. We also find that the more viewers dislike ads, the more likely it is that welfare is increasing in the number of advertising financed TV channels. A publicly owned TV channel can partly correct market distortions, in some cases by having a larger amount of advertising than private TV channels. It may even have advertising in cases where advertising is wasteful per se.}
+      \field{month}{11}
+      \field{number}{ID 949725}
+      \field{title}{Competition for {Viewers} and {Advertisers} in a {TV} {Oligopoly}}
+      \field{type}{{SSRN} {Scholarly} {Paper}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{year}{2006}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/BHJN4CI2/papers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://papers.ssrn.com/abstract=949725
+      \endverb
+      \verb{url}
+      \verb http://papers.ssrn.com/abstract=949725
+      \endverb
+      \keyw{advertising,television industry}
+    \endentry
+    \entry{kind_business_2009}{report}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=f68cdd6a59eb95c1ad5f32b5f7ff7759}{%
+           family={Kind},
+           familyi={K\bibinitperiod},
+           given={Hans\bibnamedelima Jarle},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b745c4a26dfdfa6ef5b61ac6eaf16396}{%
+           family={Nilssen},
+           familyi={N\bibinitperiod},
+           given={Tore},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=aa139b79bfd091f807ea8ef70d96ad9b}{%
+           family={Sørgard},
+           familyi={S\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {CESifo Group Munich}%
+      }
+      \strng{namehash}{ba89cc0ca5e93b8a9fd36956acb33f46}
+      \strng{fullhash}{ba89cc0ca5e93b8a9fd36956acb33f46}
+      \strng{bibnamehash}{ba89cc0ca5e93b8a9fd36956acb33f46}
+      \strng{authorbibnamehash}{ba89cc0ca5e93b8a9fd36956acb33f46}
+      \strng{authornamehash}{ba89cc0ca5e93b8a9fd36956acb33f46}
+      \strng{authorfullhash}{ba89cc0ca5e93b8a9fd36956acb33f46}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The purpose of this article is to analyze how competitive forces may influence the way media firms like TV channels raise revenue. A media firm can either be financed by advertising revenue, by direct payment from the viewers (or the readers, if we consider newspapers), or by both. We show that the scope for raising revenues from consumer payment is constrained by other media firms offering close substitutes. This implies that the less differentiated the media firms’ content, the larger is the fraction of their revenue coming from advertising. A media firm’s scope for raising revenues from ads, on the other hand, is constrained by how many competitors it faces. We should thus expect that direct payment from the media consumers becomes more important the larger the number of competing media products.}
+      \field{number}{2713}
+      \field{shorttitle}{Business {Models} for {Media} {Firms}}
+      \field{title}{Business {Models} for {Media} {Firms}: {Does} {Competition} {Matter} for how they {Raise} {Revenue}?}
+      \field{type}{{CESifo} {Working} {Paper} {Series}}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{year}{2009}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb RePEc PDF:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/PZ3BUB7A/Kind et al. - 2009 - Business Models for Media Firms Does Competition .pdf:application/pdf;RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/CZ995T23/_2713.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/p/ces/ceswps/_2713.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/p/ces/ceswps/_2713.html
+      \endverb
+    \endentry
+    \entry{leonello_horizontal_2010}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=57e84e37387797f97dda871a648a6787}{%
+           family={Leonello},
+           familyi={L\bibinitperiod},
+           given={Agnese},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{57e84e37387797f97dda871a648a6787}
+      \strng{fullhash}{57e84e37387797f97dda871a648a6787}
+      \strng{bibnamehash}{57e84e37387797f97dda871a648a6787}
+      \strng{authorbibnamehash}{57e84e37387797f97dda871a648a6787}
+      \strng{authornamehash}{57e84e37387797f97dda871a648a6787}
+      \strng{authorfullhash}{57e84e37387797f97dda871a648a6787}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The paper analyzes the eects of mergers in two-sided markets. In these markets two distinct groups of agents interact through one or more plat- forms. I show that, in two-sided markets, the...}
+      \field{journaltitle}{ResearchGate}
+      \field{month}{1}
+      \field{title}{Horizontal {Mergers} in {Two}-{Sided} {Markets}}
+      \field{urlday}{3}
+      \field{urlmonth}{11}
+      \field{urlyear}{2016}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/MPE6UNXA/242492919_Horizontal_Mergers_in_Two-Sided_Markets.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/242492919_Horizontal_Mergers_in_Two-Sided_Markets
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/242492919_Horizontal_Mergers_in_Two-Sided_Markets
+      \endverb
+    \endentry
+    \entry{malam_mergers_2011}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=96f01f2f9d31369a16e0e0f91fbd19db}{%
+           family={Malam},
+           familyi={M\bibinitperiod},
+           given={Craig\bibnamedelima R.},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{96f01f2f9d31369a16e0e0f91fbd19db}
+      \strng{fullhash}{96f01f2f9d31369a16e0e0f91fbd19db}
+      \strng{bibnamehash}{96f01f2f9d31369a16e0e0f91fbd19db}
+      \strng{authorbibnamehash}{96f01f2f9d31369a16e0e0f91fbd19db}
+      \strng{authornamehash}{96f01f2f9d31369a16e0e0f91fbd19db}
+      \strng{authorfullhash}{96f01f2f9d31369a16e0e0f91fbd19db}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An oligopoly model of competition among two-sided media platforms is presented to examine some competitive effects of mergers. The model characterises ad-sponsored media platforms that charge a zero price to viewers (offer free content) when competing simultaneously for advertisers. The model indicates that mergers among ad-sponsored platforms have a competition-intensifying effect, which offsets the incentive to increase prices on the advertiser side. When the assumption of full market coverage in the advertiser market is relaxed, the decrease in prices improves social welfare}
+      \field{month}{8}
+      \field{title}{Mergers of ad-sponsored media platforms}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{year}{2011}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb media_mergers_Sept.pdf:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/CIBINTVE/media_mergers_Sept.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://ww.w.webmeets.com/files/papers/EARIE/2011/634/media_mergers_Sept.pdf
+      \endverb
+      \verb{url}
+      \verb http://ww.w.webmeets.com/files/papers/EARIE/2011/634/media_mergers_Sept.pdf
+      \endverb
+    \endentry
+    \entry{motta_competition_2004}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=5a6bc9134ce3229d0af42856fec524d0}{%
+           family={Motta},
+           familyi={M\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{5a6bc9134ce3229d0af42856fec524d0}
+      \strng{fullhash}{5a6bc9134ce3229d0af42856fec524d0}
+      \strng{bibnamehash}{5a6bc9134ce3229d0af42856fec524d0}
+      \strng{authorbibnamehash}{5a6bc9134ce3229d0af42856fec524d0}
+      \strng{authornamehash}{5a6bc9134ce3229d0af42856fec524d0}
+      \strng{authorfullhash}{5a6bc9134ce3229d0af42856fec524d0}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This is the first book to provide a systematic treatment of the economics of antitrust (or competition policy) in a global context. It draws on the literature of industrial organisation and on original analyses to deal with such important issues as cartels, joint-ventures, mergers, vertical contracts, predatory pricing, exclusionary practices, and price discrimination, and to formulate policy implications on these issues. The interaction between theory and practice is one of the main features of the book, which contains frequent references to competition policy cases and a few fully developed case studies. The treatment is written to appeal to practitioners and students, to lawyers and economists. It is not only a textbook in economics for first year graduate or advanced undergraduate courses, but also a book for all those who wish to understand competition issues in a clear and rigorous way. Exercises and some solved problems are provided.}
+      \field{isbn}{978-0-521-01691-9}
+      \field{month}{1}
+      \field{note}{Google-Books-ID: \_gLD41DfaJwC}
+      \field{shorttitle}{Competition {Policy}}
+      \field{title}{Competition {Policy}: {Theory} and {Practice}}
+      \field{year}{2004}
+      \keyw{Business \& Economics / Economics / General,Business \& Economics / General,Business \& Economics / Industrial Management,Business \& Economics / Industries / General,Business \& Economics / International / General,Political Science / Public Policy / Economic Policy}
+    \endentry
+    \entry{noel_analyzing_2005}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=02998ee2388a37de9b3bb5f3da2b80d3}{%
+           family={Noel},
+           familyi={N\bibinitperiod},
+           given={Michael\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=8c243ec63eae723c8373f506fcffd3b7}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={David\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d7de3c48f5a1e686796f562d58eed13d}
+      \strng{fullhash}{d7de3c48f5a1e686796f562d58eed13d}
+      \strng{bibnamehash}{d7de3c48f5a1e686796f562d58eed13d}
+      \strng{authorbibnamehash}{d7de3c48f5a1e686796f562d58eed13d}
+      \strng{authornamehash}{d7de3c48f5a1e686796f562d58eed13d}
+      \strng{authorfullhash}{d7de3c48f5a1e686796f562d58eed13d}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1556-5068}
+      \field{journaltitle}{SSRN Electronic Journal}
+      \field{title}{Analyzing {Market} {Definition} and {Power} in {Multi}-sided {Platform} {Markets}}
+      \field{urlday}{10}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{year}{2005}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2139/ssrn.835504
+      \endverb
+      \verb{urlraw}
+      \verb http://www.ssrn.com/abstract=835504
+      \endverb
+      \verb{url}
+      \verb http://www.ssrn.com/abstract=835504
+      \endverb
+    \endentry
+    \entry{paha_empirical_2011}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=21926cfe622a743146dbb4675f62e509}{%
+           family={Paha},
+           familyi={P\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{21926cfe622a743146dbb4675f62e509}
+      \strng{fullhash}{21926cfe622a743146dbb4675f62e509}
+      \strng{bibnamehash}{21926cfe622a743146dbb4675f62e509}
+      \strng{authorbibnamehash}{21926cfe622a743146dbb4675f62e509}
+      \strng{authornamehash}{21926cfe622a743146dbb4675f62e509}
+      \strng{authorfullhash}{21926cfe622a743146dbb4675f62e509}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Regression methods are commonly used in competition lawsuits for, e.g., determining overcharges in price-fixing cases. Technical evaluations of these methods' pros and cons are not necessarily intuitive. Appraisals that are based on case studies are descriptive but need not be universally valid. This paper opens up the black box called econometrics for competition cases. This is done by complementing theoretical arguments with estimation results. These results are obtained for data that is generated by a simulation-model of a collusive industry. Using such data leaves little room for debate about the quality of these methods because estimates of, e.g., overcharges can be compared to their true underlying values. This analysis provides arguments for demonstrating that thoroughly conducted econometric analyses yield better results than simple techniques such as before-and-after comparisons.}
+      \field{issn}{1573-6911}
+      \field{journaltitle}{Empirica}
+      \field{number}{3}
+      \field{title}{Empirical methods in the analysis of collusion}
+      \field{volume}{38}
+      \field{year}{2011}
+      \field{pages}{389\bibrangedash 415}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1007/s10663-010-9160-1
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/s10663-010-9160-1
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/s10663-010-9160-1
+      \endverb
+    \endentry
+    \entry{picard_digitization_2011}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=d3e535c84ad83cf26021e1732feba728}{%
+           family={Picard},
+           familyi={P\bibinitperiod},
+           given={Robert\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d3e535c84ad83cf26021e1732feba728}
+      \strng{fullhash}{d3e535c84ad83cf26021e1732feba728}
+      \strng{bibnamehash}{d3e535c84ad83cf26021e1732feba728}
+      \strng{authorbibnamehash}{d3e535c84ad83cf26021e1732feba728}
+      \strng{authornamehash}{d3e535c84ad83cf26021e1732feba728}
+      \strng{authorfullhash}{d3e535c84ad83cf26021e1732feba728}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Open Society Foundations}
+      \field{month}{7}
+      \field{title}{Digitization and {Media} {Business} {Models}}
+      \field{urlday}{26}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{year}{2011}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Digitization and Media Business Models-final.indd - digitization-media-business-models-20110721.pdf:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/FE378CMX/digitization-media-business-models-20110721.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.opensocietyfoundations.org/sites/default/files/digitization-media-business-models-20110721.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.opensocietyfoundations.org/sites/default/files/digitization-media-business-models-20110721.pdf
+      \endverb
+    \endentry
+    \entry{rochet_platform_2003}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=c774e33c3153ef9db1c5d50a7f69799d}{%
+           family={Rochet},
+           familyi={R\bibinitperiod},
+           given={Jean-Charles},
+           giveni={J\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=00e537376470e49a45c05eab98111caa}{%
+           family={Tirole},
+           familyi={T\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{c07e4308d805a2d585fcfabf9ba4ca1d}
+      \strng{fullhash}{c07e4308d805a2d585fcfabf9ba4ca1d}
+      \strng{bibnamehash}{c07e4308d805a2d585fcfabf9ba4ca1d}
+      \strng{authorbibnamehash}{c07e4308d805a2d585fcfabf9ba4ca1d}
+      \strng{authornamehash}{c07e4308d805a2d585fcfabf9ba4ca1d}
+      \strng{authorfullhash}{c07e4308d805a2d585fcfabf9ba4ca1d}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many if not most markets with network externalities are two-sided. To succeed, platforms in industries such as software, portals and media, payment systems and the Internet, must “get both sides of the market on board.” Accordingly, platforms devote much attention to their business model, that is, to how they court each side while making money overall. This paper builds a model of platform competition with two-sided markets. It unveils the determinants of price allocation and end-user surplus for different governance structures (profit-maximizing platforms and not-for-profit joint undertakings), and compares the outcomes with those under an integrated monopolist and a Ramsey planner. (JEL: L5, L82, L86, L96)}
+      \field{issn}{1542-4774}
+      \field{journaltitle}{Journal of the European Economic Association}
+      \field{month}{6}
+      \field{number}{4}
+      \field{title}{Platform {Competition} in {Two}-{Sided} {Markets}}
+      \field{urlday}{4}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{1}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \field{pages}{990\bibrangedash 1029}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1162/154247603322493212
+      \endverb
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/WJI5PS42/abstract.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://onlinelibrary.wiley.com/doi/10.1162/154247603322493212/abstract
+      \endverb
+      \verb{url}
+      \verb http://onlinelibrary.wiley.com/doi/10.1162/154247603322493212/abstract
+      \endverb
+    \endentry
+    \entry{rysman_empirical_2007}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=991e7efbdf6162f0285cf3bf62a32fb5}{%
+           family={Rysman},
+           familyi={R\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{991e7efbdf6162f0285cf3bf62a32fb5}
+      \strng{fullhash}{991e7efbdf6162f0285cf3bf62a32fb5}
+      \strng{bibnamehash}{991e7efbdf6162f0285cf3bf62a32fb5}
+      \strng{authorbibnamehash}{991e7efbdf6162f0285cf3bf62a32fb5}
+      \strng{authornamehash}{991e7efbdf6162f0285cf3bf62a32fb5}
+      \strng{authorfullhash}{991e7efbdf6162f0285cf3bf62a32fb5}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{I exploit a unique data set on the payment card industry to study issues associated with network effects and two-sided markets. I show that consumers concentrate their spending on a single payment network (single-homing), although many maintain unused cards that allow the ability to use multiple networks (multi-homing). Further, I establish a regional correlation between consumer usage and merchant acceptance within the four major networks (Visa, Mastercard, American Express and Discover). This correlation is suggestive of the existence of a positive feedback loop between consumer usage and merchant acceptance.}
+      \field{issn}{0022-1821}
+      \field{journaltitle}{The Journal of Industrial Economics}
+      \field{number}{1}
+      \field{title}{An {Empirical} {Analysis} of {Payment} {Card} {Usage}}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{volume}{55}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 36}
+      \range{pages}{36}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/4622372
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/4622372
+      \endverb
+    \endentry
+    \entry{salop_monopolistic_1979}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=094221d26a8784ed4ef505dc998ece01}{%
+           family={Salop},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{094221d26a8784ed4ef505dc998ece01}
+      \strng{fullhash}{094221d26a8784ed4ef505dc998ece01}
+      \strng{bibnamehash}{094221d26a8784ed4ef505dc998ece01}
+      \strng{authorbibnamehash}{094221d26a8784ed4ef505dc998ece01}
+      \strng{authornamehash}{094221d26a8784ed4ef505dc998ece01}
+      \strng{authorfullhash}{094221d26a8784ed4ef505dc998ece01}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Chamberlinian monopolistically competitive equilibrium has been explored and extended in a number of recent papers. These analyses have paid only cursory attention to the existence of an industry outside the Chamberlinian group. In this article I analyze a model of spatial competition in which a second commodity is explicitly treated. In this two-industry economy, a zero-profit equilibrium with symmetrically located firms may exhibit rather strange properties. First, demand curves are kinked although firms make "Nash" conjectures. If equilibrium lies at the kink, the effects of parameter changes are perverse. In the short run, prices are rigid in the face of small cost changes. In the long run, increases in costs lower equilibrium prices. Increases in market size raise prices. The welfare properties are also perverse at a kinked equilibrium.}
+      \field{issn}{0361-915X}
+      \field{journaltitle}{Bell Journal of Economics}
+      \field{number}{1}
+      \field{title}{Monopolistic {Competition} with {Outside} {Goods}}
+      \field{urlday}{18}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{volume}{10}
+      \field{year}{1979}
+      \field{urldateera}{ce}
+      \field{pages}{141\bibrangedash 156}
+      \range{pages}{16}
+      \verb{file}
+      \verb RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/TZZTM5HK/v_3a10_3ay_3a1979_3ai_3aspring_3ap_3a141-156.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://econpapers.repec.org/article/rjebellje/v_3a10_3ay_3a1979_3ai_3aspring_3ap_3a141-156.htm
+      \endverb
+      \verb{url}
+      \verb http://econpapers.repec.org/article/rjebellje/v_3a10_3ay_3a1979_3ai_3aspring_3ap_3a141-156.htm
+      \endverb
+    \endentry
+    \entry{shubik_market_1980}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=eb71b325ef956eeefd86e2d5253c9f08}{%
+           family={Shubik},
+           familyi={S\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4b0d3b7b0a12caca2361fab958eae116}{%
+           family={Levitan},
+           familyi={L\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{c89f6fe9a0aa445ac4b6ca0c5f0095d1}
+      \strng{fullhash}{c89f6fe9a0aa445ac4b6ca0c5f0095d1}
+      \strng{bibnamehash}{c89f6fe9a0aa445ac4b6ca0c5f0095d1}
+      \strng{authorbibnamehash}{c89f6fe9a0aa445ac4b6ca0c5f0095d1}
+      \strng{authornamehash}{c89f6fe9a0aa445ac4b6ca0c5f0095d1}
+      \strng{authorfullhash}{c89f6fe9a0aa445ac4b6ca0c5f0095d1}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-674-55026-1}
+      \field{note}{Google-Books-ID: j626AAAAIAAJ}
+      \field{title}{Market {Structure} and {Behavior}}
+      \field{year}{1980}
+      \keyw{Business \& Economics / Commerce,Business \& Economics / Economics / General,Business \& Economics / Industries / General,Business \& Economics / Organizational Behavior,Mathematics / Game Theory}
+    \endentry
+    \entry{song_estimating_2015}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=387125821808097e88f178962aa78ce5}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Minjae},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{387125821808097e88f178962aa78ce5}
+      \strng{fullhash}{387125821808097e88f178962aa78ce5}
+      \strng{bibnamehash}{387125821808097e88f178962aa78ce5}
+      \strng{authorbibnamehash}{387125821808097e88f178962aa78ce5}
+      \strng{authornamehash}{387125821808097e88f178962aa78ce5}
+      \strng{authorfullhash}{387125821808097e88f178962aa78ce5}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper I develop a structural model of platform demand in two-sided markets and use it to estimate platform market power and predict price changes in post-merger markets. My model and estimation procedure are applicable to settings where (1) agents on each side care about the presence of agents on the other side and (2) platforms charge access fees on both sides. Using data on TV magazines in Germany I show that the magazines typically set copy prices below marginal costs and make profits from selling advertising space. I also show that platform mergers are much less harmful to consumers (readers and advertisers) than what the one-sided market model predicts.}
+      \field{journaltitle}{American Economic Journal: Microeconomics}
+      \field{month}{1}
+      \field{note}{forthcoming}
+      \field{title}{Estimating {Platform} {Market} {Power} in {Two}-{Sided} {Markets} with an {Application} to {Magazine} {Advertising}}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{volume}{forthcoming}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/S7MKN5VI/papers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/abstract=1908621
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/abstract=1908621
+      \endverb
+      \keyw{competitive bottleneck,Merger Simulation,platform competition,two-sided single-homing}
+    \endentry
+    \entry{tiao_modeling_1981}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=916251320325c2085ebd88598fc1e074}{%
+           family={Tiao},
+           familyi={T\bibinitperiod},
+           given={G.\bibnamedelimi C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=2,uniquepart=given,hash=067f658bfe8ce1763fbbad3ab585281d}{%
+           family={Box},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi E.\bibnamedelimi P.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=2}}%
+      }
+      \strng{namehash}{813962f41cb609ba9d5d205633729952}
+      \strng{fullhash}{813962f41cb609ba9d5d205633729952}
+      \strng{bibnamehash}{813962f41cb609ba9d5d205633729952}
+      \strng{authorbibnamehash}{813962f41cb609ba9d5d205633729952}
+      \strng{authornamehash}{813962f41cb609ba9d5d205633729952}
+      \strng{authorfullhash}{813962f41cb609ba9d5d205633729952}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An approach to the modeling and analysis of multiple time series is proposed. Properties of a class of vector autoregressive moving average models are discussed. Modeling procedures consisting of tentative specification, estimation, and diagnostic checking are outlined and illustrated by three real examples.}
+      \field{issn}{0162-1459}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{376}
+      \field{title}{Modeling {Multiple} {Times} {Series} with {Applications}}
+      \field{urlday}{29}
+      \field{urlmonth}{8}
+      \field{urlyear}{2016}
+      \field{volume}{76}
+      \field{year}{1981}
+      \field{urldateera}{ce}
+      \field{pages}{802\bibrangedash 816}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.2307/2287575
+      \endverb
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2287575
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2287575
+      \endverb
+    \endentry
+    \entry{vogel_populaere_1998}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=3c304b132ed8219bc642e10feb39d974}{%
+           family={Vogel},
+           familyi={V\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Fischer}%
+      }
+      \strng{namehash}{3c304b132ed8219bc642e10feb39d974}
+      \strng{fullhash}{3c304b132ed8219bc642e10feb39d974}
+      \strng{bibnamehash}{3c304b132ed8219bc642e10feb39d974}
+      \strng{authorbibnamehash}{3c304b132ed8219bc642e10feb39d974}
+      \strng{authornamehash}{3c304b132ed8219bc642e10feb39d974}
+      \strng{authorfullhash}{3c304b132ed8219bc642e10feb39d974}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Die populaere {Presse} in {Deutschland}: ihre {Grundlagen}, {Strukturen} und {Strategien}}
+      \field{year}{1998}
+    \endentry
+    \entry{weyl_price_2010}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=9087291bfd990bb856016531e01e3e9f}{%
+           family={Weyl},
+           familyi={W\bibinitperiod},
+           given={E.\bibnamedelimi Glen},
+           giveni={E\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9087291bfd990bb856016531e01e3e9f}
+      \strng{fullhash}{9087291bfd990bb856016531e01e3e9f}
+      \strng{bibnamehash}{9087291bfd990bb856016531e01e3e9f}
+      \strng{authorbibnamehash}{9087291bfd990bb856016531e01e3e9f}
+      \strng{authornamehash}{9087291bfd990bb856016531e01e3e9f}
+      \strng{authorfullhash}{9087291bfd990bb856016531e01e3e9f}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{I develop a general theory of monopoly pricing of networks. Platforms use insulating tariffs to avoid coordination failure, implementing any desired allocation. Profit maximization distorts in the spirit of A. Michael Spence (1975) by internalizing only network externalities to marginal users. Thus the empirical and prescriptive content of the popular Jean-Charles Rochet and Jean Tirole (2006) model of two-sided markets turns on the nature of user heterogeneity. I propose a more plausible, yet equally tractable, model of heterogeneity in which users differ in their income or scale. My approach provides a general measure of market power and helps predict the effect of price regulation and mergers. (JEL D42, D85, L14)}
+      \field{issn}{0002-8282}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{9}
+      \field{number}{4}
+      \field{title}{A {Price} {Theory} of {Multi}-sided {Platforms}}
+      \field{urlday}{31}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{volume}{100}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \field{pages}{1642\bibrangedash 1672}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1257/aer.100.4.1642
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/3GTB7WTI/Weyl - 2010 - A Price Theory of Multi-sided Platforms.pdf:application/pdf;Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/MGXHE26T/articles.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.100.4.1642
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.100.4.1642
+      \endverb
+    \endentry
+    \entry{white_insulated_2012}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=f4e5adf2d633d7eca36b966425455ad6}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=9087291bfd990bb856016531e01e3e9f}{%
+           family={Weyl},
+           familyi={W\bibinitperiod},
+           given={E.\bibnamedelimi Glen},
+           giveni={E\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{7889b16ef545f3105e8e55c93334c58f}
+      \strng{fullhash}{7889b16ef545f3105e8e55c93334c58f}
+      \strng{bibnamehash}{7889b16ef545f3105e8e55c93334c58f}
+      \strng{authorbibnamehash}{7889b16ef545f3105e8e55c93334c58f}
+      \strng{authornamehash}{7889b16ef545f3105e8e55c93334c58f}
+      \strng{authorfullhash}{7889b16ef545f3105e8e55c93334c58f}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1556-5068}
+      \field{journaltitle}{SSRN Electronic Journal}
+      \field{title}{Insulated {Platform} {Competition}}
+      \field{urlday}{10}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2139/ssrn.1694317
+      \endverb
+      \verb{urlraw}
+      \verb http://www.ssrn.com/abstract=1694317
+      \endverb
+      \verb{url}
+      \verb http://www.ssrn.com/abstract=1694317
+      \endverb
+    \endentry
+    \entry{wright_one-sided_2004}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=1022f600ae81af5a9aab3562b89da5ae}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1022f600ae81af5a9aab3562b89da5ae}
+      \strng{fullhash}{1022f600ae81af5a9aab3562b89da5ae}
+      \strng{bibnamehash}{1022f600ae81af5a9aab3562b89da5ae}
+      \strng{authorbibnamehash}{1022f600ae81af5a9aab3562b89da5ae}
+      \strng{authornamehash}{1022f600ae81af5a9aab3562b89da5ae}
+      \strng{authorfullhash}{1022f600ae81af5a9aab3562b89da5ae}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, I consider eight basic fallacies that can arise from using conventional wisdom from one-sided markets in two-sided market settings. These fallacies are illustrated using statements made in the context of regulatory investigations into credit card schemes in Australia and the United Kingdom. I discuss how these fallacies may be reconciled by proper use of a two-sided market analysis, making reference to the relevant economics literature where applicable. The analysis is supported by observations on other two-sided markets.}
+      \field{journaltitle}{Review of Network Economics}
+      \field{number}{1}
+      \field{title}{One-sided {Logic} in {Two}-sided {Markets}}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2016}
+      \field{volume}{3}
+      \field{year}{2004}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+      \verb{file}
+      \verb RePEc Snapshot:/Users/Franzi/Library/Application Support/Zotero/Profiles/la73mnmp.default/zotero/storage/S8T3FQRE/v_3a3_3ay_3a2004_3ai_3a1_3an_3a3.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://econpapers.repec.org/article/bpjrneart/v_3a3_3ay_3a2004_3ai_3a1_3an_3a3.htm
+      \endverb
+      \verb{url}
+      \verb http://econpapers.repec.org/article/bpjrneart/v_3a3_3ay_3a2004_3ai_3a1_3an_3a3.htm
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

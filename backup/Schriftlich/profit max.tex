@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{ulem}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{tikz-3dplot}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage{multirow,rotating}
+\usepackage[autostyle]{csquotes}
+\usepackage[toc,page]{appendix}
+\DeclareUnicodeCharacter{20AC}{\euro}
+
+\usepackage[backend=biber,style=authoryear-comp]{biblatex}
+\addbibresource{Meine Bibliothek.bib}
+
+\begin{document}
+
+\title{Market Definition of Platform Markets}
+\date{\today}
+\author{Ralf Dewenter, Ulrich Heimeshoff, Franziska Löw}
+
+\maketitle
+
+
+
+% MODEL
+
+\chapter{Model}
+
+\subsection{Profit Maximization}\label{appendix_model}
+
+\begin{equation}
+p_i=\nu_a-\beta_a q_i - \theta q_j +ds_i
+\end{equation}
+
+\begin{equation}
+r_i=\nu_b-\beta_b s_i - \mu s_j +gq_i
+\end{equation} 
+
+\begin{equation}\label{eq:profit}
+\pi_i=(p_i-c_i)q_i+(r_i-f_i)s_i
+\end{equation}
+
+\begin{equation}
+	\frac{\partial \pi_i}{\partial q_i}=\nu_a-2\beta_a q_i-\theta q_j+(d+g)s_i-c_i
+\end{equation}
+
+\begin{equation}
+	\frac{\partial \pi_i}{\partial s_i}=\nu_b-2\beta_b s_i-\mu s_j+(d+g)q_i-f_i
+\end{equation}
+
+\begin{flalign*}
+	& q_i=(8 \beta_a^2 \beta_b f_i-8 \beta_a^2 \beta_b nu_b-4 \beta_a^2 f_j \mu+4 \beta_a^2 \mu \nu_b+4 \beta_a \beta_b c_i d+4 \beta_a \beta_b c_i g-4 \beta_a \beta_b d \\
+	& \nu_a-4 \beta_a \beta_b g \nu_a-2 \beta_a c_j d \mu-2 \beta_a c_j g \mu-2
+	 \beta_a d^2 f_i+2 \beta_a d^2 \nu_b-4 \beta_a d f_i g+4 \beta_a d g \nu_b+2 \beta_a \\
+	& d \mu \nu_a-2 \beta_a f_i g^2+2 \beta_a g^2 \nu_b+2 \beta_a g \mu \nu_a-2 \beta_b c_j
+	 d \theta-2 \beta_b c_j g \theta+2 \beta_b d \nu_a \theta-2 \beta_b f_i \theta^2+2 \\
+	&  \beta_b g \nu_a \theta+2 \beta_b \nu_b \theta^2-c_i d^3-3 c_i d^2 g-3 c_i d 
+	 g^2+c_i d \mu\theta-c_i g^3+c_i g \mu\theta+d^3 \nu_a-d^2 f_j \theta+3 d^2 g \\
+	& \nu_a+d^2 \nu_b \theta-2 d f_j g \theta+3 d g^2 \nu_a+2 d g \nu_b \theta-d \mu 
+	 \nu_a \theta-f_j g^2 \theta+f_j \mu \theta^2+g^3 \nu_a+g^2 \nu_b \theta-g \mu \\
+	& \nu_a \theta-\mu \nu_b \theta^2)/(16 \beta_a^2 \beta_b^2-4 \beta_a^2 \mu^2-8 
+	 \beta_a \beta_b d^2-16 \beta_a \beta_b d g-8 \beta_a \beta_b g^2-4 \beta_b^2 \\
+	& theta^2+d^4+4 d^3 g+6 d^2 g^2-2 d^2 \mu\theta+4 d g^3-4 d g \mu\theta+g^4-2 
+	 g^2 \mu\theta+mu^2 \theta^2)
+\end{flalign*}
+
+
+\end{document}
